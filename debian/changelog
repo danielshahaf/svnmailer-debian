@@ -1,4 +1,4 @@
-svnmailer (1.0.8-10) UNRELEASED; urgency=low
+svnmailer (1.0.8-10) unstable; urgency=low
 
   * debian/control
     - adopting under PAPT team (adding me as uploader); Closes: #506640
@@ -27,7 +27,7 @@ svnmailer (1.0.8-10) UNRELEASED; urgency=low
     - indented license and copyrigth with 4 spaces
     - added file NOTICE text
 
- -- Sandro Tosi <morph@debian.org>  Sun, 23 Nov 2008 23:44:17 +0100
+ -- Sandro Tosi <morph@debian.org>  Tue, 25 Nov 2008 13:05:16 +0100
 
 svnmailer (1.0.8-9) unstable; urgency=medium
 
