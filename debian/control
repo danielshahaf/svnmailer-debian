@@ -1,19 +1,25 @@
 Source: svnmailer
 Section: utils
 Priority: optional
-Maintainer: Julien Danjou <acid@debian.org>
-Build-Depends: debhelper (>= 5.0.0), dpatch
-Build-Depends-Indep: python-dev (>= 2.3), python-support (>= 0.3)
-Standards-Version: 3.7.3
+Maintainer: Python Applications Packaging Team <python-apps-team@lists.alioth.debian.org>
+Uploaders: Sandro Tosi <morph@debian.org>
+Build-Depends: debhelper (>= 5.0.0), dpatch, python
+Build-Depends-Indep: python-support (>= 0.3)
+Standards-Version: 3.8.0
+Homepage: http://opensource.perlig.de/svnmailer/
+Vcs-Svn: svn://svn.debian.org/svn/python-apps/packages/svnmailer/trunk/
+Vcs-Browser: http://svn.debian.org/viewsvn/python-apps/packages/svnmailer/trunk/
+XS-Python-Version: current
 
 Package: svnmailer
 Architecture: all
 Depends: ${python:Depends}, python-subversion
-Description: an extensible subversion commit notification tool
- The svnmailer is a tool, which is usually called by a subversion hook 
+XB-Python-Version: ${python:Versions}
+Description: extensible Subversion commit notification tool
+ The svnmailer is a tool, which is usually called by a Subversion hook 
  to submit commit notifications in various ways (at the moment: mail via 
  SMTP or a pipe to a sendmail like program, news via NNTP, CIA live 
  tracker notification via XML-RPC). It is derived from the original 
- mailer.py distributed with subversion, but supposed to be much more 
+ mailer.py distributed with Subversion, but supposed to be much more 
  consistent, better extensible and to have much more features. Have a 
  look at the documentation for further details. 

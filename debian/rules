@@ -1,36 +1,13 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
-# Sample debian/rules that uses debhelper.
-# This file was originally written by Joey Hess and Craig Small.
-# As a special exception, when this file is copied by dh-make into a
-# dh-make output file, you may use that output file without restriction.
-# This special exception was added by Craig Small in version 0.37 of dh-make.
 
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
 include /usr/share/dpatch/dpatch.make
 
-
-CFLAGS = -Wall -g
-
-ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
-	CFLAGS += -O0
-else
-	CFLAGS += -O2
-endif
-
-configure: configure-stamp
-configure-stamp:
-	dh_testdir
-	# Add here commands to configure the package.
-
-	touch configure-stamp
-
-
 build: build-stamp
-
-build-stamp: configure-stamp patch-stamp
+build-stamp: patch-stamp
 	dh_testdir
 
 	# Add here commands to compile the package.
@@ -41,12 +18,11 @@ build-stamp: configure-stamp patch-stamp
 clean: unpatch
 	dh_testdir
 	dh_testroot
-	rm -rf build
-	rm -f build-stamp configure-stamp
 
 	# Add here commands to clean up after the build process.
+	python setup.py clean
 
-	dh_clean 
+	dh_clean build-stamp build
 
 install: build
 	dh_testdir
@@ -66,8 +42,6 @@ binary-indep: build install
 	dh_installman
 	dh_installdocs
 	dh_installexamples
-	dh_link
-	dh_strip
 	dh_compress
 	dh_fixperms
 	dh_pysupport
@@ -80,4 +54,4 @@ binary-indep: build install
 # Build architecture-dependent files here.
 binary-arch: build install
 binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary install configure
+.PHONY: build clean binary-indep binary-arch binary install

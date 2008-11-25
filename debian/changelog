@@ -1,11 +1,31 @@
 svnmailer (1.0.8-10) UNRELEASED; urgency=low
 
   * debian/control
+    - adopting under PAPT team (adding me as uploader); Closes: #506640
     - added dpatch to build-deps
+    - added Homepage field
+    - bump Standards-Version to 3.8.0
+      + added debian/README.source
+    - added Vcs-{Svn,Browser} fields
+    - moved python (removing python-dev) to Build-Dep instad of
+      Build-Depends-Indep
+    - added X{S,B}-Python-Version fields (removing debian/pyversions)
+    - little improvements on descriptions
   * debian/rules
     - added dpatch stuff
   * debian/patches/01_restore_pristine_code.dpatch
     - added to remove direct upstream code modifications
+  * debian/watch
+    - added
+  * debian/rules
+    - removed configure target, since not needed
+    - removed un-needed dh_* calls
+    - added setup.py clean call
+  * debian/copyright
+    - removed Apache 2.0 full text and refer to the file on Debian system
+    - added upstream author section
+    - indented license and copyrigth with 4 spaces
+    - added file NOTICE text
 
  -- Sandro Tosi <morph@debian.org>  Sun, 23 Nov 2008 23:44:17 +0100
 
