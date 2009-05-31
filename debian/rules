@@ -5,6 +5,7 @@
 #export DH_VERBOSE=1
 
 include /usr/share/dpatch/dpatch.make
+include /usr/share/python/python.mk
 
 build: build-stamp
 build-stamp: patch-stamp
@@ -31,7 +32,7 @@ install: build
 	dh_installdirs
 
 	# Add here commands to install the package into debian/svnmailer.
-	python setup.py install --root=$(CURDIR)/debian/svnmailer
+	python setup.py install --root=$(CURDIR)/debian/svnmailer $(py_setup_install_args)
 
 
 # Build architecture-independent files here.
