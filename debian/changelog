@@ -15,8 +15,10 @@ svnmailer (1.0.8-11) UNRELEASED; urgency=low
     - set XS-Python-Version to '2.5' not to 'current'
   * debian/{dirs, pycompat}
     - removed since not needed
+  * debian/svnmailer.doc-base
+    - added doc-base
 
- -- Sandro Tosi <morph@debian.org>  Thu, 08 Oct 2009 22:10:33 +0200
+ -- Sandro Tosi <morph@debian.org>  Thu, 08 Oct 2009 22:16:28 +0200
 
 svnmailer (1.0.8-10) unstable; urgency=low
 
