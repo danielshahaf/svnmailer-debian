@@ -1,4 +1,4 @@
-svnmailer (1.0.8-11) UNRELEASED; urgency=low
+svnmailer (1.0.8-11) unstable; urgency=low
 
   [ Julien Lavergne ]
   * From Ubuntu, prepare for the future python transition:
@@ -18,7 +18,7 @@ svnmailer (1.0.8-11) UNRELEASED; urgency=low
   * debian/svnmailer.doc-base
     - added doc-base
 
- -- Sandro Tosi <morph@debian.org>  Thu, 08 Oct 2009 22:16:28 +0200
+ -- Sandro Tosi <morph@debian.org>  Thu, 08 Oct 2009 22:31:40 +0200
 
 svnmailer (1.0.8-10) unstable; urgency=low
 
