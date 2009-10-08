@@ -1,5 +1,6 @@
 svnmailer (1.0.8-11) UNRELEASED; urgency=low
 
+  [ Julien Lavergne ]
   * From Ubuntu, prepare for the future python transition:
    - debian/rules: 
     + Include /usr/share/python/python.mk
@@ -8,7 +9,11 @@ svnmailer (1.0.8-11) UNRELEASED; urgency=low
     + Bump build-depends to python (>= 2.5.4-1~)
     + Bump build-depends to debhelper (>= 5.0.38)
 
- -- Julien Lavergne <julien.lavergne@gmail.com>  Sun, 31 May 2009 23:06:43 +0200
+  [ Sandro Tosi ]
+  * debian/control
+    - bump Standards-Version to 3.8.3 (no changes needed)
+
+ -- Sandro Tosi <morph@debian.org>  Thu, 08 Oct 2009 21:39:30 +0200
 
 svnmailer (1.0.8-10) unstable; urgency=low
 
