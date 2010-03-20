@@ -2,8 +2,10 @@ svnmailer (1.0.8-12) UNRELEASED; urgency=low
 
   * debian/control
     - update section to 'vcs', to match override file
+    - set XS-Python-Version: to 'all', it's compatibile with all the supported
+      version of Python
 
- -- Sandro Tosi <morph@debian.org>  Fri, 09 Oct 2009 07:14:29 +0200
+ -- Sandro Tosi <morph@debian.org>  Sat, 20 Mar 2010 17:20:19 +0100
 
 svnmailer (1.0.8-11) unstable; urgency=low
 

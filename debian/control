@@ -9,7 +9,7 @@ Standards-Version: 3.8.3
 Homepage: http://opensource.perlig.de/svnmailer/
 Vcs-Svn: svn://svn.debian.org/svn/python-apps/packages/svnmailer/trunk/
 Vcs-Browser: http://svn.debian.org/viewsvn/python-apps/packages/svnmailer/trunk/
-XS-Python-Version: 2.5
+XS-Python-Version: all
 
 Package: svnmailer
 Architecture: all
