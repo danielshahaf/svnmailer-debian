@@ -13,7 +13,7 @@ XS-Python-Version: all
 
 Package: svnmailer
 Architecture: all
-Depends: ${python:Depends}, python-subversion
+Depends: ${misc:Depends}, ${python:Depends}, python-subversion
 XB-Python-Version: ${python:Versions}
 Description: extensible Subversion commit notification tool
  The svnmailer is a tool, which is usually called by a Subversion hook 

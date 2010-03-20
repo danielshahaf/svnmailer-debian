@@ -5,8 +5,9 @@ svnmailer (1.0.8-12) UNRELEASED; urgency=low
     - set XS-Python-Version: to 'all', it's compatibile with all the supported
       version of Python
     - bump Standards-Version to 3.8.4 (no changes needed)
+    - add ${misc:Depends} to Depends
 
- -- Sandro Tosi <morph@debian.org>  Sat, 20 Mar 2010 17:21:29 +0100
+ -- Sandro Tosi <morph@debian.org>  Sat, 20 Mar 2010 17:23:47 +0100
 
 svnmailer (1.0.8-11) unstable; urgency=low
 
