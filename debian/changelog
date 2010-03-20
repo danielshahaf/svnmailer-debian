@@ -1,4 +1,4 @@
-svnmailer (1.0.8-12) UNRELEASED; urgency=low
+svnmailer (1.0.8-12) unstable; urgency=low
 
   * debian/control
     - update section to 'vcs', to match override file
@@ -7,7 +7,7 @@ svnmailer (1.0.8-12) UNRELEASED; urgency=low
     - bump Standards-Version to 3.8.4 (no changes needed)
     - add ${misc:Depends} to Depends
 
- -- Sandro Tosi <morph@debian.org>  Sat, 20 Mar 2010 17:23:47 +0100
+ -- Sandro Tosi <morph@debian.org>  Sat, 20 Mar 2010 17:25:37 +0100
 
 svnmailer (1.0.8-11) unstable; urgency=low
 
