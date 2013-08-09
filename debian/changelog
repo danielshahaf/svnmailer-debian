@@ -8,6 +8,10 @@ svnmailer (1.0.8-13) UNRELEASED; urgency=low
   [ Jakub Wilk ]
   * Use canonical URIs for Vcs-* fields.
 
+  [ Emilio Pozuelo Monfort ]
+  * Convert svn_core.SVN_STREAM_CHUNK_SIZE from long to int to restore
+    compatibility with python-subversion 1.6.17.  (Closes: #712383)
+
  -- Jakub Wilk <jwilk@debian.org>  Sun, 05 May 2013 18:05:51 +0200
 
 svnmailer (1.0.8-12) unstable; urgency=low
