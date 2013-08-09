@@ -1,5 +1,11 @@
 svnmailer (1.0.8-13) UNRELEASED; urgency=low
 
+  [ Andreas Beckmann ]
+  * QA upload.
+  * Remove Sandro Tosi from Uploaders. Thanks for your work on svnmailer!
+    (See #634213)
+
+  [ Jakub Wilk ]
   * Use canonical URIs for Vcs-* fields.
 
  -- Jakub Wilk <jwilk@debian.org>  Sun, 05 May 2013 18:05:51 +0200
