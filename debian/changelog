@@ -1,4 +1,4 @@
-svnmailer (1.0.8-13) UNRELEASED; urgency=low
+svnmailer (1.0.8-13) unstable; urgency=low
 
   [ Andreas Beckmann ]
   * QA upload.
@@ -12,7 +12,7 @@ svnmailer (1.0.8-13) UNRELEASED; urgency=low
   * Convert svn_core.SVN_STREAM_CHUNK_SIZE from long to int to restore
     compatibility with python-subversion 1.6.17.  (Closes: #712383)
 
- -- Jakub Wilk <jwilk@debian.org>  Sun, 05 May 2013 18:05:51 +0200
+ -- Andreas Beckmann <anbe@debian.org>  Sat, 03 Aug 2013 16:46:12 +0200
 
 svnmailer (1.0.8-12) unstable; urgency=low
 
