@@ -5,6 +5,8 @@ svnmailer (1.0.8-14) UNRELEASED; urgency=low
     in python-subversion (see #683188).
   * Switch from dpatch to source format 3.0 (quilt).
   * Switch from dh_pysupport to dh_python2.
+  * Switch to debhelper 9 and minimal dh --with python2 rules.
+  * Bump Standards-Version to 3.9.4.
 
  -- Andreas Beckmann <anbe@debian.org>  Tue, 15 Oct 2013 23:39:38 +0200
 
