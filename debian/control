@@ -3,7 +3,9 @@ Section: vcs
 Priority: optional
 Maintainer: Python Applications Packaging Team <python-apps-team@lists.alioth.debian.org>
 Uploaders: Debian QA Group <packages@qa.debian.org>
-Build-Depends: debhelper (>= 5.0.38), dpatch, python (>= 2.5.4-1~)
+Build-Depends:
+ debhelper (>= 7.0.50~),
+ python (>= 2.5.4-1~),
 Build-Depends-Indep: python-support (>= 0.3)
 Standards-Version: 3.8.4
 Homepage: http://opensource.perlig.de/svnmailer/

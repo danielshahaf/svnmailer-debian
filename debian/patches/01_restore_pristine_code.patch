@@ -1,13 +1,7 @@
-#! /bin/sh /usr/share/dpatch/dpatch-run
-## 01_restore_pristine_code.dpatch by Sandro Tosi <morph@debian.org>
-##
-## All lines beginning with `## DP:' are a description of the patch.
-## DP: New patch generated from svnmailer 1.0.8-10 diff.gz
-
-@DPATCH@
-
---- svnmailer-1.0.8.orig/src/lib/svnmailer/notifier/_base.py
-+++ svnmailer-1.0.8/src/lib/svnmailer/notifier/_base.py
+Author: Sandro Tosi <morph@debian.org>
+Description: New patch generated from svnmailer 1.0.8-10 diff.gz
+--- a/src/lib/svnmailer/notifier/_base.py
++++ b/src/lib/svnmailer/notifier/_base.py
 @@ -345,7 +345,6 @@
              @return: The two encodings
              @rtype: C{tuple} of C{str}
