@@ -4,6 +4,7 @@ svnmailer (1.0.8-14) UNRELEASED; urgency=low
   * Revert SVN_STREAM_CHUNK_SIZE int vs. long workaround, this has been fixed
     in python-subversion (see #683188).
   * Switch from dpatch to source format 3.0 (quilt).
+  * Switch from dh_pysupport to dh_python2.
 
  -- Andreas Beckmann <anbe@debian.org>  Tue, 15 Oct 2013 23:39:38 +0200
 

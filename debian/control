@@ -5,18 +5,16 @@ Maintainer: Python Applications Packaging Team <python-apps-team@lists.alioth.de
 Uploaders: Debian QA Group <packages@qa.debian.org>
 Build-Depends:
  debhelper (>= 7.0.50~),
- python (>= 2.5.4-1~),
-Build-Depends-Indep: python-support (>= 0.3)
+ dh-python,
+ python (>= 2.6.6-3~),
 Standards-Version: 3.8.4
 Homepage: http://opensource.perlig.de/svnmailer/
 Vcs-Svn: svn://anonscm.debian.org/python-apps/packages/svnmailer/trunk/
 Vcs-Browser: http://anonscm.debian.org/viewvc/python-apps/packages/svnmailer/trunk/
-XS-Python-Version: all
 
 Package: svnmailer
 Architecture: all
 Depends: ${misc:Depends}, ${python:Depends}, python-subversion
-XB-Python-Version: ${python:Versions}
 Description: extensible Subversion commit notification tool
  The svnmailer is a tool, which is usually called by a Subversion hook 
  to submit commit notifications in various ways (at the moment: mail via 
