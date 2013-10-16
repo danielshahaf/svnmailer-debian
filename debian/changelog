@@ -1,14 +1,22 @@
-svnmailer (1.0.8-14) UNRELEASED; urgency=low
+svnmailer (1.0.9-1) UNRELEASED; urgency=low
 
   * QA upload.
+  * New upstream release.
+    - Add manpage for the svn-mailer script
+    - Adjust for Subversion's binding API change in 1.7  (Closes: #646224)
+    - Fix long outstanding issue (python >= 2.5):
+      LookupError is no longer imported explicitly
+    - Work around the double-quoted-printable issue by defaulting to 8bit.
+      (Closes: #385246)
   * Revert SVN_STREAM_CHUNK_SIZE int vs. long workaround, this has been fixed
     in python-subversion (see #683188).
   * Switch from dpatch to source format 3.0 (quilt).
   * Switch from dh_pysupport to dh_python2.
   * Switch to debhelper 9 and minimal dh --with python2 rules.
+    (Closes: #671539)
   * Bump Standards-Version to 3.9.4.
 
- -- Andreas Beckmann <anbe@debian.org>  Tue, 15 Oct 2013 23:39:38 +0200
+ -- Andreas Beckmann <anbe@debian.org>  Wed, 16 Oct 2013 10:07:56 +0200
 
 svnmailer (1.0.8-13) unstable; urgency=low
 
