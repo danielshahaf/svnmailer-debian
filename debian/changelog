@@ -9,6 +9,9 @@ svnmailer (1.0.9-1) UNRELEASED; urgency=low
     - Work around the double-quoted-printable issue by defaulting to 8bit.
       (Closes: #385246)
   * Drop patch restore_pristine_code, fixed upstream.
+  * Drop our own copy of the manpage.
+  * Add new patch manpage-installation to properly install the upstream
+    manpage into /usr/share/man.
   * Revert SVN_STREAM_CHUNK_SIZE int vs. long workaround, this has been fixed
     in python-subversion (see #683188).
   * Switch from dpatch to source format 3.0 (quilt).
