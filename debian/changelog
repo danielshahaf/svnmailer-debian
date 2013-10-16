@@ -8,6 +8,7 @@ svnmailer (1.0.9-1) UNRELEASED; urgency=low
       LookupError is no longer imported explicitly
     - Work around the double-quoted-printable issue by defaulting to 8bit.
       (Closes: #385246)
+  * Drop patch restore_pristine_code, fixed upstream.
   * Revert SVN_STREAM_CHUNK_SIZE int vs. long workaround, this has been fixed
     in python-subversion (see #683188).
   * Switch from dpatch to source format 3.0 (quilt).
