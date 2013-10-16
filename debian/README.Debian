@@ -12,10 +12,5 @@ Please make sure that your post-commit hook script is executable (chmod +x).
 
 For more complete information, read the full documentation.
 
-If you're mail are double encoded (python >= 2.4.3), you can set:
-
-  mail_transfer_encoding = 8bit
-
-to fix the problem.
 
  -- Julien Danjou <acid@debian.org>, Fri, 27 May 2005 20:58:11 +0200

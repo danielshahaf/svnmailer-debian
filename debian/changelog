@@ -1,4 +1,4 @@
-svnmailer (1.0.9-1) UNRELEASED; urgency=low
+svnmailer (1.0.9-1) unstable; urgency=low
 
   * QA upload.
   * New upstream release.
@@ -20,7 +20,7 @@ svnmailer (1.0.9-1) UNRELEASED; urgency=low
     (Closes: #671539)
   * Bump Standards-Version to 3.9.4.
 
- -- Andreas Beckmann <anbe@debian.org>  Wed, 16 Oct 2013 10:07:56 +0200
+ -- Andreas Beckmann <anbe@debian.org>  Wed, 16 Oct 2013 10:49:06 +0200
 
 svnmailer (1.0.8-13) unstable; urgency=low
 
