@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class Hierarchy</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="svnmailer-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Trees&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">&nbsp;</td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<center><b>
+ [ <a href="module-tree.html">Module Hierarchy</a>
+ | <a href="class-tree.html">Class Hierarchy</a> ]
+</b></center><br />
+<h1 class="epydoc">Class Hierarchy</h1>
+<ul class="nomargin-top">
+    <li> <strong class="uidlink">email.message.Message</strong>:
+      <em class="summary">Basic message object.</em>
+    <ul>
+    <li> <strong class="uidlink">email.mime.base.MIMEBase</strong>:
+      <em class="summary">Base class for MIME specializations.</em>
+    <ul>
+    <li> <strong class="uidlink">email.mime.multipart.MIMEMultipart</strong>:
+      <em class="summary">Base class for MIME multipart/* type messages.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._multimail._MultiMail-class.html" onclick="show_private();">svnmailer.notifier._multimail._MultiMail</a></strong>:
+      <em class="summary">A multimail class</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">email.mime.nonmultipart.MIMENonMultipart</strong>:
+      <em class="summary">Base class for MIME multipart/* type messages.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._multimail._SinglePart-class.html" onclick="show_private();">svnmailer.notifier._multimail._SinglePart</a></strong>:
+      <em class="summary">A single part of a multipart mail</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._textmail._TextMail-class.html" onclick="show_private();">svnmailer.notifier._textmail._TextMail</a></strong>:
+      <em class="summary">A text mail class (email.MIMEText produces undesired results)</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">optparse.OptionContainer</strong>:
+      <em class="summary">Abstract base class.</em>
+    <ul>
+    <li> <strong class="uidlink">optparse.OptionParser</strong>:
+      <em class="summary">Class attributes:
+  standard_option_list : [Option]
+    list of standard options that will be accepted by all instances
+    of this parser class (intended to be overridden by subclasses).</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.cli.SvnmailerOptionParser-class.html" onclick="show_private();">svnmailer.cli.SvnmailerOptionParser</a></strong>:
+      <em class="summary">Fully initialized option parser</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">svn.repos.RevisionChangeCollector</strong>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.subversion.Collector-class.html" onclick="show_private();">svnmailer.subversion.Collector</a></strong>:
+      <em class="summary">svn 1.[01] collector</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.subversion._RevisionChangeCollector-class.html" onclick="show_private();">svnmailer.subversion._RevisionChangeCollector</a></strong>:
+      <em class="summary">Collect all changes between two particular revisions</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">object</strong>:
+      <em class="summary">The most base type</em>
+    <ul>
+    <li> <strong class="uidlink">exceptions.BaseException</strong>:
+      <em class="summary">Common base class for all exceptions</em>
+    <ul>
+    <li> <strong class="uidlink">exceptions.Exception</strong>:
+      <em class="summary">Common base class for all non-exit exceptions.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.config.Error-class.html">svnmailer.config.Error</a></strong>:
+      <em class="summary">Base exception for this module</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.config.ConfigInvalidError-class.html">svnmailer.config.ConfigInvalidError</a></strong>:
+      <em class="summary">Config file has errors</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.config.ConfigMappingSectionNotFoundError-class.html">svnmailer.config.ConfigMappingSectionNotFoundError</a></strong>:
+      <em class="summary">Config mapping section was not found</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.config.ConfigMappingSpecInvalidError-class.html">svnmailer.config.ConfigMappingSpecInvalidError</a></strong>:
+      <em class="summary">Config mapping spec was not recognized</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.config.ConfigOptionUnknownError-class.html">svnmailer.config.ConfigOptionUnknownError</a></strong>:
+      <em class="summary">An unknown option was parsed</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.config.ConfigSectionNotFoundError-class.html">svnmailer.config.ConfigSectionNotFoundError</a></strong>:
+      <em class="summary">Specified config section was not found</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.config.ConfigNotFoundError-class.html">svnmailer.config.ConfigNotFoundError</a></strong>:
+      <em class="summary">Config file not found</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.config.ConfigMissingError-class.html">svnmailer.config.ConfigMissingError</a></strong>:
+      <em class="summary">Config not specified and not found on default locations</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._multimail.Error-class.html">svnmailer.notifier._multimail.Error</a></strong>:
+      <em class="summary">Base exception for this module</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._multimail.InvalidMailOption-class.html">svnmailer.notifier._multimail.InvalidMailOption</a></strong>:
+      <em class="summary">Invalid Multipart mail option</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._mail.Error-class.html" onclick="show_private();">svnmailer.notifier._mail.Error</a></strong>:
+      <em class="summary">Base exception for this module</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._mail.NoRecipientsError-class.html" onclick="show_private();">svnmailer.notifier._mail.NoRecipientsError</a></strong>:
+      <em class="summary">No recipients found</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.browser.Error-class.html" onclick="show_private();">svnmailer.browser.Error</a></strong>:
+      <em class="summary">Base exception for this module</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.browser.InvalidBaseUrlError-class.html" onclick="show_private();">svnmailer.browser.InvalidBaseUrlError</a></strong>:
+      <em class="summary">Invalid URL was configured</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.main.Error-class.html">svnmailer.main.Error</a></strong>:
+      <em class="summary">Base exception for this module</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.main.ConfigError-class.html">svnmailer.main.ConfigError</a></strong>:
+      <em class="summary">Configuration error occurred</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.main.NotifierError-class.html">svnmailer.main.NotifierError</a></strong>:
+      <em class="summary">An Notifier error occured</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.cli.Error-class.html" onclick="show_private();">svnmailer.cli.Error</a></strong>:
+      <em class="summary">Base exception for this module</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.cli.CommandlineError-class.html">svnmailer.cli.CommandlineError</a></strong>:
+      <em class="summary">Error in commandline</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.subversion.RepositoryError-class.html">svnmailer.subversion.RepositoryError</a></strong>:
+      <em class="summary">A repository error occured</em>
+    </li>
+    <li> <strong class="uidlink">exceptions.StandardError</strong>:
+      <em class="summary">Base class for all standard Python exceptions that do not represent
+interpreter exiting.</em>
+    <ul>
+    <li> <strong class="uidlink">exceptions.RuntimeError</strong>:
+      <em class="summary">Unspecified run-time error.</em>
+    <ul>
+    <li> <strong class="uidlink">exceptions.NotImplementedError</strong>:
+      <em class="summary">Method or function hasn't been implemented yet.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.struct_accessors.NotSupportedError-class.html" onclick="show_private();">svnmailer.struct_accessors.NotSupportedError</a></strong>:
+      <em class="summary">This method is not supported</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="svn.core.SubversionException-class.html">svn.core.SubversionException</a></strong>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._base.BaseNotifier-class.html">svnmailer.notifier._base.BaseNotifier</a></strong>:
+      <em class="summary">Base class for notifiers</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier.cia_xmlrpc.CIAXMLRPCNotifier-class.html" onclick="show_private();">svnmailer.notifier.cia_xmlrpc.CIAXMLRPCNotifier</a></strong>:
+      <em class="summary">The CIA XML-RPC Notifier class</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._text.TextNotifier-class.html">svnmailer.notifier._text.TextNotifier</a></strong>:
+      <em class="summary">Base class for plain text notifications</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._mail.MailNotifier-class.html">svnmailer.notifier._mail.MailNotifier</a></strong>:
+      <em class="summary">Bases class for mail (like) notifiers</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._multimail.MultiMailNotifier-class.html" onclick="show_private();">svnmailer.notifier._multimail.MultiMailNotifier</a></strong>:
+      <em class="summary">Bases class for mail notifiers using attachments for the diffs</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._textmail.TextMailNotifier-class.html" onclick="show_private();">svnmailer.notifier._textmail.TextMailNotifier</a></strong>:
+      <em class="summary">Bases class for textual mail notifiers</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._textnews.TextNewsNotifier-class.html">svnmailer.notifier._textnews.TextNewsNotifier</a></strong>:
+      <em class="summary">Bases class for news notifiers</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier.stdout.StdoutNotifier-class.html" onclick="show_private();">svnmailer.notifier.stdout.StdoutNotifier</a></strong>:
+      <em class="summary">Writes all stuff to sys.stdout</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.subversion.Collector-class.html" onclick="show_private();">svnmailer.subversion.Collector</a></strong>:
+      <em class="summary">svn 1.[01] collector</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.subversion._RevisionChangeCollector-class.html" onclick="show_private();">svnmailer.subversion._RevisionChangeCollector</a></strong>:
+      <em class="summary">Collect all changes between two particular revisions</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._multimail.DiffDescriptor-class.html" onclick="show_private();">svnmailer.notifier._multimail.DiffDescriptor</a></strong>:
+      <em class="summary">Container class to describe a dumped diff</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.differ.ExternalDiffer-class.html">svnmailer.differ.ExternalDiffer</a></strong>:
+      <em class="summary">Differ which calls an external program (e.g.</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.main.GroupSet-class.html" onclick="show_private();">svnmailer.main.GroupSet</a></strong>:
+      <em class="summary">Container object for a single groupset</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.differ.InternalDiffer-class.html">svnmailer.differ.InternalDiffer</a></strong>:
+      <em class="summary">Differ without an external program call (uses difflib)</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.main.Main-class.html">svnmailer.main.Main</a></strong>:
+      <em class="summary">main svnmailer logic</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.typedstruct.MemberDescriptor-class.html">svnmailer.typedstruct.MemberDescriptor</a></strong>:
+      <em class="summary">Base class for members descriptors</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.struct_accessors.BaseDescriptor-class.html" onclick="show_private();">svnmailer.struct_accessors.BaseDescriptor</a></strong>:
+      <em class="summary">Base class for svnmailer descriptors</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.struct_accessors.BasePostmapDescriptor-class.html" onclick="show_private();">svnmailer.struct_accessors.BasePostmapDescriptor</a></strong>:
+      <em class="summary">Base class for postmap only descriptors</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.struct_accessors.TokenlistDescriptor-class.html" onclick="show_private();">svnmailer.struct_accessors.TokenlistDescriptor</a></strong>:
+      <em class="summary">(Unicode) Tokenlist storage</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.struct_accessors.UnicodeDescriptor-class.html" onclick="show_private();">svnmailer.struct_accessors.UnicodeDescriptor</a></strong>:
+      <em class="summary">Unicode object storage</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.struct_accessors.BasePremapDescriptor-class.html" onclick="show_private();">svnmailer.struct_accessors.BasePremapDescriptor</a></strong>:
+      <em class="summary">Base class for premap only descriptors</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.struct_accessors.CommandlineDescriptor-class.html" onclick="show_private();">svnmailer.struct_accessors.CommandlineDescriptor</a></strong>:
+      <em class="summary">Commandline storage</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.struct_accessors.FilenameDescriptor-class.html" onclick="show_private();">svnmailer.struct_accessors.FilenameDescriptor</a></strong>:
+      <em class="summary">Filename storage</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.struct_accessors.MailactionDescriptor-class.html" onclick="show_private();">svnmailer.struct_accessors.MailactionDescriptor</a></strong>:
+      <em class="summary">Mail action parsing and storage</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.struct_accessors.QuotedstringDescriptor-class.html" onclick="show_private();">svnmailer.struct_accessors.QuotedstringDescriptor</a></strong>:
+      <em class="summary">Quoted string storage</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.struct_accessors.RegexDescriptor-class.html" onclick="show_private();">svnmailer.struct_accessors.RegexDescriptor</a></strong>:
+      <em class="summary">Regex storage</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.struct_accessors.TokenDescriptor-class.html" onclick="show_private();">svnmailer.struct_accessors.TokenDescriptor</a></strong>:
+      <em class="summary">Unicode token storage</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.struct_accessors.BooleanDescriptor-class.html" onclick="show_private();">svnmailer.struct_accessors.BooleanDescriptor</a></strong>:
+      <em class="summary">Boolean storage</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.struct_accessors.HumanBooleanDescriptor-class.html" onclick="show_private();">svnmailer.struct_accessors.HumanBooleanDescriptor</a></strong>:
+      <em class="summary">Boolean storage with translater from human readable booleans</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.struct_accessors.IntegerDescriptor-class.html" onclick="show_private();">svnmailer.struct_accessors.IntegerDescriptor</a></strong>:
+      <em class="summary">Integer storage</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.struct_accessors.StdinDescriptor-class.html" onclick="show_private();">svnmailer.struct_accessors.StdinDescriptor</a></strong>:
+      <em class="summary">Stdin storage</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.struct_accessors.StringDescriptor-class.html" onclick="show_private();">svnmailer.struct_accessors.StringDescriptor</a></strong>:
+      <em class="summary">String storage</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier.news.NNTPSubmitter-class.html" onclick="show_private();">svnmailer.notifier.news.NNTPSubmitter</a></strong>:
+      <em class="summary">Use NNTP to submit the notification as news article</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.browser.ParsedUrl-class.html" onclick="show_private();">svnmailer.browser.ParsedUrl</a></strong>:
+      <em class="summary">Container for URL parsing and modification</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.subversion.PathDescriptor-class.html" onclick="show_private();">svnmailer.subversion.PathDescriptor</a></strong>:
+      <em class="summary">Describes the basic information of a particular path</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.subversion.LockedPathDescriptor-class.html">svnmailer.subversion.LockedPathDescriptor</a></strong>:
+      <em class="summary">Describes the lock status of a particular path</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.subversion.VersionedPathDescriptor-class.html" onclick="show_private();">svnmailer.subversion.VersionedPathDescriptor</a></strong>:
+      <em class="summary">Describes the changes of a particular path</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.subversion.Repository-class.html">svnmailer.subversion.Repository</a></strong>:
+      <em class="summary">Access to the subversion repository</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier.mail.SMTPSubmitter-class.html" onclick="show_private();">svnmailer.notifier.mail.SMTPSubmitter</a></strong>:
+      <em class="summary">Use SMTP to submit the mail</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier.selector.Selector-class.html">svnmailer.notifier.selector.Selector</a></strong>:
+      <em class="summary">Notifier selector class</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier.mail.SendmailSubmitter-class.html" onclick="show_private();">svnmailer.notifier.mail.SendmailSubmitter</a></strong>:
+      <em class="summary">Pipe all stuff to a mailer</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.settings.Settings-class.html">svnmailer.settings.Settings</a></strong>:
+      <em class="summary">Settings management</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.config.ConfigFileSettings-class.html">svnmailer.config.ConfigFileSettings</a></strong>:
+      <em class="summary">Provide settings from config</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._multimail.SplittingDecorator-class.html" onclick="show_private();">svnmailer.notifier._multimail.SplittingDecorator</a></strong>:
+      <em class="summary">Splits the content between diffs if it gets too long</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._textmail.SplittingDecorator-class.html" onclick="show_private();">svnmailer.notifier._textmail.SplittingDecorator</a></strong>:
+      <em class="summary">Splits the content between diffs, if it gets loo long</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._multimail.SplittingTruncatingDecorator-class.html" onclick="show_private();">svnmailer.notifier._multimail.SplittingTruncatingDecorator</a></strong>:
+      <em class="summary">split/truncate decorator</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.typedstruct.Struct-class.html">svnmailer.typedstruct.Struct</a></strong>:
+      <em class="summary">General structure stub</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.settings.GeneralSettingsContainer-class.html" onclick="show_private();">svnmailer.settings.GeneralSettingsContainer</a></strong>:
+      <em class="summary">Container for general settings</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.settings.GroupSettingsContainer-class.html" onclick="show_private();">svnmailer.settings.GroupSettingsContainer</a></strong>:
+      <em class="summary">Container for group settings</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.settings.RuntimeSettingsContainer-class.html" onclick="show_private();">svnmailer.settings.RuntimeSettingsContainer</a></strong>:
+      <em class="summary">Container for runtime settings</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.typedstruct.StructDescriptor-class.html" onclick="show_private();">svnmailer.typedstruct.StructDescriptor</a></strong>:
+      <em class="summary">Base class for struct descriptors</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.typedstruct.StructDictDescriptor-class.html" onclick="show_private();">svnmailer.typedstruct.StructDictDescriptor</a></strong>:
+      <em class="summary">_dict_ descriptor</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.typedstruct.StructMembersDescriptor-class.html" onclick="show_private();">svnmailer.typedstruct.StructMembersDescriptor</a></strong>:
+      <em class="summary">_members_ descriptor</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.typedstruct.StructSetDescriptor-class.html" onclick="show_private();">svnmailer.typedstruct.StructSetDescriptor</a></strong>:
+      <em class="summary">_set_ descriptor</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.typedstruct.StructSubDescriptor-class.html" onclick="show_private();">svnmailer.typedstruct.StructSubDescriptor</a></strong>:
+      <em class="summary">_sub_ descriptor</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.typedstruct.StructPrivate-class.html" onclick="show_private();">svnmailer.typedstruct.StructPrivate</a></strong>:
+      <em class="summary">Private container class for Struct internals</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.util.TempFile-class.html">svnmailer.util.TempFile</a></strong>:
+      <em class="summary">Tempfile container class</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._multimail.TruncatingDecorator-class.html" onclick="show_private();">svnmailer.notifier._multimail.TruncatingDecorator</a></strong>:
+      <em class="summary">Truncates the mail body after n bytes</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._textmail.TruncatingDecorator-class.html" onclick="show_private();">svnmailer.notifier._textmail.TruncatingDecorator</a></strong>:
+      <em class="summary">Truncates the mail body after n bytes</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._textmail.URLDecorator-class.html" onclick="show_private();">svnmailer.notifier._textmail.URLDecorator</a></strong>:
+      <em class="summary">Shows only the urls, if the mail gets too long</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._multimail.URLDecorator-class.html" onclick="show_private();">svnmailer.notifier._multimail.URLDecorator</a></strong>:
+      <em class="summary">Shows only the urls, if the mail gets too long</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._textmail.URLTruncatingDecorator-class.html" onclick="show_private();">svnmailer.notifier._textmail.URLTruncatingDecorator</a></strong>:
+      <em class="summary">Truncates the mail body after n bytes</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.notifier._multimail.URLTruncatingDecorator-class.html" onclick="show_private();">svnmailer.notifier._multimail.URLTruncatingDecorator</a></strong>:
+      <em class="summary">Truncates url-only mails</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.browser.ViewcvsGenerator-class.html" onclick="show_private();">svnmailer.browser.ViewcvsGenerator</a></strong>:
+      <em class="summary">viewcvs generator</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.browser.WebsvnGenerator-class.html" onclick="show_private();">svnmailer.browser.WebsvnGenerator</a></strong>:
+      <em class="summary">websvn generator</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.stream._BaseStream-class.html" onclick="show_private();">svnmailer.stream._BaseStream</a></strong>:
+      <em class="summary">Base stream wrapper</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.stream.BinaryOrUnicodeStream-class.html">svnmailer.stream.BinaryOrUnicodeStream</a></strong>:
+      <em class="summary">Stream wrapper, which accepts unicode or binary data</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.stream.CountStream-class.html">svnmailer.stream.CountStream</a></strong>:
+      <em class="summary">Dummy stream, which throws away all data</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.stream.CuckooStream-class.html">svnmailer.stream.CuckooStream</a></strong>:
+      <em class="summary">Stream wrapper, which provides a method to replace the stream</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.stream.DevNullStream-class.html">svnmailer.stream.DevNullStream</a></strong>:
+      <em class="summary">Dummy stream, which throws away all data</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.stream.SplittingStream-class.html">svnmailer.stream.SplittingStream</a></strong>:
+      <em class="summary">Stream wrapper, which provides the ability to split the stream</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.stream.TruncatingStream-class.html">svnmailer.stream.TruncatingStream</a></strong>:
+      <em class="summary">stream wrapper, which truncates after a limit</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.stream.TruncatingFileStream-class.html" onclick="show_private();">svnmailer.stream.TruncatingFileStream</a></strong>:
+      <em class="summary">Truncating stream, which writes the truncating note on close</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.stream.UnicodeStream-class.html">svnmailer.stream.UnicodeStream</a></strong>:
+      <em class="summary">Stream wrapper, which accepts unicode and a specified charset</em>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.util._DummyPopen3-class.html" onclick="show_private();">svnmailer.util._DummyPopen3</a></strong>:
+      <em class="summary">Dummy Popen3 class for platforms which don't provide one in popen2</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.util._DummyPopen4-class.html" onclick="show_private();">svnmailer.util._DummyPopen4</a></strong>:
+      <em class="summary">Dummy Popen4 class for platforms which don't provide one in popen2</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.util._LocaleFile-class.html" onclick="show_private();">svnmailer.util._LocaleFile</a></strong>:
+      <em class="summary">Transform filenames according to locale</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.struct_accessors._MailAction-class.html" onclick="show_private();">svnmailer.struct_accessors._MailAction</a></strong>:
+      <em class="summary">Mailaction container</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.settings._Tokens-class.html" onclick="show_private();">svnmailer.settings._Tokens</a></strong>:
+      <em class="summary">Generic token container</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.subversion._Version-class.html" onclick="show_private();">svnmailer.subversion._Version</a></strong>:
+      <em class="summary">SVN version container class</em>
+    </li>
+    <li> <strong class="uidlink">basestring</strong>:
+      <em class="summary">Type basestring cannot be instantiated; it is the base for str and unicode.</em>
+    <ul>
+    <li> <strong class="uidlink">str</strong>:
+      <em class="summary">str(object) -&gt; string</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.struct_accessors._QuotedString-class.html" onclick="show_private();">svnmailer.struct_accessors._QuotedString</a></strong>:
+      <em class="summary">Holds a quoted string</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li> <strong class="uidlink">dict</strong>:
+      <em class="summary">dict() -&gt; new empty dictionary
+dict(mapping) -&gt; new dictionary initialized from a mapping object's
+    (key, value) pairs
+dict(iterable) -&gt; new dictionary initialized as if via:
+    d = {}
+    for k, v in iterable:
+        d[k] = v
+dict(**kwargs) -&gt; new dictionary initialized with the name=value pairs
+    in the keyword argument list.</em>
+    <ul>
+    <li> <strong class="uidlink"><a href="svnmailer.util.ReadOnlyDict-class.html">svnmailer.util.ReadOnlyDict</a></strong>:
+      <em class="summary">Read only dictionary</em>
+    </li>
+    <li> <strong class="uidlink"><a href="svnmailer.util.SafeDict-class.html">svnmailer.util.SafeDict</a></strong>:
+      <em class="summary">A dict, which returns '' on unknown keys or false values</em>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+</ul>
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="svnmailer-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Trees&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Sep 25 21:07:32 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

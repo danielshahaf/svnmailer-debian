@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>svnmailer.settings</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="svnmailer-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="svnmailer-module.html">Package&nbsp;svnmailer</a> ::
+        Module&nbsp;settings
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module settings</h1><p class="nomargin-top"><span class="codelink"><a href="svnmailer.settings-pysrc.html">source&nbsp;code</a></span></p>
+<h1 class="heading">Runtime settings for the svnmailer</h1>
+    <p>This module defines one public class, called <a 
+    href="svnmailer.settings.Settings-class.html" 
+    class="link">Settings</a>. This class is the storage container for all 
+    settings used by the svnmailer. <a 
+    href="svnmailer.settings.Settings-class.html" class="link">Settings</a>
+    is an abstract class. There is just one method that must be implemented
+    -- <a href="svnmailer.settings.Settings-class.html#init" 
+    class="link">Settings.init</a>. This method is responsible for filling 
+    the container properly. An implementor of the <a 
+    href="svnmailer.settings.Settings-class.html" class="link">Settings</a>
+    class can be found in the <a href="svnmailer.config-module.html" 
+    class="link">svnmailer.config</a> module.</p>
+    <p>This module further defines the Settings subcontainers <a 
+    href="svnmailer.settings.GroupSettingsContainer-class.html" 
+    class="link" onclick="show_private();">GroupSettingsContainer</a>, <a 
+    href="svnmailer.settings.GeneralSettingsContainer-class.html" 
+    class="link" onclick="show_private();">GeneralSettingsContainer</a> and
+    <a href="svnmailer.settings.RuntimeSettingsContainer-class.html" 
+    class="link" onclick="show_private();">RuntimeSettingsContainer</a>, 
+    but you should not instantiate them directly -- <a 
+    href="svnmailer.settings.Settings-class.html" class="link">Settings</a>
+    provides methods that return instances of these containers.</p>
+
+<hr />
+<div class="fields">      <p><strong>Author:</strong>
+        Andr\xc3\xa9 Malo
+      </p>
+</div><!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="svnmailer.settings._Tokens-class.html" class="summary-name" onclick="show_private();">_Tokens</a><br />
+      Generic token container
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="svnmailer.settings.GroupSettingsContainer-class.html" class="summary-name" onclick="show_private();">GroupSettingsContainer</a><br />
+      Container for group settings
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="svnmailer.settings.GeneralSettingsContainer-class.html" class="summary-name" onclick="show_private();">GeneralSettingsContainer</a><br />
+      Container for general settings
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="svnmailer.settings.RuntimeSettingsContainer-class.html" class="summary-name" onclick="show_private();">RuntimeSettingsContainer</a><br />
+      Container for runtime settings
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="svnmailer.settings.Settings-class.html" class="summary-name">Settings</a><br />
+      Settings management
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>dict</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.settings-module.html#groupMembers" class="summary-sig-name" onclick="show_private();">groupMembers</a>(<span class="summary-sig-arg">space</span>)</span><br />
+      Define the members of the group settings</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.settings-pysrc.html#groupMembers">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>dict</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.settings-module.html#generalMembers" class="summary-sig-name" onclick="show_private();">generalMembers</a>(<span class="summary-sig-arg">space</span>)</span><br />
+      Define the members of the general settings</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.settings-pysrc.html#generalMembers">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>dict</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.settings-module.html#runtimeMembers" class="summary-sig-name" onclick="show_private();">runtimeMembers</a>(<span class="summary-sig-arg">space</span>)</span><br />
+      Define the members of the runtime settings</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.settings-pysrc.html#runtimeMembers">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="modes"></a><span class="summary-name">modes</span> = <code title="_Tokens('commit', 'propchange', 'lock', 'unlock')">_Tokens('commit', 'propchange', 'lock', 'unlock')</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="xpath"></a><span class="summary-name">xpath</span> = <code title="_Tokens(u'yes', u'no', u'ignore')">_Tokens(u'yes', u'no', u'ignore')</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="showenc"></a><span class="summary-name">showenc</span> = <code title="_Tokens(u'yes', u'no', u'nondefault')">_Tokens(u'yes', u'no', u'nondefault')</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'svnmailer'"><code class="variable-quote">'</code><code class="variable-string">svnmailer</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="groupMembers"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">groupMembers</span>(<span class="sig-arg">space</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.settings-pysrc.html#groupMembers">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Define the members of the group settings</p>
+  <p>The following members are defined:</p>
+  <ul>
+    <li>
+      <code>_name</code>: Name of the group
+    </li>
+    <li>
+      <code>_def_for_repos</code>: default for_repos regex
+    </li>
+    <li>
+      <code>_def_for_paths</code>: default for_paths regex
+    </li>
+    <li>
+      <code>for_repos</code>: Repository regex
+    </li>
+    <li>
+      <code>for_paths</code>: Path regex (inside the repos)
+    </li>
+    <li>
+      <code>exclude_paths</code>: Exclude path regex to prevent for_paths 
+      from being applied
+    </li>
+    <li>
+      <code>ignore_if_other_matches</code>: this group will be ignored if 
+      there are any other groups selected for a particular path
+    </li>
+    <li>
+      <code>show_nonmatching_paths</code>: How to deal with paths that are 
+      not matched by the group
+    </li>
+    <li>
+      <code>commit_subject_template</code>: Subject template for commit 
+      mail
+    </li>
+    <li>
+      <code>propchange_subject_template</code>: Subject template for 
+      revpropchanges
+    </li>
+    <li>
+      <code>lock_subject_template</code>: Subject template for locks
+    </li>
+    <li>
+      <code>unlock_subject_template</code>: Subject template for unlocks
+    </li>
+    <li>
+      <code>commit_subject_prefix</code>: Subject prefix for commit mail
+    </li>
+    <li>
+      <code>propchange_subject_prefix</code>: Subject prefix for 
+      revpropchanges
+    </li>
+    <li>
+      <code>lock_subject_prefix</code>: Subject prefix for locks
+    </li>
+    <li>
+      <code>unlock_subject_prefix</code>: Subject prefix for unlocks
+    </li>
+    <li>
+      <code>max_subject_length</code>: Maximum subject length
+    </li>
+    <li>
+      <code>from_addr</code>: <code>From:</code> address format string
+    </li>
+    <li>
+      <code>to_addr</code>: <code>To:</code> address format string
+    </li>
+    <li>
+      <code>to_fake</code>: <code>To:</code> non-address format string
+    </li>
+    <li>
+      <code>bcc_addr</code>: <code>Bcc:</code> address format string
+    </li>
+    <li>
+      <code>reply_to_addr</code>: <code>Reply-To:</code> address format 
+      string
+    </li>
+    <li>
+      <code>diff_command</code>: The diff command to use
+    </li>
+    <li>
+      <code>generate_diffs</code>: List of actions for which diffs are 
+      generated
+    </li>
+    <li>
+      <code>browser_base_url</code>: type and format string of the 
+      repository browser base url
+    </li>
+    <li>
+      <code>custom_header</code>: custom header name and format template
+    </li>
+    <li>
+      <code>to_newsgroup</code>: The newsgroup where the notification 
+      should be posted to
+    </li>
+    <li>
+      <code>long_news_action</code>: The action to take on huge commit 
+      postings
+    </li>
+    <li>
+      <code>long_mail_action</code>: The action to take on huge commit 
+      mails
+    </li>
+    <li>
+      <code>mail_transfer_encoding</code>: Content-Transfer-Encoding for 
+      mails
+    </li>
+    <li>
+      <code>news_transfer_encoding</code>: Content-Transfer-Encoding for 
+      news
+    </li>
+    <li>
+      <code>mail_type</code>: The mail construction type
+    </li>
+    <li>
+      <code>extract_x509_author</code>: Treat author as x509 subject and 
+      try to extract author's real name and email address
+    </li>
+    <li>
+      <code>cia_project_name</code>: The project name used for CIA 
+      notifications
+    </li>
+    <li>
+      <code>cia_project_module</code>: The project module used for CIA 
+      notifications
+    </li>
+    <li>
+      <code>cia_project_branch</code>: The project branch used for CIA 
+      notifications
+    </li>
+    <li>
+      <code>cia_project_submodule</code>: The project submodule used for 
+      CIA notifications
+    </li>
+    <li>
+      <code>cia_project_path</code>: The project path, which will be 
+      stripped from the absolute node path
+    </li>
+    <li>
+      <code>apply_charset_property</code>: Should svnmailer:content-charset
+      properties be recognized?
+    </li>
+    <li>
+      <code>show_applied_charset</code>: Show the encoding of the files in 
+      the diff?
+    </li>
+    <li>
+      <code>viewcvs_base_url</code>: (<i>deprecated</i>, use 
+      <code>browser_base_url</code> instead) format string for the viewcvs 
+      URL
+    </li>
+  </ul>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>space</code></strong> (<code>dict</code>) - The namespace to pollute</li>
+    </ul></dd>
+    <dt>Returns: <code>dict</code></dt>
+        <dd>The members definition</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="generalMembers"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">generalMembers</span>(<span class="sig-arg">space</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.settings-pysrc.html#generalMembers">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Define the members of the general settings</p>
+  <p>The following members are defined:</p>
+  <ul>
+    <li>
+      <code>diff_command</code>: The diff command
+    </li>
+    <li>
+      <code>sendmail_command</code>: The sendmail compatible command
+    </li>
+    <li>
+      <code>smtp_host</code>: The smtp host (<code>host[:port]</code>)
+    </li>
+    <li>
+      <code>smtp_user</code>: The smtp auth. user
+    </li>
+    <li>
+      <code>smtp_pass</code>: The smtp auth. password
+    </li>
+    <li>
+      <code>debug_all_mails_to</code>: All mails are sent to these 
+      addresses (for debugging purposes)
+    </li>
+    <li>
+      <code>cia_rpc_server</code>: The XML-RPC server running the CIA 
+      tracker
+    </li>
+    <li>
+      <code>tempdir</code>: The directory to use for temporary files
+    </li>
+  </ul>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>space</code></strong> (<code>dict</code>) - The namespace to pollute</li>
+    </ul></dd>
+    <dt>Returns: <code>dict</code></dt>
+        <dd>The members definition</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="runtimeMembers"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">runtimeMembers</span>(<span class="sig-arg">space</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.settings-pysrc.html#runtimeMembers">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Define the members of the runtime settings</p>
+  <p>The following members are defined:</p>
+  <ul>
+    <li>
+      <code>_repos</code>: The repository object
+    </li>
+    <li>
+      <code>stdin</code>: The stdin, read once
+    </li>
+    <li>
+      <code>path_encoding</code>: The path-encoding parameter
+    </li>
+    <li>
+      <code>debug</code>: debug mode (True/False)
+    </li>
+    <li>
+      <code>revision</code>: committed revision number
+    </li>
+    <li>
+      <code>repository</code>: path to the repository
+    </li>
+    <li>
+      <code>config</code>: supplied config file name
+    </li>
+    <li>
+      <code>mode</code>: running mode (see <a 
+      href="svnmailer.settings-module.html#modes" class="link">modes</a>)
+    </li>
+    <li>
+      <code>author</code>: Author of the commit or revpropchange
+    </li>
+    <li>
+      <code>propname</code>: Property changed (in revpropchange)
+    </li>
+    <li>
+      <code>action</code>: The revprop action (M, A, D)
+    </li>
+  </ul>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>space</code></strong> (<code>dict</code>) - The namespace to pollute</li>
+    </ul></dd>
+    <dt>Returns: <code>dict</code></dt>
+        <dd>The members definition</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="svnmailer-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Sep 25 21:07:32 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

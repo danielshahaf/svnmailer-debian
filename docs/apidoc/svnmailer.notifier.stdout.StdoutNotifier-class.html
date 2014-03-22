@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>svnmailer.notifier.stdout.StdoutNotifier</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="svnmailer-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="svnmailer-module.html">Package&nbsp;svnmailer</a> ::
+        <a href="svnmailer.notifier-module.html">Package&nbsp;notifier</a> ::
+        <a href="svnmailer.notifier.stdout-module.html">Module&nbsp;stdout</a> ::
+        Class&nbsp;StdoutNotifier
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class StdoutNotifier</h1><p class="nomargin-top"><span class="codelink"><a href="svnmailer.notifier.stdout-pysrc.html#StdoutNotifier">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+        object --+        
+                 |        
+<a href="svnmailer.notifier._base.BaseNotifier-class.html">_base.BaseNotifier</a> --+    
+                     |    
+    <a href="svnmailer.notifier._text.TextNotifier-class.html">_text.TextNotifier</a> --+
+                         |
+                        <strong class="uidshort">StdoutNotifier</strong>
+</pre>
+
+<hr />
+<p>Writes all stuff to sys.stdout</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.notifier.stdout.StdoutNotifier-class.html#run" class="summary-sig-name">run</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Print the notification to stdout</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.notifier.stdout-pysrc.html#StdoutNotifier.run">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_writeNotification"></a><span class="summary-sig-name">_writeNotification</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Writes the whole diff notification body</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.notifier.stdout-pysrc.html#StdoutNotifier._writeNotification">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.notifier.stdout.StdoutNotifier-class.html#_writePreamble" class="summary-sig-name" onclick="show_private();">_writePreamble</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">groups</span>)</span><br />
+      Writes the stdout preamble for the selected groups</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.notifier.stdout-pysrc.html#StdoutNotifier._writePreamble">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>str</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.notifier.stdout.StdoutNotifier-class.html#_getOutputEnc" class="summary-sig-name" onclick="show_private();">_getOutputEnc</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">fp</span>)</span><br />
+      Returns the &quot;proper&quot; output encoding</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.notifier.stdout-pysrc.html#StdoutNotifier._getOutputEnc">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="svnmailer.notifier._text.TextNotifier-class.html">_text.TextNotifier</a></code></b>:
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#__init__">__init__</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#getDate">getDate</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writeContentDiff">writeContentDiff</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writeContentDiffAction">writeContentDiffAction</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writeDiff">writeDiff</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writeDiffList">writeDiffList</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writeLockData">writeLockData</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writeMetaData">writeMetaData</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writePathInfo">writePathInfo</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writePathList">writePathList</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writePropertyDiff">writePropertyDiff</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writePropertyDiffAction">writePropertyDiffAction</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writePropertyDiffs">writePropertyDiffs</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writeRevPropData">writeRevPropData</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="svnmailer.notifier._text.TextNotifier-class.html">_text.TextNotifier</a></code></b> (private):
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#_doWritePathList" onclick="show_private();">_doWritePathList</a></code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="svnmailer.notifier._base.BaseNotifier-class.html">_base.BaseNotifier</a></code></b>:
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#dumpContent">dumpContent</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getAuthor">getAuthor</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getContentDiffAction">getContentDiffAction</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getContentDiffUrl">getContentDiffUrl</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getContentEncodingProperty">getContentEncodingProperty</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getContentEncodings">getContentEncodings</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getDiffTokens">getDiffTokens</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getDiffer">getDiffer</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getEncodingFromMimeType">getEncodingFromMimeType</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getLog">getLog</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getPropertyDiffAction">getPropertyDiffAction</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getTempDir">getTempDir</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getTempFile">getTempFile</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getTime">getTime</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getUrl">getUrl</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#isBinaryProperty">isBinaryProperty</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#isOneLineProperty">isOneLineProperty</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#isUTF8Property">isUTF8Property</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="svnmailer.notifier._base.BaseNotifier-class.html">_base.BaseNotifier</a></code></b> (private):
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#_getContentEncoding" onclick="show_private();">_getContentEncoding</a></code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="svnmailer.notifier.stdout.StdoutNotifier-class.html#__implements__" class="summary-name">__implements__</a> = <code title="[&lt;class 'svnmailer.notifier._text.TextNotifier'&gt;]"><code class="variable-group">[</code>&lt;class 'svnmailer.notifier._text.TextNotifie<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">file like object</span>
+    </td><td class="summary">
+        <a name="_fp"></a><span class="summary-name">_fp</span> = <code title="None">None</code><br />
+      <code>None</code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="svnmailer.notifier._text.TextNotifier-class.html">_text.TextNotifier</a></code></b>:
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#OUTPUT_SEPARATOR">OUTPUT_SEPARATOR</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#OUTPUT_SEPARATOR_LIGHT">OUTPUT_SEPARATOR_LIGHT</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="svnmailer.notifier._base.BaseNotifier-class.html">_base.BaseNotifier</a></code></b>:
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#ADD">ADD</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#COPY">COPY</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#DELETE">DELETE</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#ENC_CONFIG">ENC_CONFIG</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#ENC_DEFAULT">ENC_DEFAULT</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#ENC_PROPERTY">ENC_PROPERTY</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#MODIFY">MODIFY</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#NONE">NONE</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#PROPCHANGE">PROPCHANGE</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="svnmailer.notifier._base.BaseNotifier-class.html">_base.BaseNotifier</a></code></b> (private):
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#_diffable_tests" onclick="show_private();">_diffable_tests</a></code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="svnmailer.notifier._text.TextNotifier-class.html">_text.TextNotifier</a></code></b>:
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#changeset">changeset</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#config">config</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#differ">differ</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#fp">fp</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="svnmailer.notifier._base.BaseNotifier-class.html">_base.BaseNotifier</a></code></b> (private):
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#_groupset" onclick="show_private();">_groupset</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#_penc_cache" onclick="show_private();">_penc_cache</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#_settings" onclick="show_private();">_settings</a></code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="run"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">run</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.notifier.stdout-pysrc.html#StdoutNotifier.run">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Print the notification to stdout</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="svnmailer.notifier._base.BaseNotifier-class.html#run">_base.BaseNotifier.run</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_writePreamble"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_writePreamble</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">groups</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.notifier.stdout-pysrc.html#StdoutNotifier._writePreamble">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Writes the stdout preamble for the selected groups</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>groups</code></strong> (<code>list</code>) - The groups that are notified</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_getOutputEnc"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_getOutputEnc</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">fp</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.notifier.stdout-pysrc.html#StdoutNotifier._getOutputEnc">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the &quot;proper&quot; output encoding</p>
+  <p>If the output goes to a terminal, the method tries to get the current 
+  locale encoding. UTF-8 is default and fallback if anything fails.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fp</code></strong> (file like object) - The file object written to</li>
+    </ul></dd>
+    <dt>Returns: <code>str</code></dt>
+        <dd>The chosen encoding</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__implements__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">__implements__</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code>&lt;class 'svnmailer.notifier._text.TextNotifier'&gt;<code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="svnmailer-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Sep 25 21:07:32 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

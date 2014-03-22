@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>svnmailer.stream</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="svnmailer-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="svnmailer-module.html">Package&nbsp;svnmailer</a> ::
+        Module&nbsp;stream
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="svnmailer.stream-module.html">Module svnmailer.stream</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment"># -*- coding: utf-8 -*-</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"># Copyright 2004-2006 Andr&#233; Malo or his licensors, as applicable</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"># Licensed under the Apache License, Version 2.0 (the "License");</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"># you may not use this file except in compliance with the License.</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># You may obtain a copy of the License at</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment">#     http://www.apache.org/licenses/LICENSE-2.0</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment"># Unless required by applicable law or agreed to in writing, software</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment"># distributed under the License is distributed on an "AS IS" BASIS,</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment"># See the License for the specific language governing permissions and</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment"># limitations under the License.</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-docstring">svnmailer stream objects</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-name">__author__</tt>    <tt class="py-op">=</tt> <tt class="py-string">"Andr&#233; Malo"</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-name">__docformat__</tt> <tt class="py-op">=</tt> <tt class="py-string">"epytext en"</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-name">__all__</tt>       <tt class="py-op">=</tt> <tt class="py-op">[</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">    <tt class="py-string">'UnicodeStream'</tt><tt class="py-op">,</tt> <tt class="py-string">'TruncatingStream'</tt><tt class="py-op">,</tt> <tt class="py-string">'CuckooStream'</tt><tt class="py-op">,</tt> <tt class="py-string">'SplittingStream'</tt><tt class="py-op">,</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">    <tt class="py-string">'DevNullStream'</tt><tt class="py-op">,</tt> <tt class="py-string">'BinaryOrUnicodeStream'</tt><tt class="py-op">,</tt> <tt class="py-string">'CountStream'</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-op">]</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"> </tt>
+<a name="_BaseStream"></a><div id="_BaseStream-def"><a name="L27"></a><tt class="py-lineno"> 27</tt> <a class="py-toggle" href="#" id="_BaseStream-toggle" onclick="return toggle('_BaseStream');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="svnmailer.stream._BaseStream-class.html">_BaseStream</a><tt class="py-op">(</tt><tt class="py-base-class">object</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_BaseStream-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="_BaseStream-expanded"><a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">    <tt class="py-docstring">""" Base stream wrapper</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-docstring">        @ivar stream: The wrapped stream</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-docstring">        @type stream: file like object</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"> </tt>
+<a name="_BaseStream.__init__"></a><div id="_BaseStream.__init__-def"><a name="L34"></a><tt class="py-lineno"> 34</tt> <a class="py-toggle" href="#" id="_BaseStream.__init__-toggle" onclick="return toggle('_BaseStream.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream._BaseStream-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">stream</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_BaseStream.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="_BaseStream.__init__-expanded"><a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">        <tt class="py-docstring">""" Initialization</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-docstring">            @param stream: The stream to wrap</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-docstring">            @type stream: file like object</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-0" class="py-name" targets="Module svnmailer.stream=svnmailer.stream-module.html"><a title="svnmailer.stream" class="py-name" href="#" onclick="return doclink('link-0', 'stream', 'link-0');">stream</a></tt> <tt class="py-op">=</tt> <tt id="link-1" class="py-name"><a title="svnmailer.stream" class="py-name" href="#" onclick="return doclink('link-1', 'stream', 'link-0');">stream</a></tt> </tt>
+</div><a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"> </tt>
+<a name="_BaseStream.write"></a><div id="_BaseStream.write-def"><a name="L43"></a><tt class="py-lineno"> 43</tt> <a class="py-toggle" href="#" id="_BaseStream.write-toggle" onclick="return toggle('_BaseStream.write');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream._BaseStream-class.html#write">write</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">towrite</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_BaseStream.write-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="_BaseStream.write-expanded"><a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">        <tt class="py-docstring">""" Writes the data to the stream</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-docstring">            @param towrite: stuff to write</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-docstring">            @type towrite: C{str}</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-2" class="py-name"><a title="svnmailer.stream" class="py-name" href="#" onclick="return doclink('link-2', 'stream', 'link-0');">stream</a></tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Method svnmailer.stream.BinaryOrUnicodeStream.write()=svnmailer.stream.BinaryOrUnicodeStream-class.html#write,Method svnmailer.stream.CountStream.write()=svnmailer.stream.CountStream-class.html#write,Method svnmailer.stream.DevNullStream.write()=svnmailer.stream.DevNullStream-class.html#write,Method svnmailer.stream.SplittingStream.write()=svnmailer.stream.SplittingStream-class.html#write,Method svnmailer.stream.TruncatingStream.write()=svnmailer.stream.TruncatingStream-class.html#write,Method svnmailer.stream.UnicodeStream.write()=svnmailer.stream.UnicodeStream-class.html#write,Method svnmailer.stream._BaseStream.write()=svnmailer.stream._BaseStream-class.html#write"><a title="svnmailer.stream.BinaryOrUnicodeStream.write
+svnmailer.stream.CountStream.write
+svnmailer.stream.DevNullStream.write
+svnmailer.stream.SplittingStream.write
+svnmailer.stream.TruncatingStream.write
+svnmailer.stream.UnicodeStream.write
+svnmailer.stream._BaseStream.write" class="py-name" href="#" onclick="return doclink('link-3', 'write', 'link-3');">write</a></tt><tt class="py-op">(</tt><tt class="py-name">towrite</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"> </tt>
+<a name="_BaseStream.writelines"></a><div id="_BaseStream.writelines-def"><a name="L52"></a><tt class="py-lineno"> 52</tt> <a class="py-toggle" href="#" id="_BaseStream.writelines-toggle" onclick="return toggle('_BaseStream.writelines');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream._BaseStream-class.html#writelines">writelines</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">lines</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_BaseStream.writelines-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="_BaseStream.writelines-expanded"><a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-docstring">r"""Write a list of strings</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-docstring">            @param lines: The lines to write (including \n)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-docstring">            @type lines: C{list}</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">line</tt> <tt class="py-keyword">in</tt> <tt class="py-name">lines</tt><tt class="py-op">:</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name"><a title="svnmailer.stream.BinaryOrUnicodeStream.write
+svnmailer.stream.CountStream.write
+svnmailer.stream.DevNullStream.write
+svnmailer.stream.SplittingStream.write
+svnmailer.stream.TruncatingStream.write
+svnmailer.stream.UnicodeStream.write
+svnmailer.stream._BaseStream.write" class="py-name" href="#" onclick="return doclink('link-4', 'write', 'link-3');">write</a></tt><tt class="py-op">(</tt><tt class="py-name">line</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"> </tt>
+<a name="_BaseStream.close"></a><div id="_BaseStream.close-def"><a name="L62"></a><tt class="py-lineno"> 62</tt> <a class="py-toggle" href="#" id="_BaseStream.close-toggle" onclick="return toggle('_BaseStream.close');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream._BaseStream-class.html#close">close</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_BaseStream.close-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="_BaseStream.close-expanded"><a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt class="py-docstring">""" Closes the stream """</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name"><a title="svnmailer.stream" class="py-name" href="#" onclick="return doclink('link-5', 'stream', 'link-0');">stream</a></tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Method svnmailer.stream.SplittingStream.close()=svnmailer.stream.SplittingStream-class.html#close,Method svnmailer.stream.TruncatingFileStream.close()=svnmailer.stream.TruncatingFileStream-class.html#close,Method svnmailer.stream._BaseStream.close()=svnmailer.stream._BaseStream-class.html#close,Method svnmailer.subversion.Repository.close()=svnmailer.subversion.Repository-class.html#close,Method svnmailer.util.TempFile.close()=svnmailer.util.TempFile-class.html#close"><a title="svnmailer.stream.SplittingStream.close
+svnmailer.stream.TruncatingFileStream.close
+svnmailer.stream._BaseStream.close
+svnmailer.subversion.Repository.close
+svnmailer.util.TempFile.close" class="py-name" href="#" onclick="return doclink('link-6', 'close', 'link-6');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"> </tt>
+<a name="_BaseStream.__getattr__"></a><div id="_BaseStream.__getattr__-def"><a name="L67"></a><tt class="py-lineno"> 67</tt> <a class="py-toggle" href="#" id="_BaseStream.__getattr__-toggle" onclick="return toggle('_BaseStream.__getattr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream._BaseStream-class.html#__getattr__">__getattr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="_BaseStream.__getattr__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="_BaseStream.__getattr__-expanded"><a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-docstring">""" Delegates all undefined attributes to the stream """</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">getattr</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name"><a title="svnmailer.stream" class="py-name" href="#" onclick="return doclink('link-7', 'stream', 'link-0');">stream</a></tt><tt class="py-op">,</tt> <tt id="link-8" class="py-name" targets="Variable svnmailer.util.TempFile.name=svnmailer.util.TempFile-class.html#name"><a title="svnmailer.util.TempFile.name" class="py-name" href="#" onclick="return doclink('link-8', 'name', 'link-8');">name</a></tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"> </tt>
+<a name="UnicodeStream"></a><div id="UnicodeStream-def"><a name="L72"></a><tt class="py-lineno"> 72</tt> <a class="py-toggle" href="#" id="UnicodeStream-toggle" onclick="return toggle('UnicodeStream');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="svnmailer.stream.UnicodeStream-class.html">UnicodeStream</a><tt class="py-op">(</tt><tt class="py-base-class">_BaseStream</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="UnicodeStream-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="UnicodeStream-expanded"><a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">    <tt class="py-docstring">""" Stream wrapper, which accepts unicode and a specified charset</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-docstring">        @ivar decode: Decoder function for the input encoding</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-docstring">        @type decode: callable</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">        @ivar err: error handling advise</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-docstring">        @type err: C{str}</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"> </tt>
+<a name="UnicodeStream.__init__"></a><div id="UnicodeStream.__init__-def"><a name="L82"></a><tt class="py-lineno"> 82</tt> <a class="py-toggle" href="#" id="UnicodeStream.__init__-toggle" onclick="return toggle('UnicodeStream.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.UnicodeStream-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">stream</tt><tt class="py-op">,</tt> <tt class="py-param">in_enc</tt> <tt class="py-op">=</tt> <tt class="py-string">'utf-8'</tt><tt class="py-op">,</tt> <tt class="py-param">out_enc</tt> <tt class="py-op">=</tt> <tt class="py-string">'utf-8'</tt><tt class="py-op">,</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">                 <tt class="py-param">errors</tt> <tt class="py-op">=</tt> <tt class="py-string">"replace"</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="UnicodeStream.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="UnicodeStream.__init__-expanded"><a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-docstring">""" Initialization</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-docstring">            @param stream: The stream to wrap</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt class="py-docstring">            @type stream: file like object</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-docstring">            @param in_enc: The input encoding, that should be assumed, if a</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-docstring">                pure string is written</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-docstring">            @type in_enc: C{str}</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-docstring">            @param out_enc: The output encoding</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-docstring">            @type out_enc: C{str}</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"><tt class="py-docstring">            @param errors: The error handling indicator, when an unicode error</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"><tt class="py-docstring">                occurs. (The default is quite lenient and writes replace</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-docstring">                characters on errors)</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-docstring">            @type errors: C{str}</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">        <tt class="py-keyword">import</tt> <tt class="py-name">codecs</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line">        <tt class="py-name">writer</tt> <tt class="py-op">=</tt> <tt class="py-name">codecs</tt><tt class="py-op">.</tt><tt class="py-name">lookup</tt><tt class="py-op">(</tt><tt class="py-name">out_enc</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">3</tt><tt class="py-op">]</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-9" class="py-name" targets="Class svnmailer.stream.UnicodeStream=svnmailer.stream.UnicodeStream-class.html"><a title="svnmailer.stream.UnicodeStream" class="py-name" href="#" onclick="return doclink('link-9', 'UnicodeStream', 'link-9');">UnicodeStream</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Method svnmailer.browser.ParsedUrl.__init__()=svnmailer.browser.ParsedUrl-class.html#__init__,Method svnmailer.browser.ViewcvsGenerator.__init__()=svnmailer.browser.ViewcvsGenerator-class.html#__init__,Method svnmailer.browser.WebsvnGenerator.__init__()=svnmailer.browser.WebsvnGenerator-class.html#__init__,Method svnmailer.cli.SvnmailerOptionParser.__init__()=svnmailer.cli.SvnmailerOptionParser-class.html#__init__,Method svnmailer.differ.ExternalDiffer.__init__()=svnmailer.differ.ExternalDiffer-class.html#__init__,Method svnmailer.differ.InternalDiffer.__init__()=svnmailer.differ.InternalDiffer-class.html#__init__,Method svnmailer.main.GroupSet.__init__()=svnmailer.main.GroupSet-class.html#__init__,Method svnmailer.main.Main.__init__()=svnmailer.main.Main-class.html#__init__,Method svnmailer.notifier._base.BaseNotifier.__init__()=svnmailer.notifier._base.BaseNotifier-class.html#__init__,Method svnmailer.notifier._mail.MailNotifier.__init__()=svnmailer.notifier._mail.MailNotifier-class.html#__init__,Method svnmailer.notifier._multimail.DiffDescriptor.__init__()=svnmailer.notifier._multimail.DiffDescriptor-class.html#__init__,Method svnmailer.notifier._multimail.MultiMailNotifier.__init__()=svnmailer.notifier._multimail.MultiMailNotifier-class.html#__init__,Method svnmailer.notifier._multimail.SplittingDecorator.__init__()=svnmailer.notifier._multimail.SplittingDecorator-class.html#__init__,Method svnmailer.notifier._multimail.SplittingTruncatingDecorator.__init__()=svnmailer.notifier._multimail.SplittingTruncatingDecorator-class.html#__init__,Method svnmailer.notifier._multimail.TruncatingDecorator.__init__()=svnmailer.notifier._multimail.TruncatingDecorator-class.html#__init__,Method svnmailer.notifier._multimail.URLDecorator.__init__()=svnmailer.notifier._multimail.URLDecorator-class.html#__init__,Method svnmailer.notifier._multimail.URLTruncatingDecorator.__init__()=svnmailer.notifier._multimail.URLTruncatingDecorator-class.html#__init__,Method svnmailer.notifier._multimail._MultiMail.__init__()=svnmailer.notifier._multimail._MultiMail-class.html#__init__,Method svnmailer.notifier._multimail._SinglePart.__init__()=svnmailer.notifier._multimail._SinglePart-class.html#__init__,Method svnmailer.notifier._text.TextNotifier.__init__()=svnmailer.notifier._text.TextNotifier-class.html#__init__,Method svnmailer.notifier._textmail.SplittingDecorator.__init__()=svnmailer.notifier._textmail.SplittingDecorator-class.html#__init__,Method svnmailer.notifier._textmail.TruncatingDecorator.__init__()=svnmailer.notifier._textmail.TruncatingDecorator-class.html#__init__,Method svnmailer.notifier._textmail.URLDecorator.__init__()=svnmailer.notifier._textmail.URLDecorator-class.html#__init__,Method svnmailer.notifier._textmail.URLTruncatingDecorator.__init__()=svnmailer.notifier._textmail.URLTruncatingDecorator-class.html#__init__,Method svnmailer.notifier._textmail._TextMail.__init__()=svnmailer.notifier._textmail._TextMail-class.html#__init__,Method svnmailer.notifier.cia_xmlrpc.CIAXMLRPCNotifier.__init__()=svnmailer.notifier.cia_xmlrpc.CIAXMLRPCNotifier-class.html#__init__,Method svnmailer.notifier.selector.Selector.__init__()=svnmailer.notifier.selector.Selector-class.html#__init__,Method svnmailer.settings.Settings.__init__()=svnmailer.settings.Settings-class.html#__init__,Method svnmailer.settings._Tokens.__init__()=svnmailer.settings._Tokens-class.html#__init__,Method svnmailer.stream.CountStream.__init__()=svnmailer.stream.CountStream-class.html#__init__,Method svnmailer.stream.DevNullStream.__init__()=svnmailer.stream.DevNullStream-class.html#__init__,Method svnmailer.stream.SplittingStream.__init__()=svnmailer.stream.SplittingStream-class.html#__init__,Method svnmailer.stream.TruncatingStream.__init__()=svnmailer.stream.TruncatingStream-class.html#__init__,Method svnmailer.stream.UnicodeStream.__init__()=svnmailer.stream.UnicodeStream-class.html#__init__,Method svnmailer.stream._BaseStream.__init__()=svnmailer.stream._BaseStream-class.html#__init__,Method svnmailer.struct_accessors.BaseDescriptor.__init__()=svnmailer.struct_accessors.BaseDescriptor-class.html#__init__,Method svnmailer.struct_accessors.HumanBooleanDescriptor.__init__()=svnmailer.struct_accessors.HumanBooleanDescriptor-class.html#__init__,Method svnmailer.struct_accessors.RegexDescriptor.__init__()=svnmailer.struct_accessors.RegexDescriptor-class.html#__init__,Method svnmailer.struct_accessors.TokenDescriptor.__init__()=svnmailer.struct_accessors.TokenDescriptor-class.html#__init__,Method svnmailer.struct_accessors.TokenlistDescriptor.__init__()=svnmailer.struct_accessors.TokenlistDescriptor-class.html#__init__,Method svnmailer.struct_accessors._MailAction.__init__()=svnmailer.struct_accessors._MailAction-class.html#__init__,Method svnmailer.subversion.PathDescriptor.__init__()=svnmailer.subversion.PathDescriptor-class.html#__init__,Method svnmailer.subversion.Repository.__init__()=svnmailer.subversion.Repository-class.html#__init__,Method svnmailer.subversion.RepositoryError.__init__()=svnmailer.subversion.RepositoryError-class.html#__init__,Method svnmailer.subversion._RevisionChangeCollector.__init__()=svnmailer.subversion._RevisionChangeCollector-class.html#__init__,Method svnmailer.subversion._Version.__init__()=svnmailer.subversion._Version-class.html#__init__,Method svnmailer.typedstruct.MemberDescriptor.__init__()=svnmailer.typedstruct.MemberDescriptor-class.html#__init__,Method svnmailer.typedstruct.Struct.__init__()=svnmailer.typedstruct.Struct-class.html#__init__,Method svnmailer.typedstruct.StructDescriptor.__init__()=svnmailer.typedstruct.StructDescriptor-class.html#__init__,Method svnmailer.typedstruct.StructPrivate.__init__()=svnmailer.typedstruct.StructPrivate-class.html#__init__,Method svnmailer.util.TempFile.__init__()=svnmailer.util.TempFile-class.html#__init__,Method svnmailer.util._DummyPopen3.__init__()=svnmailer.util._DummyPopen3-class.html#__init__,Method svnmailer.util._DummyPopen4.__init__()=svnmailer.util._DummyPopen4-class.html#__init__,Method svnmailer.util._LocaleFile.__init__()=svnmailer.util._LocaleFile-class.html#__init__"><a title="svnmailer.browser.ParsedUrl.__init__
+svnmailer.browser.ViewcvsGenerator.__init__
+svnmailer.browser.WebsvnGenerator.__init__
+svnmailer.cli.SvnmailerOptionParser.__init__
+svnmailer.differ.ExternalDiffer.__init__
+svnmailer.differ.InternalDiffer.__init__
+svnmailer.main.GroupSet.__init__
+svnmailer.main.Main.__init__
+svnmailer.notifier._base.BaseNotifier.__init__
+svnmailer.notifier._mail.MailNotifier.__init__
+svnmailer.notifier._multimail.DiffDescriptor.__init__
+svnmailer.notifier._multimail.MultiMailNotifier.__init__
+svnmailer.notifier._multimail.SplittingDecorator.__init__
+svnmailer.notifier._multimail.SplittingTruncatingDecorator.__init__
+svnmailer.notifier._multimail.TruncatingDecorator.__init__
+svnmailer.notifier._multimail.URLDecorator.__init__
+svnmailer.notifier._multimail.URLTruncatingDecorator.__init__
+svnmailer.notifier._multimail._MultiMail.__init__
+svnmailer.notifier._multimail._SinglePart.__init__
+svnmailer.notifier._text.TextNotifier.__init__
+svnmailer.notifier._textmail.SplittingDecorator.__init__
+svnmailer.notifier._textmail.TruncatingDecorator.__init__
+svnmailer.notifier._textmail.URLDecorator.__init__
+svnmailer.notifier._textmail.URLTruncatingDecorator.__init__
+svnmailer.notifier._textmail._TextMail.__init__
+svnmailer.notifier.cia_xmlrpc.CIAXMLRPCNotifier.__init__
+svnmailer.notifier.selector.Selector.__init__
+svnmailer.settings.Settings.__init__
+svnmailer.settings._Tokens.__init__
+svnmailer.stream.CountStream.__init__
+svnmailer.stream.DevNullStream.__init__
+svnmailer.stream.SplittingStream.__init__
+svnmailer.stream.TruncatingStream.__init__
+svnmailer.stream.UnicodeStream.__init__
+svnmailer.stream._BaseStream.__init__
+svnmailer.struct_accessors.BaseDescriptor.__init__
+svnmailer.struct_accessors.HumanBooleanDescriptor.__init__
+svnmailer.struct_accessors.RegexDescriptor.__init__
+svnmailer.struct_accessors.TokenDescriptor.__init__
+svnmailer.struct_accessors.TokenlistDescriptor.__init__
+svnmailer.struct_accessors._MailAction.__init__
+svnmailer.subversion.PathDescriptor.__init__
+svnmailer.subversion.Repository.__init__
+svnmailer.subversion.RepositoryError.__init__
+svnmailer.subversion._RevisionChangeCollector.__init__
+svnmailer.subversion._Version.__init__
+svnmailer.typedstruct.MemberDescriptor.__init__
+svnmailer.typedstruct.Struct.__init__
+svnmailer.typedstruct.StructDescriptor.__init__
+svnmailer.typedstruct.StructPrivate.__init__
+svnmailer.util.TempFile.__init__
+svnmailer.util._DummyPopen3.__init__
+svnmailer.util._DummyPopen4.__init__
+svnmailer.util._LocaleFile.__init__" class="py-name" href="#" onclick="return doclink('link-10', '__init__', 'link-10');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">writer</tt><tt class="py-op">(</tt><tt id="link-11" class="py-name"><a title="svnmailer.stream" class="py-name" href="#" onclick="return doclink('link-11', 'stream', 'link-0');">stream</a></tt><tt class="py-op">,</tt> <tt class="py-name">errors</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">decode</tt> <tt class="py-op">=</tt> <tt class="py-name">codecs</tt><tt class="py-op">.</tt><tt class="py-name">lookup</tt><tt class="py-op">(</tt><tt class="py-name">in_enc</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">1</tt><tt class="py-op">]</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">err</tt>    <tt class="py-op">=</tt> <tt class="py-name">errors</tt> </tt>
+</div><a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"> </tt>
+<a name="UnicodeStream.write"></a><div id="UnicodeStream.write-def"><a name="L110"></a><tt class="py-lineno">110</tt> <a class="py-toggle" href="#" id="UnicodeStream.write-toggle" onclick="return toggle('UnicodeStream.write');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.UnicodeStream-class.html#write">write</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">towrite</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="UnicodeStream.write-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="UnicodeStream.write-expanded"><a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">        <tt class="py-docstring">""" Write a string or unicode """</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">towrite</tt><tt class="py-op">,</tt> <tt class="py-name">str</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">            <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-12" class="py-name"><a title="svnmailer.stream.UnicodeStream" class="py-name" href="#" onclick="return doclink('link-12', 'UnicodeStream', 'link-9');">UnicodeStream</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name"><a title="svnmailer.stream.BinaryOrUnicodeStream.write
+svnmailer.stream.CountStream.write
+svnmailer.stream.DevNullStream.write
+svnmailer.stream.SplittingStream.write
+svnmailer.stream.TruncatingStream.write
+svnmailer.stream.UnicodeStream.write
+svnmailer.stream._BaseStream.write" class="py-name" href="#" onclick="return doclink('link-13', 'write', 'link-3');">write</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">decode</tt><tt class="py-op">(</tt><tt class="py-name">towrite</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">err</tt><tt class="py-op">)</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">            <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-14" class="py-name"><a title="svnmailer.stream.UnicodeStream" class="py-name" href="#" onclick="return doclink('link-14', 'UnicodeStream', 'link-9');">UnicodeStream</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name"><a title="svnmailer.stream.BinaryOrUnicodeStream.write
+svnmailer.stream.CountStream.write
+svnmailer.stream.DevNullStream.write
+svnmailer.stream.SplittingStream.write
+svnmailer.stream.TruncatingStream.write
+svnmailer.stream.UnicodeStream.write
+svnmailer.stream._BaseStream.write" class="py-name" href="#" onclick="return doclink('link-15', 'write', 'link-3');">write</a></tt><tt class="py-op">(</tt><tt class="py-name">towrite</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"> </tt>
+<a name="BinaryOrUnicodeStream"></a><div id="BinaryOrUnicodeStream-def"><a name="L118"></a><tt class="py-lineno">118</tt> <a class="py-toggle" href="#" id="BinaryOrUnicodeStream-toggle" onclick="return toggle('BinaryOrUnicodeStream');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="svnmailer.stream.BinaryOrUnicodeStream-class.html">BinaryOrUnicodeStream</a><tt class="py-op">(</tt><tt class="py-base-class">_BaseStream</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="BinaryOrUnicodeStream-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="BinaryOrUnicodeStream-expanded"><a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">    <tt class="py-docstring">""" Stream wrapper, which accepts unicode or binary data</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"><tt class="py-docstring">        Unicode data is converted to UTF-8</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"> </tt>
+<a name="BinaryOrUnicodeStream.write"></a><div id="BinaryOrUnicodeStream.write-def"><a name="L124"></a><tt class="py-lineno">124</tt> <a class="py-toggle" href="#" id="BinaryOrUnicodeStream.write-toggle" onclick="return toggle('BinaryOrUnicodeStream.write');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.BinaryOrUnicodeStream-class.html#write">write</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">towrite</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="BinaryOrUnicodeStream.write-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="BinaryOrUnicodeStream.write-expanded"><a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">        <tt class="py-docstring">""" Write a string or unicode """</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">towrite</tt><tt class="py-op">,</tt> <tt class="py-name">unicode</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line">            <tt class="py-name">towrite</tt> <tt class="py-op">=</tt> <tt class="py-name">towrite</tt><tt class="py-op">.</tt><tt class="py-name">encode</tt><tt class="py-op">(</tt><tt class="py-string">'utf-8'</tt><tt class="py-op">)</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-16" class="py-name" targets="Class svnmailer.stream.BinaryOrUnicodeStream=svnmailer.stream.BinaryOrUnicodeStream-class.html"><a title="svnmailer.stream.BinaryOrUnicodeStream" class="py-name" href="#" onclick="return doclink('link-16', 'BinaryOrUnicodeStream', 'link-16');">BinaryOrUnicodeStream</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name"><a title="svnmailer.stream.BinaryOrUnicodeStream.write
+svnmailer.stream.CountStream.write
+svnmailer.stream.DevNullStream.write
+svnmailer.stream.SplittingStream.write
+svnmailer.stream.TruncatingStream.write
+svnmailer.stream.UnicodeStream.write
+svnmailer.stream._BaseStream.write" class="py-name" href="#" onclick="return doclink('link-17', 'write', 'link-3');">write</a></tt><tt class="py-op">(</tt><tt class="py-name">towrite</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"> </tt>
+<a name="TruncatingStream"></a><div id="TruncatingStream-def"><a name="L132"></a><tt class="py-lineno">132</tt> <a class="py-toggle" href="#" id="TruncatingStream-toggle" onclick="return toggle('TruncatingStream');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="svnmailer.stream.TruncatingStream-class.html">TruncatingStream</a><tt class="py-op">(</tt><tt class="py-base-class">_BaseStream</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TruncatingStream-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="TruncatingStream-expanded"><a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">    <tt class="py-docstring">""" stream wrapper, which truncates after a limit</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line"><tt class="py-docstring">        @ivar maxsize: The maximum size in bytes</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"><tt class="py-docstring">        @type maxsize: C{int}</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"><tt class="py-docstring">        @ivar current: The number of bytes received</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"><tt class="py-docstring">        @type current: C{int}</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line"><tt class="py-docstring">        @ivar trunced: The number of lines truncated (maybe actual-1)</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line"><tt class="py-docstring">        @type trunced: C{int}</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line"><tt class="py-docstring">        @ivar lastchar: The last character written</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line"><tt class="py-docstring">        @type lastchar: C{str}</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line"> </tt>
+<a name="TruncatingStream.__init__"></a><div id="TruncatingStream.__init__-def"><a name="L148"></a><tt class="py-lineno">148</tt> <a class="py-toggle" href="#" id="TruncatingStream.__init__-toggle" onclick="return toggle('TruncatingStream.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.TruncatingStream-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">stream</tt><tt class="py-op">,</tt> <tt class="py-param">maxsize</tt><tt class="py-op">,</tt> <tt class="py-param">add_note</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TruncatingStream.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TruncatingStream.__init__-expanded"><a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">        <tt class="py-docstring">""" Initialization</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"><tt class="py-docstring">            @param stream: The stream to wrap</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line"><tt class="py-docstring">            @type stream: file like object</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line"><tt class="py-docstring">            @param maxsize: The maximum size in bytes</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line"><tt class="py-docstring">            @type maxsize: C{int}</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-18" class="py-name" targets="Class svnmailer.stream.TruncatingStream=svnmailer.stream.TruncatingStream-class.html"><a title="svnmailer.stream.TruncatingStream" class="py-name" href="#" onclick="return doclink('link-18', 'TruncatingStream', 'link-18');">TruncatingStream</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-19" class="py-name"><a title="svnmailer.browser.ParsedUrl.__init__
+svnmailer.browser.ViewcvsGenerator.__init__
+svnmailer.browser.WebsvnGenerator.__init__
+svnmailer.cli.SvnmailerOptionParser.__init__
+svnmailer.differ.ExternalDiffer.__init__
+svnmailer.differ.InternalDiffer.__init__
+svnmailer.main.GroupSet.__init__
+svnmailer.main.Main.__init__
+svnmailer.notifier._base.BaseNotifier.__init__
+svnmailer.notifier._mail.MailNotifier.__init__
+svnmailer.notifier._multimail.DiffDescriptor.__init__
+svnmailer.notifier._multimail.MultiMailNotifier.__init__
+svnmailer.notifier._multimail.SplittingDecorator.__init__
+svnmailer.notifier._multimail.SplittingTruncatingDecorator.__init__
+svnmailer.notifier._multimail.TruncatingDecorator.__init__
+svnmailer.notifier._multimail.URLDecorator.__init__
+svnmailer.notifier._multimail.URLTruncatingDecorator.__init__
+svnmailer.notifier._multimail._MultiMail.__init__
+svnmailer.notifier._multimail._SinglePart.__init__
+svnmailer.notifier._text.TextNotifier.__init__
+svnmailer.notifier._textmail.SplittingDecorator.__init__
+svnmailer.notifier._textmail.TruncatingDecorator.__init__
+svnmailer.notifier._textmail.URLDecorator.__init__
+svnmailer.notifier._textmail.URLTruncatingDecorator.__init__
+svnmailer.notifier._textmail._TextMail.__init__
+svnmailer.notifier.cia_xmlrpc.CIAXMLRPCNotifier.__init__
+svnmailer.notifier.selector.Selector.__init__
+svnmailer.settings.Settings.__init__
+svnmailer.settings._Tokens.__init__
+svnmailer.stream.CountStream.__init__
+svnmailer.stream.DevNullStream.__init__
+svnmailer.stream.SplittingStream.__init__
+svnmailer.stream.TruncatingStream.__init__
+svnmailer.stream.UnicodeStream.__init__
+svnmailer.stream._BaseStream.__init__
+svnmailer.struct_accessors.BaseDescriptor.__init__
+svnmailer.struct_accessors.HumanBooleanDescriptor.__init__
+svnmailer.struct_accessors.RegexDescriptor.__init__
+svnmailer.struct_accessors.TokenDescriptor.__init__
+svnmailer.struct_accessors.TokenlistDescriptor.__init__
+svnmailer.struct_accessors._MailAction.__init__
+svnmailer.subversion.PathDescriptor.__init__
+svnmailer.subversion.Repository.__init__
+svnmailer.subversion.RepositoryError.__init__
+svnmailer.subversion._RevisionChangeCollector.__init__
+svnmailer.subversion._Version.__init__
+svnmailer.typedstruct.MemberDescriptor.__init__
+svnmailer.typedstruct.Struct.__init__
+svnmailer.typedstruct.StructDescriptor.__init__
+svnmailer.typedstruct.StructPrivate.__init__
+svnmailer.util.TempFile.__init__
+svnmailer.util._DummyPopen3.__init__
+svnmailer.util._DummyPopen4.__init__
+svnmailer.util._LocaleFile.__init__" class="py-name" href="#" onclick="return doclink('link-19', '__init__', 'link-10');">__init__</a></tt><tt class="py-op">(</tt><tt id="link-20" class="py-name"><a title="svnmailer.stream" class="py-name" href="#" onclick="return doclink('link-20', 'stream', 'link-0');">stream</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line"> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">maxsize</tt> <tt class="py-op">=</tt> <tt class="py-name">maxsize</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">current</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">trunced</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">lastchar</tt> <tt class="py-op">=</tt> <tt class="py-string">"\n"</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">add_note</tt> <tt class="py-op">=</tt> <tt class="py-name">add_note</tt> </tt>
+</div><a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line"> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line"> </tt>
+<a name="TruncatingStream.write"></a><div id="TruncatingStream.write-def"><a name="L166"></a><tt class="py-lineno">166</tt> <a class="py-toggle" href="#" id="TruncatingStream.write-toggle" onclick="return toggle('TruncatingStream.write');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.TruncatingStream-class.html#write">write</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">towrite</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TruncatingStream.write-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TruncatingStream.write-expanded"><a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">        <tt class="py-docstring">""" Writes a string up to the limit """</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">current</tt> <tt class="py-op">&lt;=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">maxsize</tt><tt class="py-op">:</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">            <tt class="py-name">written</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">line</tt> <tt class="py-keyword">in</tt> <tt class="py-name">towrite</tt><tt class="py-op">.</tt><tt class="py-name">splitlines</tt><tt class="py-op">(</tt><tt class="py-name">True</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">current</tt> <tt class="py-op">+=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">line</tt><tt class="py-op">)</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">current</tt> <tt class="py-op">&lt;=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">maxsize</tt><tt class="py-op">:</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">                    <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-21" class="py-name"><a title="svnmailer.stream.TruncatingStream" class="py-name" href="#" onclick="return doclink('link-21', 'TruncatingStream', 'link-18');">TruncatingStream</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="svnmailer.stream.BinaryOrUnicodeStream.write
+svnmailer.stream.CountStream.write
+svnmailer.stream.DevNullStream.write
+svnmailer.stream.SplittingStream.write
+svnmailer.stream.TruncatingStream.write
+svnmailer.stream.UnicodeStream.write
+svnmailer.stream._BaseStream.write" class="py-name" href="#" onclick="return doclink('link-22', 'write', 'link-3');">write</a></tt><tt class="py-op">(</tt><tt class="py-name">line</tt><tt class="py-op">)</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">                    <tt class="py-name">written</tt> <tt class="py-op">+=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">line</tt><tt class="py-op">)</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">                <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line">                    <tt class="py-name">towrite</tt> <tt class="py-op">=</tt> <tt class="py-name">towrite</tt><tt class="py-op">[</tt><tt class="py-name">written</tt><tt class="py-op">:</tt><tt class="py-op">]</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">                    <tt class="py-keyword">break</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line"> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">current</tt> <tt class="py-op">&gt;</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">maxsize</tt><tt class="py-op">:</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">trunced</tt> <tt class="py-op">+=</tt> <tt class="py-name">towrite</tt><tt class="py-op">.</tt><tt class="py-name">count</tt><tt class="py-op">(</tt><tt class="py-string">'\n'</tt><tt class="py-op">)</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">lastchar</tt> <tt class="py-op">=</tt> <tt class="py-name">towrite</tt><tt class="py-op">[</tt><tt class="py-op">-</tt><tt class="py-number">1</tt><tt class="py-op">:</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line"> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line"> </tt>
+<a name="TruncatingStream.getTruncatedLineCount"></a><div id="TruncatingStream.getTruncatedLineCount-def"><a name="L184"></a><tt class="py-lineno">184</tt> <a class="py-toggle" href="#" id="TruncatingStream.getTruncatedLineCount-toggle" onclick="return toggle('TruncatingStream.getTruncatedLineCount');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.TruncatingStream-class.html#getTruncatedLineCount">getTruncatedLineCount</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TruncatingStream.getTruncatedLineCount-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TruncatingStream.getTruncatedLineCount-expanded"><a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line">        <tt class="py-docstring">""" Returns the number of truncated lines</tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line"><tt class="py-docstring">            @return: The line count</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line"><tt class="py-docstring">            @rtype: C{int}</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">trunced</tt> <tt class="py-op">+</tt> <tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">lastchar</tt> <tt class="py-op">!=</tt> <tt class="py-string">"\n"</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line"> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line"> </tt>
+<a name="TruncatingStream.writeWithoutTruncation"></a><div id="TruncatingStream.writeWithoutTruncation-def"><a name="L193"></a><tt class="py-lineno">193</tt> <a class="py-toggle" href="#" id="TruncatingStream.writeWithoutTruncation-toggle" onclick="return toggle('TruncatingStream.writeWithoutTruncation');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.TruncatingStream-class.html#writeWithoutTruncation">writeWithoutTruncation</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">towrite</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TruncatingStream.writeWithoutTruncation-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TruncatingStream.writeWithoutTruncation-expanded"><a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line">        <tt class="py-docstring">""" Writes without truncation</tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line"><tt class="py-docstring">            @param towrite: The data to write</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line"><tt class="py-docstring">            @type towrite: C{str}</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-23" class="py-name"><a title="svnmailer.stream.TruncatingStream" class="py-name" href="#" onclick="return doclink('link-23', 'TruncatingStream', 'link-18');">TruncatingStream</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name"><a title="svnmailer.stream.BinaryOrUnicodeStream.write
+svnmailer.stream.CountStream.write
+svnmailer.stream.DevNullStream.write
+svnmailer.stream.SplittingStream.write
+svnmailer.stream.TruncatingStream.write
+svnmailer.stream.UnicodeStream.write
+svnmailer.stream._BaseStream.write" class="py-name" href="#" onclick="return doclink('link-24', 'write', 'link-3');">write</a></tt><tt class="py-op">(</tt><tt class="py-name">towrite</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line"> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line"> </tt>
+<a name="TruncatingStream.seek"></a><div id="TruncatingStream.seek-def"><a name="L202"></a><tt class="py-lineno">202</tt> <a class="py-toggle" href="#" id="TruncatingStream.seek-toggle" onclick="return toggle('TruncatingStream.seek');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.TruncatingStream-class.html#seek">seek</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">position</tt><tt class="py-op">,</tt> <tt class="py-param">mode</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TruncatingStream.seek-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TruncatingStream.seek-expanded"><a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line">        <tt class="py-docstring">""" Sets the file position """</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-25" class="py-name" targets="Variable svnmailer.settings.RuntimeSettingsContainer.mode=svnmailer.settings.RuntimeSettingsContainer-class.html#mode,Variable svnmailer.struct_accessors._MailAction.mode=svnmailer.struct_accessors._MailAction-class.html#mode"><a title="svnmailer.settings.RuntimeSettingsContainer.mode
+svnmailer.struct_accessors._MailAction.mode" class="py-name" href="#" onclick="return doclink('link-25', 'mode', 'link-25');">mode</a></tt> <tt class="py-op">!=</tt> <tt class="py-number">0</tt> <tt class="py-keyword">or</tt> <tt class="py-name">position</tt> <tt class="py-op">!=</tt> <tt class="py-number">0</tt><tt class="py-op">:</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">NotImplementedError</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line"> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">current</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">trunced</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">lastchar</tt> <tt class="py-op">=</tt> <tt class="py-string">"\n"</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name"><a title="svnmailer.stream" class="py-name" href="#" onclick="return doclink('link-26', 'stream', 'link-0');">stream</a></tt><tt class="py-op">.</tt><tt id="link-27" class="py-name" targets="Method svnmailer.stream.TruncatingStream.seek()=svnmailer.stream.TruncatingStream-class.html#seek"><a title="svnmailer.stream.TruncatingStream.seek" class="py-name" href="#" onclick="return doclink('link-27', 'seek', 'link-27');">seek</a></tt><tt class="py-op">(</tt><tt class="py-name">position</tt><tt class="py-op">,</tt> <tt id="link-28" class="py-name"><a title="svnmailer.settings.RuntimeSettingsContainer.mode
+svnmailer.struct_accessors._MailAction.mode" class="py-name" href="#" onclick="return doclink('link-28', 'mode', 'link-25');">mode</a></tt><tt class="py-op">)</tt> </tt>
+</div><a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line"> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line"> </tt>
+<a name="TruncatingStream.getvalue"></a><div id="TruncatingStream.getvalue-def"><a name="L213"></a><tt class="py-lineno">213</tt> <a class="py-toggle" href="#" id="TruncatingStream.getvalue-toggle" onclick="return toggle('TruncatingStream.getvalue');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.TruncatingStream-class.html#getvalue">getvalue</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TruncatingStream.getvalue-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TruncatingStream.getvalue-expanded"><a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line">        <tt class="py-docstring">""" Returns the content """</tt> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line">        <tt class="py-name">cont</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-29" class="py-name"><a title="svnmailer.stream" class="py-name" href="#" onclick="return doclink('link-29', 'stream', 'link-0');">stream</a></tt><tt class="py-op">.</tt><tt id="link-30" class="py-name" targets="Method svnmailer.stream.TruncatingStream.getvalue()=svnmailer.stream.TruncatingStream-class.html#getvalue"><a title="svnmailer.stream.TruncatingStream.getvalue" class="py-name" href="#" onclick="return doclink('link-30', 'getvalue', 'link-30');">getvalue</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">add_note</tt><tt class="py-op">:</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line">            <tt id="link-31" class="py-name" targets="Variable svnmailer.notifier._base.num=svnmailer.notifier._base-module.html#num"><a title="svnmailer.notifier._base.num" class="py-name" href="#" onclick="return doclink('link-31', 'num', 'link-31');">num</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name" targets="Method svnmailer.stream.TruncatingStream.getTruncatedLineCount()=svnmailer.stream.TruncatingStream-class.html#getTruncatedLineCount"><a title="svnmailer.stream.TruncatingStream.getTruncatedLineCount" class="py-name" href="#" onclick="return doclink('link-32', 'getTruncatedLineCount', 'link-32');">getTruncatedLineCount</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt id="link-33" class="py-name"><a title="svnmailer.notifier._base.num" class="py-name" href="#" onclick="return doclink('link-33', 'num', 'link-31');">num</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line">                <tt class="py-name">cont</tt> <tt class="py-op">=</tt> <tt class="py-string">"%s\n[... %d lines stripped ...]\n"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">                    <tt class="py-name">cont</tt><tt class="py-op">,</tt> <tt id="link-34" class="py-name"><a title="svnmailer.notifier._base.num" class="py-name" href="#" onclick="return doclink('link-34', 'num', 'link-31');">num</a></tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line">                <tt class="py-op">)</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line"> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">cont</tt> </tt>
+</div></div><a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line"> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line"> </tt>
+<a name="TruncatingFileStream"></a><div id="TruncatingFileStream-def"><a name="L226"></a><tt class="py-lineno">226</tt> <a class="py-toggle" href="#" id="TruncatingFileStream-toggle" onclick="return toggle('TruncatingFileStream');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="svnmailer.stream.TruncatingFileStream-class.html">TruncatingFileStream</a><tt class="py-op">(</tt><tt class="py-base-class">TruncatingStream</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TruncatingFileStream-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="TruncatingFileStream-expanded"><a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line">    <tt class="py-docstring">""" Truncating stream, which writes the truncating note on close """</tt> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line"> </tt>
+<a name="TruncatingFileStream.close"></a><div id="TruncatingFileStream.close-def"><a name="L229"></a><tt class="py-lineno">229</tt> <a class="py-toggle" href="#" id="TruncatingFileStream.close-toggle" onclick="return toggle('TruncatingFileStream.close');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.TruncatingFileStream-class.html#close">close</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TruncatingFileStream.close-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TruncatingFileStream.close-expanded"><a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line">        <tt class="py-docstring">""" Closes the stream """</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">add_note</tt><tt class="py-op">:</tt> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line">            <tt id="link-35" class="py-name"><a title="svnmailer.notifier._base.num" class="py-name" href="#" onclick="return doclink('link-35', 'num', 'link-31');">num</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name"><a title="svnmailer.stream.TruncatingStream.getTruncatedLineCount" class="py-name" href="#" onclick="return doclink('link-36', 'getTruncatedLineCount', 'link-32');">getTruncatedLineCount</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt id="link-37" class="py-name"><a title="svnmailer.notifier._base.num" class="py-name" href="#" onclick="return doclink('link-37', 'num', 'link-31');">num</a></tt><tt class="py-op">:</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-38" class="py-name" targets="Method svnmailer.stream.TruncatingStream.writeWithoutTruncation()=svnmailer.stream.TruncatingStream-class.html#writeWithoutTruncation"><a title="svnmailer.stream.TruncatingStream.writeWithoutTruncation" class="py-name" href="#" onclick="return doclink('link-38', 'writeWithoutTruncation', 'link-38');">writeWithoutTruncation</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line">                    <tt class="py-string">"\n[... %d lines stripped ...]\n"</tt> <tt class="py-op">%</tt> <tt id="link-39" class="py-name"><a title="svnmailer.notifier._base.num" class="py-name" href="#" onclick="return doclink('link-39', 'num', 'link-31');">num</a></tt> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">                <tt class="py-op">)</tt> </tt>
+<a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-40" class="py-name" targets="Class svnmailer.stream.TruncatingFileStream=svnmailer.stream.TruncatingFileStream-class.html"><a title="svnmailer.stream.TruncatingFileStream" class="py-name" href="#" onclick="return doclink('link-40', 'TruncatingFileStream', 'link-40');">TruncatingFileStream</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name"><a title="svnmailer.stream.SplittingStream.close
+svnmailer.stream.TruncatingFileStream.close
+svnmailer.stream._BaseStream.close
+svnmailer.subversion.Repository.close
+svnmailer.util.TempFile.close" class="py-name" href="#" onclick="return doclink('link-41', 'close', 'link-6');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line"> </tt>
+<a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line"> </tt>
+<a name="CuckooStream"></a><div id="CuckooStream-def"><a name="L240"></a><tt class="py-lineno">240</tt> <a class="py-toggle" href="#" id="CuckooStream-toggle" onclick="return toggle('CuckooStream');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="svnmailer.stream.CuckooStream-class.html">CuckooStream</a><tt class="py-op">(</tt><tt class="py-base-class">_BaseStream</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CuckooStream-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="CuckooStream-expanded"><a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line">    <tt class="py-docstring">""" Stream wrapper, which provides a method to replace the stream """</tt> </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line"> </tt>
+<a name="CuckooStream.replaceStream"></a><div id="CuckooStream.replaceStream-def"><a name="L243"></a><tt class="py-lineno">243</tt> <a class="py-toggle" href="#" id="CuckooStream.replaceStream-toggle" onclick="return toggle('CuckooStream.replaceStream');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.CuckooStream-class.html#replaceStream">replaceStream</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">stream</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CuckooStream.replaceStream-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="CuckooStream.replaceStream-expanded"><a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line">        <tt class="py-docstring">""" Replaces the stream with another</tt> </tt>
+<a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line"><tt class="py-docstring">            @param stream: The new stream</tt> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line"><tt class="py-docstring">            @type stream: file like object</tt> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-42" class="py-name"><a title="svnmailer.stream" class="py-name" href="#" onclick="return doclink('link-42', 'stream', 'link-0');">stream</a></tt><tt class="py-op">.</tt><tt id="link-43" class="py-name"><a title="svnmailer.stream.SplittingStream.close
+svnmailer.stream.TruncatingFileStream.close
+svnmailer.stream._BaseStream.close
+svnmailer.subversion.Repository.close
+svnmailer.util.TempFile.close" class="py-name" href="#" onclick="return doclink('link-43', 'close', 'link-6');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L250"></a><tt class="py-lineno">250</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name"><a title="svnmailer.stream" class="py-name" href="#" onclick="return doclink('link-44', 'stream', 'link-0');">stream</a></tt> <tt class="py-op">=</tt> <tt id="link-45" class="py-name"><a title="svnmailer.stream" class="py-name" href="#" onclick="return doclink('link-45', 'stream', 'link-0');">stream</a></tt> </tt>
+</div></div><a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line"> </tt>
+<a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line"> </tt>
+<a name="SplittingStream"></a><div id="SplittingStream-def"><a name="L253"></a><tt class="py-lineno">253</tt> <a class="py-toggle" href="#" id="SplittingStream-toggle" onclick="return toggle('SplittingStream');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="svnmailer.stream.SplittingStream-class.html">SplittingStream</a><tt class="py-op">(</tt><tt class="py-base-class">_BaseStream</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SplittingStream-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="SplittingStream-expanded"><a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line">    <tt class="py-docstring">""" Stream wrapper, which provides the ability to split the stream</tt> </tt>
+<a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line"><tt class="py-docstring">        @ivar current: The current byte counter</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line"><tt class="py-docstring">        @type current: C{int}</tt> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line"> </tt>
+<a name="SplittingStream.__init__"></a><div id="SplittingStream.__init__-def"><a name="L260"></a><tt class="py-lineno">260</tt> <a class="py-toggle" href="#" id="SplittingStream.__init__-toggle" onclick="return toggle('SplittingStream.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.SplittingStream-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">tempdir</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SplittingStream.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SplittingStream.__init__-expanded"><a name="L261"></a><tt class="py-lineno">261</tt>  <tt class="py-line">        <tt class="py-docstring">""" Initialization</tt> </tt>
+<a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L263"></a><tt class="py-lineno">263</tt>  <tt class="py-line"><tt class="py-docstring">            @param tempdir: specific temporary directory</tt> </tt>
+<a name="L264"></a><tt class="py-lineno">264</tt>  <tt class="py-line"><tt class="py-docstring">            @type tempdir: C{str}</tt> </tt>
+<a name="L265"></a><tt class="py-lineno">265</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L266"></a><tt class="py-lineno">266</tt>  <tt class="py-line">        <tt class="py-keyword">import</tt> <tt class="py-name">cStringIO</tt> </tt>
+<a name="L267"></a><tt class="py-lineno">267</tt>  <tt class="py-line">        <tt id="link-46" class="py-name"><a title="svnmailer.stream" class="py-name" href="#" onclick="return doclink('link-46', 'stream', 'link-0');">stream</a></tt> <tt class="py-op">=</tt> <tt class="py-name">cStringIO</tt><tt class="py-op">.</tt><tt class="py-name">StringIO</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L268"></a><tt class="py-lineno">268</tt>  <tt class="py-line"> </tt>
+<a name="L269"></a><tt class="py-lineno">269</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-47" class="py-name" targets="Class svnmailer.stream.SplittingStream=svnmailer.stream.SplittingStream-class.html"><a title="svnmailer.stream.SplittingStream" class="py-name" href="#" onclick="return doclink('link-47', 'SplittingStream', 'link-47');">SplittingStream</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name"><a title="svnmailer.browser.ParsedUrl.__init__
+svnmailer.browser.ViewcvsGenerator.__init__
+svnmailer.browser.WebsvnGenerator.__init__
+svnmailer.cli.SvnmailerOptionParser.__init__
+svnmailer.differ.ExternalDiffer.__init__
+svnmailer.differ.InternalDiffer.__init__
+svnmailer.main.GroupSet.__init__
+svnmailer.main.Main.__init__
+svnmailer.notifier._base.BaseNotifier.__init__
+svnmailer.notifier._mail.MailNotifier.__init__
+svnmailer.notifier._multimail.DiffDescriptor.__init__
+svnmailer.notifier._multimail.MultiMailNotifier.__init__
+svnmailer.notifier._multimail.SplittingDecorator.__init__
+svnmailer.notifier._multimail.SplittingTruncatingDecorator.__init__
+svnmailer.notifier._multimail.TruncatingDecorator.__init__
+svnmailer.notifier._multimail.URLDecorator.__init__
+svnmailer.notifier._multimail.URLTruncatingDecorator.__init__
+svnmailer.notifier._multimail._MultiMail.__init__
+svnmailer.notifier._multimail._SinglePart.__init__
+svnmailer.notifier._text.TextNotifier.__init__
+svnmailer.notifier._textmail.SplittingDecorator.__init__
+svnmailer.notifier._textmail.TruncatingDecorator.__init__
+svnmailer.notifier._textmail.URLDecorator.__init__
+svnmailer.notifier._textmail.URLTruncatingDecorator.__init__
+svnmailer.notifier._textmail._TextMail.__init__
+svnmailer.notifier.cia_xmlrpc.CIAXMLRPCNotifier.__init__
+svnmailer.notifier.selector.Selector.__init__
+svnmailer.settings.Settings.__init__
+svnmailer.settings._Tokens.__init__
+svnmailer.stream.CountStream.__init__
+svnmailer.stream.DevNullStream.__init__
+svnmailer.stream.SplittingStream.__init__
+svnmailer.stream.TruncatingStream.__init__
+svnmailer.stream.UnicodeStream.__init__
+svnmailer.stream._BaseStream.__init__
+svnmailer.struct_accessors.BaseDescriptor.__init__
+svnmailer.struct_accessors.HumanBooleanDescriptor.__init__
+svnmailer.struct_accessors.RegexDescriptor.__init__
+svnmailer.struct_accessors.TokenDescriptor.__init__
+svnmailer.struct_accessors.TokenlistDescriptor.__init__
+svnmailer.struct_accessors._MailAction.__init__
+svnmailer.subversion.PathDescriptor.__init__
+svnmailer.subversion.Repository.__init__
+svnmailer.subversion.RepositoryError.__init__
+svnmailer.subversion._RevisionChangeCollector.__init__
+svnmailer.subversion._Version.__init__
+svnmailer.typedstruct.MemberDescriptor.__init__
+svnmailer.typedstruct.Struct.__init__
+svnmailer.typedstruct.StructDescriptor.__init__
+svnmailer.typedstruct.StructPrivate.__init__
+svnmailer.util.TempFile.__init__
+svnmailer.util._DummyPopen3.__init__
+svnmailer.util._DummyPopen4.__init__
+svnmailer.util._LocaleFile.__init__" class="py-name" href="#" onclick="return doclink('link-48', '__init__', 'link-10');">__init__</a></tt><tt class="py-op">(</tt><tt id="link-49" class="py-name"><a title="svnmailer.stream" class="py-name" href="#" onclick="return doclink('link-49', 'stream', 'link-0');">stream</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L270"></a><tt class="py-lineno">270</tt>  <tt class="py-line"> </tt>
+<a name="L271"></a><tt class="py-lineno">271</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">current</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L272"></a><tt class="py-lineno">272</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tempfiles</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L273"></a><tt class="py-lineno">273</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-50" class="py-name" targets="Variable svnmailer.settings.GeneralSettingsContainer.tempdir=svnmailer.settings.GeneralSettingsContainer-class.html#tempdir"><a title="svnmailer.settings.GeneralSettingsContainer.tempdir" class="py-name" href="#" onclick="return doclink('link-50', 'tempdir', 'link-50');">tempdir</a></tt> <tt class="py-op">=</tt> <tt id="link-51" class="py-name"><a title="svnmailer.settings.GeneralSettingsContainer.tempdir" class="py-name" href="#" onclick="return doclink('link-51', 'tempdir', 'link-50');">tempdir</a></tt> </tt>
+</div><a name="L274"></a><tt class="py-lineno">274</tt>  <tt class="py-line"> </tt>
+<a name="L275"></a><tt class="py-lineno">275</tt>  <tt class="py-line"> </tt>
+<a name="SplittingStream.write"></a><div id="SplittingStream.write-def"><a name="L276"></a><tt class="py-lineno">276</tt> <a class="py-toggle" href="#" id="SplittingStream.write-toggle" onclick="return toggle('SplittingStream.write');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.SplittingStream-class.html#write">write</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">towrite</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SplittingStream.write-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SplittingStream.write-expanded"><a name="L277"></a><tt class="py-lineno">277</tt>  <tt class="py-line">        <tt class="py-docstring">""" Writes to the current stream and counts the number of bytes """</tt> </tt>
+<a name="L278"></a><tt class="py-lineno">278</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">current</tt> <tt class="py-op">+=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">towrite</tt><tt class="py-op">)</tt> </tt>
+<a name="L279"></a><tt class="py-lineno">279</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-52" class="py-name"><a title="svnmailer.stream.SplittingStream" class="py-name" href="#" onclick="return doclink('link-52', 'SplittingStream', 'link-47');">SplittingStream</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-53" class="py-name"><a title="svnmailer.stream.BinaryOrUnicodeStream.write
+svnmailer.stream.CountStream.write
+svnmailer.stream.DevNullStream.write
+svnmailer.stream.SplittingStream.write
+svnmailer.stream.TruncatingStream.write
+svnmailer.stream.UnicodeStream.write
+svnmailer.stream._BaseStream.write" class="py-name" href="#" onclick="return doclink('link-53', 'write', 'link-3');">write</a></tt><tt class="py-op">(</tt><tt class="py-name">towrite</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L280"></a><tt class="py-lineno">280</tt>  <tt class="py-line"> </tt>
+<a name="L281"></a><tt class="py-lineno">281</tt>  <tt class="py-line"> </tt>
+<a name="SplittingStream.split"></a><div id="SplittingStream.split-def"><a name="L282"></a><tt class="py-lineno">282</tt> <a class="py-toggle" href="#" id="SplittingStream.split-toggle" onclick="return toggle('SplittingStream.split');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.SplittingStream-class.html#split">split</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SplittingStream.split-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SplittingStream.split-expanded"><a name="L283"></a><tt class="py-lineno">283</tt>  <tt class="py-line">        <tt class="py-docstring">""" Splits the stream</tt> </tt>
+<a name="L284"></a><tt class="py-lineno">284</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L285"></a><tt class="py-lineno">285</tt>  <tt class="py-line"><tt class="py-docstring">            This dumps the current content into a tempfile clears</tt> </tt>
+<a name="L286"></a><tt class="py-lineno">286</tt>  <tt class="py-line"><tt class="py-docstring">            the old stream.</tt> </tt>
+<a name="L287"></a><tt class="py-lineno">287</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L288"></a><tt class="py-lineno">288</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">current</tt><tt class="py-op">:</tt> </tt>
+<a name="L289"></a><tt class="py-lineno">289</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> </tt>
+<a name="L290"></a><tt class="py-lineno">290</tt>  <tt class="py-line"> </tt>
+<a name="L291"></a><tt class="py-lineno">291</tt>  <tt class="py-line">        <tt class="py-keyword">from</tt> <tt id="link-54" class="py-name" targets="Package svnmailer=svnmailer-module.html"><a title="svnmailer" class="py-name" href="#" onclick="return doclink('link-54', 'svnmailer', 'link-54');">svnmailer</a></tt> <tt class="py-keyword">import</tt> <tt id="link-55" class="py-name" targets="Module svnmailer.util=svnmailer.util-module.html"><a title="svnmailer.util" class="py-name" href="#" onclick="return doclink('link-55', 'util', 'link-55');">util</a></tt> </tt>
+<a name="L292"></a><tt class="py-lineno">292</tt>  <tt class="py-line"> </tt>
+<a name="L293"></a><tt class="py-lineno">293</tt>  <tt class="py-line">        <tt class="py-name">tmpfile</tt> <tt class="py-op">=</tt> <tt id="link-56" class="py-name"><a title="svnmailer.util" class="py-name" href="#" onclick="return doclink('link-56', 'util', 'link-55');">util</a></tt><tt class="py-op">.</tt><tt id="link-57" class="py-name" targets="Class svnmailer.util.TempFile=svnmailer.util.TempFile-class.html"><a title="svnmailer.util.TempFile" class="py-name" href="#" onclick="return doclink('link-57', 'TempFile', 'link-57');">TempFile</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-58" class="py-name"><a title="svnmailer.settings.GeneralSettingsContainer.tempdir" class="py-name" href="#" onclick="return doclink('link-58', 'tempdir', 'link-50');">tempdir</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L294"></a><tt class="py-lineno">294</tt>  <tt class="py-line">        <tt class="py-name">tmpfile</tt><tt class="py-op">.</tt><tt id="link-59" class="py-name" targets="Variable svnmailer.notifier._text.TextNotifier.fp=svnmailer.notifier._text.TextNotifier-class.html#fp,Variable svnmailer.util.TempFile.fp=svnmailer.util.TempFile-class.html#fp"><a title="svnmailer.notifier._text.TextNotifier.fp
+svnmailer.util.TempFile.fp" class="py-name" href="#" onclick="return doclink('link-59', 'fp', 'link-59');">fp</a></tt><tt class="py-op">.</tt><tt id="link-60" class="py-name"><a title="svnmailer.stream.BinaryOrUnicodeStream.write
+svnmailer.stream.CountStream.write
+svnmailer.stream.DevNullStream.write
+svnmailer.stream.SplittingStream.write
+svnmailer.stream.TruncatingStream.write
+svnmailer.stream.UnicodeStream.write
+svnmailer.stream._BaseStream.write" class="py-name" href="#" onclick="return doclink('link-60', 'write', 'link-3');">write</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-61" class="py-name"><a title="svnmailer.stream.TruncatingStream.getvalue" class="py-name" href="#" onclick="return doclink('link-61', 'getvalue', 'link-30');">getvalue</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L295"></a><tt class="py-lineno">295</tt>  <tt class="py-line">        <tt class="py-name">tmpfile</tt><tt class="py-op">.</tt><tt id="link-62" class="py-name"><a title="svnmailer.stream.SplittingStream.close
+svnmailer.stream.TruncatingFileStream.close
+svnmailer.stream._BaseStream.close
+svnmailer.subversion.Repository.close
+svnmailer.util.TempFile.close" class="py-name" href="#" onclick="return doclink('link-62', 'close', 'link-6');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L296"></a><tt class="py-lineno">296</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tempfiles</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">tmpfile</tt><tt class="py-op">)</tt> </tt>
+<a name="L297"></a><tt class="py-lineno">297</tt>  <tt class="py-line">        <tt class="py-comment"># begin fresh</tt> </tt>
+<a name="L298"></a><tt class="py-lineno">298</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">current</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L299"></a><tt class="py-lineno">299</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-63" class="py-name"><a title="svnmailer.stream.TruncatingStream.seek" class="py-name" href="#" onclick="return doclink('link-63', 'seek', 'link-27');">seek</a></tt><tt class="py-op">(</tt><tt class="py-number">0</tt><tt class="py-op">)</tt> </tt>
+<a name="L300"></a><tt class="py-lineno">300</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-64" class="py-name" targets="Variable svnmailer.struct_accessors._MailAction.truncate=svnmailer.struct_accessors._MailAction-class.html#truncate"><a title="svnmailer.struct_accessors._MailAction.truncate" class="py-name" href="#" onclick="return doclink('link-64', 'truncate', 'link-64');">truncate</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L301"></a><tt class="py-lineno">301</tt>  <tt class="py-line"> </tt>
+<a name="L302"></a><tt class="py-lineno">302</tt>  <tt class="py-line"> </tt>
+<a name="SplittingStream.close"></a><div id="SplittingStream.close-def"><a name="L303"></a><tt class="py-lineno">303</tt> <a class="py-toggle" href="#" id="SplittingStream.close-toggle" onclick="return toggle('SplittingStream.close');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.SplittingStream-class.html#close">close</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SplittingStream.close-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SplittingStream.close-expanded"><a name="L304"></a><tt class="py-lineno">304</tt>  <tt class="py-line">        <tt class="py-docstring">""" Closes the stream and removes all tempfiles """</tt> </tt>
+<a name="L305"></a><tt class="py-lineno">305</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tempfiles</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L306"></a><tt class="py-lineno">306</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-65" class="py-name"><a title="svnmailer.stream.SplittingStream" class="py-name" href="#" onclick="return doclink('link-65', 'SplittingStream', 'link-47');">SplittingStream</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-66" class="py-name"><a title="svnmailer.stream.SplittingStream.close
+svnmailer.stream.TruncatingFileStream.close
+svnmailer.stream._BaseStream.close
+svnmailer.subversion.Repository.close
+svnmailer.util.TempFile.close" class="py-name" href="#" onclick="return doclink('link-66', 'close', 'link-6');">close</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L307"></a><tt class="py-lineno">307</tt>  <tt class="py-line"> </tt>
+<a name="L308"></a><tt class="py-lineno">308</tt>  <tt class="py-line"> </tt>
+<a name="SplittingStream.getPartCount"></a><div id="SplittingStream.getPartCount-def"><a name="L309"></a><tt class="py-lineno">309</tt> <a class="py-toggle" href="#" id="SplittingStream.getPartCount-toggle" onclick="return toggle('SplittingStream.getPartCount');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.SplittingStream-class.html#getPartCount">getPartCount</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SplittingStream.getPartCount-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SplittingStream.getPartCount-expanded"><a name="L310"></a><tt class="py-lineno">310</tt>  <tt class="py-line">        <tt class="py-docstring">""" Returns the number of splitted parts</tt> </tt>
+<a name="L311"></a><tt class="py-lineno">311</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L312"></a><tt class="py-lineno">312</tt>  <tt class="py-line"><tt class="py-docstring">            @return: The number</tt> </tt>
+<a name="L313"></a><tt class="py-lineno">313</tt>  <tt class="py-line"><tt class="py-docstring">            @rtype: C{int}</tt> </tt>
+<a name="L314"></a><tt class="py-lineno">314</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L315"></a><tt class="py-lineno">315</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tempfiles</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L316"></a><tt class="py-lineno">316</tt>  <tt class="py-line"> </tt>
+<a name="L317"></a><tt class="py-lineno">317</tt>  <tt class="py-line"> </tt>
+<a name="SplittingStream.getPart"></a><div id="SplittingStream.getPart-def"><a name="L318"></a><tt class="py-lineno">318</tt> <a class="py-toggle" href="#" id="SplittingStream.getPart-toggle" onclick="return toggle('SplittingStream.getPart');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.SplittingStream-class.html#getPart">getPart</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">idx</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="SplittingStream.getPart-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="SplittingStream.getPart-expanded"><a name="L319"></a><tt class="py-lineno">319</tt>  <tt class="py-line">        <tt class="py-docstring">""" Returns the value of part C{idx}</tt> </tt>
+<a name="L320"></a><tt class="py-lineno">320</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L321"></a><tt class="py-lineno">321</tt>  <tt class="py-line"><tt class="py-docstring">            @param idx: The part number</tt> </tt>
+<a name="L322"></a><tt class="py-lineno">322</tt>  <tt class="py-line"><tt class="py-docstring">            @type idx: C{int}</tt> </tt>
+<a name="L323"></a><tt class="py-lineno">323</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L324"></a><tt class="py-lineno">324</tt>  <tt class="py-line"><tt class="py-docstring">            @return: The content of the particular part</tt> </tt>
+<a name="L325"></a><tt class="py-lineno">325</tt>  <tt class="py-line"><tt class="py-docstring">            @rtype: C{str}</tt> </tt>
+<a name="L326"></a><tt class="py-lineno">326</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L327"></a><tt class="py-lineno">327</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L328"></a><tt class="py-lineno">328</tt>  <tt class="py-line">            <tt class="py-name">tmpfile</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">tempfiles</tt><tt class="py-op">[</tt><tt class="py-name">idx</tt><tt class="py-op">]</tt> </tt>
+<a name="L329"></a><tt class="py-lineno">329</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">IndexError</tt><tt class="py-op">:</tt> </tt>
+<a name="L330"></a><tt class="py-lineno">330</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-string">''</tt> </tt>
+<a name="L331"></a><tt class="py-lineno">331</tt>  <tt class="py-line"> </tt>
+<a name="L332"></a><tt class="py-lineno">332</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">file</tt><tt class="py-op">(</tt><tt class="py-name">tmpfile</tt><tt class="py-op">.</tt><tt id="link-67" class="py-name"><a title="svnmailer.util.TempFile.name" class="py-name" href="#" onclick="return doclink('link-67', 'name', 'link-8');">name</a></tt><tt class="py-op">,</tt> <tt class="py-string">'rb'</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">read</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L333"></a><tt class="py-lineno">333</tt>  <tt class="py-line"> </tt>
+<a name="L334"></a><tt class="py-lineno">334</tt>  <tt class="py-line"> </tt>
+<a name="DevNullStream"></a><div id="DevNullStream-def"><a name="L335"></a><tt class="py-lineno">335</tt> <a class="py-toggle" href="#" id="DevNullStream-toggle" onclick="return toggle('DevNullStream');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="svnmailer.stream.DevNullStream-class.html">DevNullStream</a><tt class="py-op">(</tt><tt class="py-base-class">_BaseStream</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DevNullStream-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="DevNullStream-expanded"><a name="L336"></a><tt class="py-lineno">336</tt>  <tt class="py-line">    <tt class="py-docstring">""" Dummy stream, which throws away all data """</tt> </tt>
+<a name="L337"></a><tt class="py-lineno">337</tt>  <tt class="py-line"> </tt>
+<a name="DevNullStream.__init__"></a><div id="DevNullStream.__init__-def"><a name="L338"></a><tt class="py-lineno">338</tt> <a class="py-toggle" href="#" id="DevNullStream.__init__-toggle" onclick="return toggle('DevNullStream.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.DevNullStream-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DevNullStream.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DevNullStream.__init__-expanded"><a name="L339"></a><tt class="py-lineno">339</tt>  <tt class="py-line">        <tt class="py-docstring">""" Initialization """</tt> </tt>
+<a name="L340"></a><tt class="py-lineno">340</tt>  <tt class="py-line">        <tt class="py-keyword">import</tt> <tt class="py-name">cStringIO</tt> </tt>
+<a name="L341"></a><tt class="py-lineno">341</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-68" class="py-name" targets="Class svnmailer.stream.DevNullStream=svnmailer.stream.DevNullStream-class.html"><a title="svnmailer.stream.DevNullStream" class="py-name" href="#" onclick="return doclink('link-68', 'DevNullStream', 'link-68');">DevNullStream</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-69" class="py-name"><a title="svnmailer.browser.ParsedUrl.__init__
+svnmailer.browser.ViewcvsGenerator.__init__
+svnmailer.browser.WebsvnGenerator.__init__
+svnmailer.cli.SvnmailerOptionParser.__init__
+svnmailer.differ.ExternalDiffer.__init__
+svnmailer.differ.InternalDiffer.__init__
+svnmailer.main.GroupSet.__init__
+svnmailer.main.Main.__init__
+svnmailer.notifier._base.BaseNotifier.__init__
+svnmailer.notifier._mail.MailNotifier.__init__
+svnmailer.notifier._multimail.DiffDescriptor.__init__
+svnmailer.notifier._multimail.MultiMailNotifier.__init__
+svnmailer.notifier._multimail.SplittingDecorator.__init__
+svnmailer.notifier._multimail.SplittingTruncatingDecorator.__init__
+svnmailer.notifier._multimail.TruncatingDecorator.__init__
+svnmailer.notifier._multimail.URLDecorator.__init__
+svnmailer.notifier._multimail.URLTruncatingDecorator.__init__
+svnmailer.notifier._multimail._MultiMail.__init__
+svnmailer.notifier._multimail._SinglePart.__init__
+svnmailer.notifier._text.TextNotifier.__init__
+svnmailer.notifier._textmail.SplittingDecorator.__init__
+svnmailer.notifier._textmail.TruncatingDecorator.__init__
+svnmailer.notifier._textmail.URLDecorator.__init__
+svnmailer.notifier._textmail.URLTruncatingDecorator.__init__
+svnmailer.notifier._textmail._TextMail.__init__
+svnmailer.notifier.cia_xmlrpc.CIAXMLRPCNotifier.__init__
+svnmailer.notifier.selector.Selector.__init__
+svnmailer.settings.Settings.__init__
+svnmailer.settings._Tokens.__init__
+svnmailer.stream.CountStream.__init__
+svnmailer.stream.DevNullStream.__init__
+svnmailer.stream.SplittingStream.__init__
+svnmailer.stream.TruncatingStream.__init__
+svnmailer.stream.UnicodeStream.__init__
+svnmailer.stream._BaseStream.__init__
+svnmailer.struct_accessors.BaseDescriptor.__init__
+svnmailer.struct_accessors.HumanBooleanDescriptor.__init__
+svnmailer.struct_accessors.RegexDescriptor.__init__
+svnmailer.struct_accessors.TokenDescriptor.__init__
+svnmailer.struct_accessors.TokenlistDescriptor.__init__
+svnmailer.struct_accessors._MailAction.__init__
+svnmailer.subversion.PathDescriptor.__init__
+svnmailer.subversion.Repository.__init__
+svnmailer.subversion.RepositoryError.__init__
+svnmailer.subversion._RevisionChangeCollector.__init__
+svnmailer.subversion._Version.__init__
+svnmailer.typedstruct.MemberDescriptor.__init__
+svnmailer.typedstruct.Struct.__init__
+svnmailer.typedstruct.StructDescriptor.__init__
+svnmailer.typedstruct.StructPrivate.__init__
+svnmailer.util.TempFile.__init__
+svnmailer.util._DummyPopen3.__init__
+svnmailer.util._DummyPopen4.__init__
+svnmailer.util._LocaleFile.__init__" class="py-name" href="#" onclick="return doclink('link-69', '__init__', 'link-10');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">cStringIO</tt><tt class="py-op">.</tt><tt class="py-name">StringIO</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L342"></a><tt class="py-lineno">342</tt>  <tt class="py-line"> </tt>
+<a name="L343"></a><tt class="py-lineno">343</tt>  <tt class="py-line"> </tt>
+<a name="DevNullStream.write"></a><div id="DevNullStream.write-def"><a name="L344"></a><tt class="py-lineno">344</tt> <a class="py-toggle" href="#" id="DevNullStream.write-toggle" onclick="return toggle('DevNullStream.write');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.DevNullStream-class.html#write">write</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">towrite</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DevNullStream.write-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DevNullStream.write-expanded"><a name="L345"></a><tt class="py-lineno">345</tt>  <tt class="py-line">        <tt class="py-docstring">""" throw away stuff """</tt> </tt>
+<a name="L346"></a><tt class="py-lineno">346</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L347"></a><tt class="py-lineno">347</tt>  <tt class="py-line"> </tt>
+<a name="L348"></a><tt class="py-lineno">348</tt>  <tt class="py-line"> </tt>
+<a name="DevNullStream.writelines"></a><div id="DevNullStream.writelines-def"><a name="L349"></a><tt class="py-lineno">349</tt> <a class="py-toggle" href="#" id="DevNullStream.writelines-toggle" onclick="return toggle('DevNullStream.writelines');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.DevNullStream-class.html#writelines">writelines</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">lines</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="DevNullStream.writelines-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="DevNullStream.writelines-expanded"><a name="L350"></a><tt class="py-lineno">350</tt>  <tt class="py-line">        <tt class="py-docstring">""" throw away stuff """</tt> </tt>
+<a name="L351"></a><tt class="py-lineno">351</tt>  <tt class="py-line">        <tt class="py-keyword">pass</tt> </tt>
+</div></div><a name="L352"></a><tt class="py-lineno">352</tt>  <tt class="py-line"> </tt>
+<a name="L353"></a><tt class="py-lineno">353</tt>  <tt class="py-line"> </tt>
+<a name="CountStream"></a><div id="CountStream-def"><a name="L354"></a><tt class="py-lineno">354</tt> <a class="py-toggle" href="#" id="CountStream-toggle" onclick="return toggle('CountStream');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="svnmailer.stream.CountStream-class.html">CountStream</a><tt class="py-op">(</tt><tt class="py-base-class">_BaseStream</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CountStream-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="CountStream-expanded"><a name="L355"></a><tt class="py-lineno">355</tt>  <tt class="py-line">    <tt class="py-docstring">""" Dummy stream, which throws away all data """</tt> </tt>
+<a name="L356"></a><tt class="py-lineno">356</tt>  <tt class="py-line"> </tt>
+<a name="CountStream.__init__"></a><div id="CountStream.__init__-def"><a name="L357"></a><tt class="py-lineno">357</tt> <a class="py-toggle" href="#" id="CountStream.__init__-toggle" onclick="return toggle('CountStream.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.CountStream-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CountStream.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="CountStream.__init__-expanded"><a name="L358"></a><tt class="py-lineno">358</tt>  <tt class="py-line">        <tt class="py-docstring">""" Initialization """</tt> </tt>
+<a name="L359"></a><tt class="py-lineno">359</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">size</tt> <tt class="py-op">=</tt> <tt class="py-number">0</tt> </tt>
+<a name="L360"></a><tt class="py-lineno">360</tt>  <tt class="py-line">        <tt class="py-keyword">import</tt> <tt class="py-name">cStringIO</tt> </tt>
+<a name="L361"></a><tt class="py-lineno">361</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-70" class="py-name" targets="Class svnmailer.stream.CountStream=svnmailer.stream.CountStream-class.html"><a title="svnmailer.stream.CountStream" class="py-name" href="#" onclick="return doclink('link-70', 'CountStream', 'link-70');">CountStream</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-71" class="py-name"><a title="svnmailer.browser.ParsedUrl.__init__
+svnmailer.browser.ViewcvsGenerator.__init__
+svnmailer.browser.WebsvnGenerator.__init__
+svnmailer.cli.SvnmailerOptionParser.__init__
+svnmailer.differ.ExternalDiffer.__init__
+svnmailer.differ.InternalDiffer.__init__
+svnmailer.main.GroupSet.__init__
+svnmailer.main.Main.__init__
+svnmailer.notifier._base.BaseNotifier.__init__
+svnmailer.notifier._mail.MailNotifier.__init__
+svnmailer.notifier._multimail.DiffDescriptor.__init__
+svnmailer.notifier._multimail.MultiMailNotifier.__init__
+svnmailer.notifier._multimail.SplittingDecorator.__init__
+svnmailer.notifier._multimail.SplittingTruncatingDecorator.__init__
+svnmailer.notifier._multimail.TruncatingDecorator.__init__
+svnmailer.notifier._multimail.URLDecorator.__init__
+svnmailer.notifier._multimail.URLTruncatingDecorator.__init__
+svnmailer.notifier._multimail._MultiMail.__init__
+svnmailer.notifier._multimail._SinglePart.__init__
+svnmailer.notifier._text.TextNotifier.__init__
+svnmailer.notifier._textmail.SplittingDecorator.__init__
+svnmailer.notifier._textmail.TruncatingDecorator.__init__
+svnmailer.notifier._textmail.URLDecorator.__init__
+svnmailer.notifier._textmail.URLTruncatingDecorator.__init__
+svnmailer.notifier._textmail._TextMail.__init__
+svnmailer.notifier.cia_xmlrpc.CIAXMLRPCNotifier.__init__
+svnmailer.notifier.selector.Selector.__init__
+svnmailer.settings.Settings.__init__
+svnmailer.settings._Tokens.__init__
+svnmailer.stream.CountStream.__init__
+svnmailer.stream.DevNullStream.__init__
+svnmailer.stream.SplittingStream.__init__
+svnmailer.stream.TruncatingStream.__init__
+svnmailer.stream.UnicodeStream.__init__
+svnmailer.stream._BaseStream.__init__
+svnmailer.struct_accessors.BaseDescriptor.__init__
+svnmailer.struct_accessors.HumanBooleanDescriptor.__init__
+svnmailer.struct_accessors.RegexDescriptor.__init__
+svnmailer.struct_accessors.TokenDescriptor.__init__
+svnmailer.struct_accessors.TokenlistDescriptor.__init__
+svnmailer.struct_accessors._MailAction.__init__
+svnmailer.subversion.PathDescriptor.__init__
+svnmailer.subversion.Repository.__init__
+svnmailer.subversion.RepositoryError.__init__
+svnmailer.subversion._RevisionChangeCollector.__init__
+svnmailer.subversion._Version.__init__
+svnmailer.typedstruct.MemberDescriptor.__init__
+svnmailer.typedstruct.Struct.__init__
+svnmailer.typedstruct.StructDescriptor.__init__
+svnmailer.typedstruct.StructPrivate.__init__
+svnmailer.util.TempFile.__init__
+svnmailer.util._DummyPopen3.__init__
+svnmailer.util._DummyPopen4.__init__
+svnmailer.util._LocaleFile.__init__" class="py-name" href="#" onclick="return doclink('link-71', '__init__', 'link-10');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">cStringIO</tt><tt class="py-op">.</tt><tt class="py-name">StringIO</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L362"></a><tt class="py-lineno">362</tt>  <tt class="py-line"> </tt>
+<a name="L363"></a><tt class="py-lineno">363</tt>  <tt class="py-line"> </tt>
+<a name="CountStream.write"></a><div id="CountStream.write-def"><a name="L364"></a><tt class="py-lineno">364</tt> <a class="py-toggle" href="#" id="CountStream.write-toggle" onclick="return toggle('CountStream.write');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.CountStream-class.html#write">write</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">towrite</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CountStream.write-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="CountStream.write-expanded"><a name="L365"></a><tt class="py-lineno">365</tt>  <tt class="py-line">        <tt class="py-docstring">""" throw away stuff and count the number of octets """</tt> </tt>
+<a name="L366"></a><tt class="py-lineno">366</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">size</tt> <tt class="py-op">+=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">towrite</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L367"></a><tt class="py-lineno">367</tt>  <tt class="py-line"> </tt>
+<a name="L368"></a><tt class="py-lineno">368</tt>  <tt class="py-line"> </tt>
+<a name="CountStream.writelines"></a><div id="CountStream.writelines-def"><a name="L369"></a><tt class="py-lineno">369</tt> <a class="py-toggle" href="#" id="CountStream.writelines-toggle" onclick="return toggle('CountStream.writelines');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.stream.CountStream-class.html#writelines">writelines</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">lines</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="CountStream.writelines-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="CountStream.writelines-expanded"><a name="L370"></a><tt class="py-lineno">370</tt>  <tt class="py-line">        <tt class="py-docstring">""" write lines """</tt> </tt>
+<a name="L371"></a><tt class="py-lineno">371</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">line</tt> <tt class="py-keyword">in</tt> <tt class="py-name">lines</tt><tt class="py-op">:</tt> </tt>
+<a name="L372"></a><tt class="py-lineno">372</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-72" class="py-name"><a title="svnmailer.stream.BinaryOrUnicodeStream.write
+svnmailer.stream.CountStream.write
+svnmailer.stream.DevNullStream.write
+svnmailer.stream.SplittingStream.write
+svnmailer.stream.TruncatingStream.write
+svnmailer.stream.UnicodeStream.write
+svnmailer.stream._BaseStream.write" class="py-name" href="#" onclick="return doclink('link-72', 'write', 'link-3');">write</a></tt><tt class="py-op">(</tt><tt class="py-name">line</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L373"></a><tt class="py-lineno">373</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="svnmailer-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Sep 25 21:07:34 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

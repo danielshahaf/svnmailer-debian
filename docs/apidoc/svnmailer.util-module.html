@@ -1,0 +1,932 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>svnmailer.util</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="svnmailer-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="svnmailer-module.html">Package&nbsp;svnmailer</a> ::
+        Module&nbsp;util
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module util</h1><p class="nomargin-top"><span class="codelink"><a href="svnmailer.util-pysrc.html">source&nbsp;code</a></span></p>
+<h1 class="heading">Utilities</h1>
+    <p>This module contains some utility functions and classes used in 
+    several places of the svnmailer. These functions have a quite general 
+    character and can be used easily outside of the svnmailer as well.</p>
+
+<hr />
+<div class="fields">      <p><strong>Author:</strong>
+        Andr\xc3\xa9 Malo
+      </p>
+</div><!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="svnmailer.util.TempFile-class.html" class="summary-name">TempFile</a><br />
+      Tempfile container class
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="svnmailer.util._DummyPopen4-class.html" class="summary-name" onclick="show_private();">_DummyPopen4</a><br />
+      Dummy Popen4 class for platforms which don't provide one in popen2
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="svnmailer.util._DummyPopen3-class.html" class="summary-name" onclick="show_private();">_DummyPopen3</a><br />
+      Dummy Popen3 class for platforms which don't provide one in popen2
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="svnmailer.util._LocaleFile-class.html" class="summary-name" onclick="show_private();">_LocaleFile</a><br />
+      Transform filenames according to locale
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="svnmailer.util.ReadOnlyDict-class.html" class="summary-name">ReadOnlyDict</a><br />
+      Read only dictionary
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="svnmailer.util.SafeDict-class.html" class="summary-name">SafeDict</a><br />
+      A dict, which returns '' on unknown keys or false values
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>popen2.Popen3</code> or <code>_DummyPopen3</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.util-module.html#getPipe2" class="summary-sig-name" onclick="show_private();">getPipe2</a>(<span class="summary-sig-arg">command</span>)</span><br />
+      Returns a pipe object (<code>Popen3</code> or 
+      <code>_DummyPopen3</code> on win32)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.util-pysrc.html#getPipe2">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>popen2.Popen4</code> or <code>_DummyPopen4</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.util-module.html#getPipe4" class="summary-sig-name">getPipe4</a>(<span class="summary-sig-arg">command</span>)</span><br />
+      Returns a pipe object (<code>Popen4</code> or 
+      <code>_DummyPopen4</code> on win32)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.util-pysrc.html#getPipe4">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>str</code> or <code>list</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.util-module.html#getSuitableCommandLine" class="summary-sig-name">getSuitableCommandLine</a>(<span class="summary-sig-arg">command</span>,
+        <span class="summary-sig-arg">_platform</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Return the revised command suitable for being exec'd</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.util-pysrc.html#getSuitableCommandLine">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>list</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.util-module.html#splitCommand" class="summary-sig-name">splitCommand</a>(<span class="summary-sig-arg">command</span>)</span><br />
+      Split a command string with respect to quotes and such</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.util-pysrc.html#splitCommand">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>tuple</code> or <code>None</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.util-module.html#extractX509User" class="summary-sig-name">extractX509User</a>(<span class="summary-sig-arg">author</span>)</span><br />
+      Returns user data extracted from x509 subject string</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.util-pysrc.html#extractX509User">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>str</code> or <code>unicode</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.util-module.html#substitute" class="summary-sig-name">substitute</a>(<span class="summary-sig-arg">template</span>,
+        <span class="summary-sig-arg">subst</span>)</span><br />
+      Returns a filled template</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.util-pysrc.html#substitute">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>unicode</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.util-module.html#filterForXml" class="summary-sig-name">filterForXml</a>(<span class="summary-sig-arg">value</span>)</span><br />
+      Replaces control characters with replace characters</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.util-pysrc.html#filterForXml">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>list</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.util-module.html#getParentDirList" class="summary-sig-name">getParentDirList</a>(<span class="summary-sig-arg">path</span>)</span><br />
+      Returns the directories up to a (posix) path</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.util-pysrc.html#getParentDirList">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">any</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.util-module.html#getGlobValue" class="summary-sig-name">getGlobValue</a>(<span class="summary-sig-arg">globs</span>,
+        <span class="summary-sig-arg">path</span>)</span><br />
+      Returns the value of the glob, where path matches</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.util-pysrc.html#getGlobValue">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.util-module.html#modifyQuery" class="summary-sig-name">modifyQuery</a>(<span class="summary-sig-arg">query</span>,
+        <span class="summary-sig-arg">rem</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">add</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">set</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">delim</span>=<span class="summary-sig-default"><code class="variable-quote">'</code><code class="variable-string">&amp;</code><code class="variable-quote">'</code></span>)</span><br />
+      Returns a modified query string</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.util-pysrc.html#modifyQuery">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>dict</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.util-module.html#parseQuery" class="summary-sig-name">parseQuery</a>(<span class="summary-sig-arg">query</span>)</span><br />
+      Parses a query string</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.util-pysrc.html#parseQuery">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>tuple</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.util-module.html#commonPaths" class="summary-sig-name">commonPaths</a>(<span class="summary-sig-arg">paths</span>)</span><br />
+      Returns the common component and the stripped paths</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.util-pysrc.html#commonPaths">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.util-module.html#inherit" class="summary-sig-name">inherit</a>(<span class="summary-sig-arg">cls</span>,
+        <span class="summary-sig-arg">*bases</span>)</span><br />
+      Inherits class cls from *bases</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.util-pysrc.html#inherit">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>tuple</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.util-module.html#parseContentType" class="summary-sig-name" onclick="show_private();">parseContentType</a>(<span class="summary-sig-arg">value</span>)</span><br />
+      Parses a content type</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.util-pysrc.html#parseContentType">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="filename"></a><span class="summary-name">filename</span> = <code title="_LocaleFile()">_LocaleFile()</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'svnmailer'"><code class="variable-quote">'</code><code class="variable-string">svnmailer</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="getPipe2"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getPipe2</span>(<span class="sig-arg">command</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.util-pysrc.html#getPipe2">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a pipe object (<code>Popen3</code> or 
+  <code>_DummyPopen3</code> on win32)</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>command</code></strong> (<code>list</code>) - The command list (the first item is the command itself, the rest 
+          represents the arguments)</li>
+    </ul></dd>
+    <dt>Returns: <code>popen2.Popen3</code> or <code>_DummyPopen3</code></dt>
+        <dd>The pipe object</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getPipe4"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getPipe4</span>(<span class="sig-arg">command</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.util-pysrc.html#getPipe4">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a pipe object (<code>Popen4</code> or 
+  <code>_DummyPopen4</code> on win32)</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>command</code></strong> (<code>list</code>) - The command list (the first item is the command itself, the rest 
+          represents the arguments)</li>
+    </ul></dd>
+    <dt>Returns: <code>popen2.Popen4</code> or <code>_DummyPopen4</code></dt>
+        <dd>The pipe object</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getSuitableCommandLine"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getSuitableCommandLine</span>(<span class="sig-arg">command</span>,
+        <span class="sig-arg">_platform</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.util-pysrc.html#getSuitableCommandLine">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return the revised command suitable for being exec'd</p>
+  <p>Currently this means, it's escaped and converted to a string only for 
+  Win32, because on this system the shell is called. For other systems the 
+  list is just returned.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>command</code></strong> (<code>list</code>) - The command to escape</li>
+        <li><strong class="pname"><code>_platform</code></strong> (<code>str</code>) - A platform string (for testing purposes only)</li>
+    </ul></dd>
+    <dt>Returns: <code>str</code> or <code>list</code></dt>
+        <dd>The escaped command string or the original list</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        This is more or less the same as the stuff in 
+        svn.fs._escape_msvcrt_shell_command/arg. But it belongs somewhere 
+        else - e.g. into a util module...
+        <p>Perhaps once a day the whole package goes directly into the 
+        subversion distribution and then it's all cool.</p>
+      </p>
+</div></td></tr></table>
+</div>
+<a name="splitCommand"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">splitCommand</span>(<span class="sig-arg">command</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.util-pysrc.html#splitCommand">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Split a command string with respect to quotes and such</p>
+  <p>The command string consists of several tokens:</p>
+  <ul>
+    <li>
+      whitespace: Those are separators except inside quoted items
+    </li>
+    <li>
+      unquoted items: every token that doesn't start with a double quote 
+      (&quot;)
+    </li>
+    <li>
+      quoted items: every token that starts with a double quote (&quot;). 
+      Those items must be closed with a double quote and may contain 
+      whitespaces. The enclosing quotes are stripped. To put a double quote
+      character inside such a token, it has to be escaped with a backslash 
+      (\). Therefore - backslashes themselves have to be escaped as well. 
+      The escapes are also stripped from the result.
+    </li>
+  </ul>
+  <p>Here's an example: <code>r'foo bar &quot;baz&quot; 
+  &quot;zo\&quot;&quot; &quot;\\nk&quot;'</code> resolves to <code>['foo', 
+  'bar', 'baz', 'zo&quot;', r'\nk']</code></p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>command</code></strong> (<code>str</code>) - The command string</li>
+    </ul></dd>
+    <dt>Returns: <code>list</code></dt>
+        <dd>The splitted command</dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>ValueError</strong></code> - The command string is not valid (unclosed quote or the like)</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="extractX509User"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">extractX509User</span>(<span class="sig-arg">author</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.util-pysrc.html#extractX509User">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns user data extracted from x509 subject string</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>author</code></strong> (<code>str</code>) - The author string</li>
+    </ul></dd>
+    <dt>Returns: <code>tuple</code> or <code>None</code></dt>
+        <dd>user name, mail address (user name maybe <code>None</code>)</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="substitute"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">substitute</span>(<span class="sig-arg">template</span>,
+        <span class="sig-arg">subst</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.util-pysrc.html#substitute">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a filled template</p>
+  <p>If the <code class="link">template</code> is <code>None</code>, this 
+  function returns <code>None</code> as well.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>template</code></strong> (<code>unicode</code>) - The temlate to fill</li>
+        <li><strong class="pname"><code>subst</code></strong> (<code>dict</code>) - The substitution parameters</li>
+    </ul></dd>
+    <dt>Returns: <code>str</code> or <code>unicode</code></dt>
+        <dd>The filled template (The return type depends on the template and 
+          the parameters)</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="filterForXml"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">filterForXml</span>(<span class="sig-arg">value</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.util-pysrc.html#filterForXml">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Replaces control characters with replace characters</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>value</code></strong> (<code>unicode</code>) - The value to filter</li>
+    </ul></dd>
+    <dt>Returns: <code>unicode</code></dt>
+        <dd>The filtered value</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getParentDirList"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getParentDirList</span>(<span class="sig-arg">path</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.util-pysrc.html#getParentDirList">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the directories up to a (posix) path</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>path</code></strong> (<code>str</code>) - The path to process</li>
+    </ul></dd>
+    <dt>Returns: <code>list</code></dt>
+        <dd>The directory list</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getGlobValue"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getGlobValue</span>(<span class="sig-arg">globs</span>,
+        <span class="sig-arg">path</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.util-pysrc.html#getGlobValue">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the value of the glob, where path matches</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>globs</code></strong> (<code>list</code> of <code>tuple</code>) - The glob list (<code>[(glob, associated value)]</code>)</li>
+        <li><strong class="pname"><code>path</code></strong> (<code>str</code>) - The path to match</li>
+    </ul></dd>
+    <dt>Returns: any</dt>
+        <dd>The matched value or <code>None</code></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="modifyQuery"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">modifyQuery</span>(<span class="sig-arg">query</span>,
+        <span class="sig-arg">rem</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">add</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">set</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">delim</span>=<span class="sig-default"><code class="variable-quote">'</code><code class="variable-string">&amp;</code><code class="variable-quote">'</code></span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.util-pysrc.html#modifyQuery">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a modified query string</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>query</code></strong> (<code>str</code> or <code>dict</code>) - The query string to modify</li>
+        <li><strong class="pname"><code>rem</code></strong> (<code>list</code> of <code>str</code>) - parameters to remove (if present)</li>
+        <li><strong class="pname"><code>add</code></strong> (<code>list</code> of <code>tuple</code>) - parameters to add</li>
+        <li><strong class="pname"><code>set</code></strong> (<code>list</code> of <code>tuple</code>) - parameters to override</li>
+        <li><strong class="pname"><code>delim</code></strong> (<code>str</code>) - Delimiter to use when rebuilding the query string</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        set is a convenience parameter, it's actually a combination of 
+        <code>rem</code> and <code>add</code>. The order of processing is:
+        <ol start="1">
+          <li>
+            append the set parameters to <code>rem</code> and 
+            <code>add</code>
+          </li>
+          <li>
+            apply <code>rem</code>
+          </li>
+          <li>
+            apply <code>add</code>
+          </li>
+        </ol>
+      </p>
+      <p><strong>Warning:</strong>
+        query parameters containing no <code>=</code> character are 
+        silently dropped.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="parseQuery"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">parseQuery</span>(<span class="sig-arg">query</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.util-pysrc.html#parseQuery">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Parses a query string</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>query</code></strong> (<code>str</code>) - The query string to parse</li>
+    </ul></dd>
+    <dt>Returns: <code>dict</code></dt>
+        <dd>The parsed query (<code>{key: [values]}</code>)</dd>
+  </dl>
+<div class="fields">      <p><strong>Warning:</strong>
+        query parameters containing no <code>=</code> character are 
+        silently dropped.
+      </p>
+</div></td></tr></table>
+</div>
+<a name="commonPaths"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">commonPaths</span>(<span class="sig-arg">paths</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.util-pysrc.html#commonPaths">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the common component and the stripped paths</p>
+  <p>It expects that directories do always end with a trailing slash and 
+  paths never begin with a slash (except root).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>paths</code></strong> (<code>list</code>) - The list of paths (<code>[str, str, ...]</code>)</li>
+    </ul></dd>
+    <dt>Returns: <code>tuple</code></dt>
+        <dd>The common component (always a directory) and the stripped paths 
+          (<code>(str, [str, str, ...])</code>)</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="inherit"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">inherit</span>(<span class="sig-arg">cls</span>,
+        <span class="sig-arg">*bases</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.util-pysrc.html#inherit">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Inherits class cls from *bases</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>cls</code></strong> (<code>class</code>) - The class to inherit from *bases</li>
+        <li><strong class="pname"><code>bases</code></strong> (<code>list</code>) - The base class(es)</li>
+    </ul></dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        cls needs a __dict__, so __slots__ is tabu
+      </p>
+</div></td></tr></table>
+</div>
+<a name="parseContentType"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">parseContentType</span>(<span class="sig-arg">value</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.util-pysrc.html#parseContentType">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Parses a content type</p>
+  <p>(the email module unfortunately doesn't provide a public interface for
+  this)</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>value</code></strong> (<code>basestring</code>) - The value to parse - must be ascii compatible</li>
+    </ul></dd>
+    <dt>Returns: <code>tuple</code></dt>
+        <dd>The parsed header (<code>(value, {key, [value, value, 
+          ...]})</code>) or <code>None</code></dd>
+  </dl>
+<div class="fields">      <p><strong>Warning:</strong>
+        comments are not recognized yet
+      </p>
+</div></td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="svnmailer-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Sep 25 21:07:32 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,1030 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>svnmailer.notifier._mail.MailNotifier</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="svnmailer-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="svnmailer-module.html">Package&nbsp;svnmailer</a> ::
+        <a href="svnmailer.notifier-module.html">Package&nbsp;notifier</a> ::
+        <a href="svnmailer.notifier._mail-module.html">Module&nbsp;_mail</a> ::
+        Class&nbsp;MailNotifier
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class MailNotifier</h1><p class="nomargin-top"><span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+        object --+        
+                 |        
+<a href="svnmailer.notifier._base.BaseNotifier-class.html">_base.BaseNotifier</a> --+    
+                     |    
+    <a href="svnmailer.notifier._text.TextNotifier-class.html">_text.TextNotifier</a> --+
+                         |
+                        <strong class="uidshort">MailNotifier</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+      <ul class="subclass-list">
+<li class="private"><a href="svnmailer.notifier._textmail.TextMailNotifier-class.html" onclick="show_private();">_textmail.TextMailNotifier</a></li><li class="private">, <a href="svnmailer.notifier._multimail.MultiMailNotifier-class.html" onclick="show_private();">_multimail.MultiMailNotifier</a></li>  </ul>
+</dd></dl>
+
+<hr />
+<p>Bases class for mail (like) notifiers</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.notifier._mail.MailNotifier-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">config</span>,
+        <span class="summary-sig-arg">groupset</span>,
+        <span class="summary-sig-arg">*args</span>,
+        <span class="summary-sig-arg">**kwargs</span>)</span><br />
+      Initialization</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>unicode</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.notifier._mail.MailNotifier-class.html#_getPathString" class="summary-sig-name" onclick="show_private();">_getPathString</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">prefix</span>,
+        <span class="summary-sig-arg">paths</span>)</span><br />
+      Returns the (possibly) prefixed paths as string</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier._getPathString">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>unicode</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.notifier._mail.MailNotifier-class.html#_getPrefixedDirectories" class="summary-sig-name" onclick="show_private();">_getPrefixedDirectories</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">changeset</span>)</span><br />
+      Returns the longest common directory prefix</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier._getPrefixedDirectories">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>unicode</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.notifier._mail.MailNotifier-class.html#_getPrefixedFiles" class="summary-sig-name" onclick="show_private();">_getPrefixedFiles</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">changeset</span>)</span><br />
+      Returns the longest common path prefix</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier._getPrefixedFiles">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>tuple</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.notifier._mail.MailNotifier-class.html#composeHeaders" class="summary-sig-name">composeHeaders</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">groups</span>)</span><br />
+      Compose the informational headers of the mail</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.composeHeaders">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>tuple</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.notifier._mail.MailNotifier-class.html#composeMail" class="summary-sig-name">composeMail</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Composes the mail</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.composeMail">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>dict</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.notifier._mail.MailNotifier-class.html#getBasicHeaders" class="summary-sig-name">getBasicHeaders</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns the basic headers</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.getBasicHeaders">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>dict</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.notifier._mail.MailNotifier-class.html#getCustomHeaders" class="summary-sig-name">getCustomHeaders</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">groups</span>)</span><br />
+      Returns the custom headers</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.getCustomHeaders">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>tuple</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.notifier._mail.MailNotifier-class.html#getMailAddresses" class="summary-sig-name">getMailAddresses</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">groups</span>)</span><br />
+      Returns the substituted mail addresses (from/to/reply-to)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.getMailAddresses">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>unicode</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.notifier._mail.MailNotifier-class.html#getMailSubject" class="summary-sig-name">getMailSubject</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">countprefix</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Returns the subject</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.getMailSubject">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">generator</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.notifier._mail.MailNotifier-class.html#getMails" class="summary-sig-name">getMails</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns the composed mail(s)</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.getMails">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>unicode</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.notifier._mail.MailNotifier-class.html#getTransferEncoding" class="summary-sig-name">getTransferEncoding</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Returns the transfer encoding to use</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.getTransferEncoding">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.notifier._mail.MailNotifier-class.html#run" class="summary-sig-name">run</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Send notification as mail</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.run">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.notifier._mail.MailNotifier-class.html#sendMail" class="summary-sig-name">sendMail</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">sender</span>,
+        <span class="summary-sig-arg">to_addr</span>,
+        <span class="summary-sig-arg">mail</span>)</span><br />
+      Sends the mail</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.sendMail">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="writeNotification"></a><span class="summary-sig-name">writeNotification</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Writes the whole diff notification body</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.writeNotification">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="svnmailer.notifier._text.TextNotifier-class.html">_text.TextNotifier</a></code></b>:
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#getDate">getDate</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writeContentDiff">writeContentDiff</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writeContentDiffAction">writeContentDiffAction</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writeDiff">writeDiff</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writeDiffList">writeDiffList</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writeLockData">writeLockData</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writeMetaData">writeMetaData</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writePathInfo">writePathInfo</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writePathList">writePathList</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writePropertyDiff">writePropertyDiff</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writePropertyDiffAction">writePropertyDiffAction</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writePropertyDiffs">writePropertyDiffs</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#writeRevPropData">writeRevPropData</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="svnmailer.notifier._text.TextNotifier-class.html">_text.TextNotifier</a></code></b> (private):
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#_doWritePathList" onclick="show_private();">_doWritePathList</a></code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="svnmailer.notifier._base.BaseNotifier-class.html">_base.BaseNotifier</a></code></b>:
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#dumpContent">dumpContent</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getAuthor">getAuthor</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getContentDiffAction">getContentDiffAction</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getContentDiffUrl">getContentDiffUrl</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getContentEncodingProperty">getContentEncodingProperty</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getContentEncodings">getContentEncodings</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getDiffTokens">getDiffTokens</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getDiffer">getDiffer</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getEncodingFromMimeType">getEncodingFromMimeType</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getLog">getLog</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getPropertyDiffAction">getPropertyDiffAction</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getTempDir">getTempDir</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getTempFile">getTempFile</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getTime">getTime</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#getUrl">getUrl</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#isBinaryProperty">isBinaryProperty</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#isOneLineProperty">isOneLineProperty</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#isUTF8Property">isUTF8Property</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="svnmailer.notifier._base.BaseNotifier-class.html">_base.BaseNotifier</a></code></b> (private):
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#_getContentEncoding" onclick="show_private();">_getContentEncoding</a></code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="svnmailer.notifier._mail.MailNotifier-class.html#COMMIT_SUBJECT" class="summary-name">COMMIT_SUBJECT</a> = <code title="u'%(prefix)s r%(revision)s %(part)s - %(files/dirs)s'"><code class="variable-quote">u'</code><code class="variable-string">%(prefix)s r%(revision)s %(part)s - %(files</code><code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="LOCK_SUBJECT"></a><span class="summary-name">LOCK_SUBJECT</span> = <code title="u'%(prefix)s %(files/dirs)s'"><code class="variable-quote">u'</code><code class="variable-string">%(prefix)s %(files/dirs)s</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="REVPROP_SUBJECT"></a><span class="summary-name">REVPROP_SUBJECT</span> = <code title="u'%(prefix)s r%(revision)s - %(property)s'"><code class="variable-quote">u'</code><code class="variable-string">%(prefix)s r%(revision)s - %(property)s</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="UNLOCK_SUBJECT"></a><span class="summary-name">UNLOCK_SUBJECT</span> = <code title="u'%(prefix)s %(files/dirs)s'"><code class="variable-quote">u'</code><code class="variable-string">%(prefix)s %(files/dirs)s</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="svnmailer.notifier._mail.MailNotifier-class.html#__implements__" class="summary-name">__implements__</a> = <code title="[&lt;class 'svnmailer.notifier._text.TextNotifier'&gt;]"><code class="variable-group">[</code>&lt;class 'svnmailer.notifier._text.TextNotifie<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="svnmailer.notifier._text.TextNotifier-class.html">_text.TextNotifier</a></code></b>:
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#OUTPUT_SEPARATOR">OUTPUT_SEPARATOR</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#OUTPUT_SEPARATOR_LIGHT">OUTPUT_SEPARATOR_LIGHT</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="svnmailer.notifier._base.BaseNotifier-class.html">_base.BaseNotifier</a></code></b>:
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#ADD">ADD</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#COPY">COPY</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#DELETE">DELETE</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#ENC_CONFIG">ENC_CONFIG</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#ENC_DEFAULT">ENC_DEFAULT</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#ENC_PROPERTY">ENC_PROPERTY</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#MODIFY">MODIFY</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#NONE">NONE</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#PROPCHANGE">PROPCHANGE</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="svnmailer.notifier._base.BaseNotifier-class.html">_base.BaseNotifier</a></code></b> (private):
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#_diffable_tests" onclick="show_private();">_diffable_tests</a></code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">sre pattern or <code>None</code></span>
+    </td><td class="summary">
+        <a name="_header_re"></a><span class="summary-name">_header_re</span><br />
+      Pattern for header name checking
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="svnmailer.notifier._text.TextNotifier-class.html">_text.TextNotifier</a></code></b>:
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#changeset">changeset</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#config">config</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#differ">differ</a></code>,
+      <code><a href="svnmailer.notifier._text.TextNotifier-class.html#fp">fp</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="svnmailer.notifier._base.BaseNotifier-class.html">_base.BaseNotifier</a></code></b> (private):
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#_groupset" onclick="show_private();">_groupset</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#_penc_cache" onclick="show_private();">_penc_cache</a></code>,
+      <code><a href="svnmailer.notifier._base.BaseNotifier-class.html#_settings" onclick="show_private();">_settings</a></code>
+      </p></div>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">config</span>,
+        <span class="sig-arg">groupset</span>,
+        <span class="sig-arg">*args</span>,
+        <span class="sig-arg">**kwargs</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialization</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_getPathString"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_getPathString</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">prefix</span>,
+        <span class="sig-arg">paths</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier._getPathString">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the (possibly) prefixed paths as string</p>
+  <p>All parameters are expected to be UTF-8 encoded</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>prefix</code></strong> (<code>str</code>) - The prefix (may be empty)</li>
+        <li><strong class="pname"><code>paths</code></strong> (<code>list</code>) - List of paths (<code>[str, str, ...]</code>)</li>
+    </ul></dd>
+    <dt>Returns: <code>unicode</code></dt>
+        <dd>The prefixed paths as unicode</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_getPrefixedDirectories"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_getPrefixedDirectories</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">changeset</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier._getPrefixedDirectories">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the longest common directory prefix</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>changeset</code></strong> (list) - The change set</li>
+    </ul></dd>
+    <dt>Returns: <code>unicode</code></dt>
+        <dd>The common dir and the path list, human readable</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_getPrefixedFiles"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_getPrefixedFiles</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">changeset</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier._getPrefixedFiles">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the longest common path prefix</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>changeset</code></strong> (list) - The change set</li>
+    </ul></dd>
+    <dt>Returns: <code>unicode</code></dt>
+        <dd>The common dir and the path list, human readable</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="composeHeaders"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">composeHeaders</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">groups</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.composeHeaders">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Compose the informational headers of the mail</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>groups</code></strong> (<code>list</code>) - The groups to process</li>
+    </ul></dd>
+    <dt>Returns: <code>tuple</code></dt>
+        <dd>sender (<code>unicode</code>), recipients (<code>list</code>), 
+          headers (<code>dict</code>)</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="composeMail"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">composeMail</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.composeMail">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Composes the mail</p>
+  <dl class="fields">
+    <dt>Returns: <code>tuple</code></dt>
+        <dd>The senders, the receivers, the mail(s)</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getBasicHeaders"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getBasicHeaders</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.getBasicHeaders">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the basic headers</p>
+  <dl class="fields">
+    <dt>Returns: <code>dict</code></dt>
+        <dd>The headers</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getCustomHeaders"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getCustomHeaders</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">groups</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.getCustomHeaders">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the custom headers</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>groups</code></strong> (<code>list</code>) - The groups to process</li>
+    </ul></dd>
+    <dt>Returns: <code>dict</code></dt>
+        <dd>The custom headers</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMailAddresses"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMailAddresses</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">groups</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.getMailAddresses">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the substituted mail addresses (from/to/reply-to)</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>groups</code></strong> (<code>list</code>) - The groups to process</li>
+    </ul></dd>
+    <dt>Returns: <code>tuple</code></dt>
+        <dd>The address lists (sender, from, reply-to, to, to-fake, bcc)</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMailSubject"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMailSubject</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">countprefix</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.getMailSubject">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the subject</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>countprefix</code></strong> (<code>unicode</code>) - Optional countprefix (inserted after the rev number)</li>
+    </ul></dd>
+    <dt>Returns: <code>unicode</code></dt>
+        <dd>The subject line</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMails"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMails</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.getMails">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the composed mail(s)</p>
+  <dl class="fields">
+    <dt>Returns: generator</dt>
+        <dd>The mails</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getTransferEncoding"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getTransferEncoding</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.getTransferEncoding">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the transfer encoding to use</p>
+  <dl class="fields">
+    <dt>Returns: <code>unicode</code></dt>
+        <dd>The configured value</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="run"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">run</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.run">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Send notification as mail</p>
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="svnmailer.notifier._base.BaseNotifier-class.html#run">_base.BaseNotifier.run</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="sendMail"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">sendMail</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">sender</span>,
+        <span class="sig-arg">to_addr</span>,
+        <span class="sig-arg">mail</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.notifier._mail-pysrc.html#MailNotifier.sendMail">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sends the mail</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>sender</code></strong> (<code>str</code>) - The mail sender (envelope from)</li>
+        <li><strong class="pname"><code>to_addr</code></strong> (<code>list</code>) - The receivers</li>
+        <li><strong class="pname"><code>mail</code></strong> (<code>_TextMail</code>) - The mail object</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="COMMIT_SUBJECT"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">COMMIT_SUBJECT</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-quote">u'</code><code class="variable-string">%(prefix)s r%(revision)s %(part)s - %(files/dirs)s</code><code class="variable-quote">'</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="__implements__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">__implements__</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+<code class="variable-group">[</code>&lt;class 'svnmailer.notifier._text.TextNotifier'&gt;<code class="variable-group">]</code>
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="svnmailer-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Sep 25 21:07:32 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>svnmailer.typedstruct</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="svnmailer-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="svnmailer-module.html">Package&nbsp;svnmailer</a> ::
+        Module&nbsp;typedstruct
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module typedstruct</h1><p class="nomargin-top"><span class="codelink"><a href="svnmailer.typedstruct-pysrc.html">source&nbsp;code</a></span></p>
+<h1 class="heading">Typed Data Structures</h1>
+    <p>This module provides helpers for creating typed data structures.</p>
+    <h2 class="heading">Basic Usage</h2>
+      <p>In order to create a new data structure, you inherit from 
+      <code>Struct</code> and define the members like so (the booleans are 
+      explained later):</p>
+<pre class="literalblock">
+   class MyStruct(typedstruct.Struct):
+       __slots__ = typedstruct.members(locals(), {
+           'name1': None,
+           # ... and/or ...
+           'name2': &lt;type&gt;,
+           # ... and/or ...
+           'name3': (&lt;type&gt;, &lt;param&gt;),
+       })
+</pre>
+      <p>If there are no fixed types at all (always <code>None</code>, you 
+      can still benefit from the features of the <a 
+      href="svnmailer.typedstruct.Struct-class.html" 
+      class="link">Struct</a> class and further write it a bit simpler:</p>
+<pre class="literalblock">
+   class MyStruct(typedstruct.Struct):
+       __slots__ = typedstruct.members(locals(), (
+           'name1', 'name2', ...
+       ))
+</pre>
+      <p>Well, the main reason for using the Struct class is to get some 
+      level of type safety and automatic conversion without a complex 
+      written definition of <code>property</code> for each and every member
+      (it uses some property like descriptors internally, however). This 
+      encapsulates a lot of ugly logic and error handling (more or less) 
+      into a single piece of code and makes the member definitions 
+      <i>much</i> easier to read and maintain. For example, you can create 
+      a struct member of type <code>regex</code>. Now you assign a string 
+      to this member and it is automatically compiled to a regex, which you
+      get, if you retrieve the value later. As you'll see, the 
+      <code>regex</code> type needs to be defined as a class which should 
+      be inherited from the <a 
+      href="svnmailer.typedstruct.MemberDescriptor-class.html" 
+      class="link">MemberDescriptor</a> class and assigned to the 
+      <code>regex</code> type name via a type mapping dict:</p>
+<pre class="literalblock">
+   class RegexMember(typedstruct.MemberDescriptor):
+       def transform(self, value, arg):
+           import re
+           return re.compile(value)
+   # ...
+   typemap = {'regex': RegexMember}
+   # ...
+   class MyStruct(typedstruct.Struct):
+       __slots__ = typedstruct.members(locals(), {
+           'checker': 'regex',
+       }, typemap = typemap)
+   # ...
+   store = MyStruct()
+   store.checker = r'[a-zA-Z]$'
+   # ...
+   if store.checker.match(stringtocheck):
+       # do something
+</pre>
+    <h2 class="heading">Constraints</h2>
+      <p>Member names must be valid python identifiers. Further all names 
+      starting <i>and</i> ending with underscores are reserved for <a 
+      href="svnmailer.typedstruct.Struct-class.html" 
+      class="link">Struct</a>'s or python's own purposes.</p>
+
+<hr />
+<div class="fields">      <p><strong>Author:</strong>
+        Andr\xc3\xa9 Malo
+      </p>
+</div><!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="svnmailer.typedstruct.MemberDescriptor-class.html" class="summary-name">MemberDescriptor</a><br />
+      Base class for members descriptors
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="svnmailer.typedstruct.Struct-class.html" class="summary-name">Struct</a><br />
+      General structure stub
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="svnmailer.typedstruct.StructPrivate-class.html" class="summary-name" onclick="show_private();">StructPrivate</a><br />
+      Private container class for Struct internals
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="svnmailer.typedstruct.StructDescriptor-class.html" class="summary-name" onclick="show_private();">StructDescriptor</a><br />
+      Base class for struct descriptors
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="svnmailer.typedstruct.StructSetDescriptor-class.html" class="summary-name" onclick="show_private();">StructSetDescriptor</a><br />
+      _set_ descriptor
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="svnmailer.typedstruct.StructSubDescriptor-class.html" class="summary-name" onclick="show_private();">StructSubDescriptor</a><br />
+      _sub_ descriptor
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="svnmailer.typedstruct.StructMembersDescriptor-class.html" class="summary-name" onclick="show_private();">StructMembersDescriptor</a><br />
+      _members_ descriptor
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="svnmailer.typedstruct.StructDictDescriptor-class.html" class="summary-name" onclick="show_private();">StructDictDescriptor</a><br />
+      _dict_ descriptor
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>list</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.typedstruct-module.html#members" class="summary-sig-name">members</a>(<span class="summary-sig-arg">space</span>,
+        <span class="summary-sig-arg">the_members</span>,
+        <span class="summary-sig-arg">aliases</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">typemap</span>=<span class="summary-sig-default">None</span>)</span><br />
+      supply the member and slot entries</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.typedstruct-pysrc.html#members">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="'svnmailer'"><code class="variable-quote">'</code><code class="variable-string">svnmailer</code><code class="variable-quote">'</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="members"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">members</span>(<span class="sig-arg">space</span>,
+        <span class="sig-arg">the_members</span>,
+        <span class="sig-arg">aliases</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">typemap</span>=<span class="sig-default">None</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.typedstruct-pysrc.html#members">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>supply the member and slot entries</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>space</code></strong> (<code>dict</code>) - The namespace to pollute</li>
+        <li><strong class="pname"><code>the_members</code></strong> (<code>tuple</code> or <code>dict</code>) - The member list / description</li>
+        <li><strong class="pname"><code>aliases</code></strong> (<code>dict</code>) - The member name aliases</li>
+        <li><strong class="pname"><code>typemap</code></strong> (<code>dict</code>) - The type mapping table</li>
+    </ul></dd>
+    <dt>Returns: <code>list</code></dt>
+        <dd>The list of __slots__ to use.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="svnmailer-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Sep 25 21:07:32 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
