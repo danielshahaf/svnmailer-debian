@@ -1,0 +1,122 @@
+Description: Pretty-print svn:mergeinfo diffs
+  Print svn:mergeinfo diffs as "Merged rN", "Reverse-merged rM" rather
+  than as unidiffs.  'svn diff' does the same.
+Author: Daniel Shahaf <danielsh@elego.de>
+Bug-Debian: https://bugs.debian.org/837076
+Forwarded: yes (submitted to svnmailer-bugs@)
+Last-Update: 2012-03-04
+
+--- a/src/lib/svnmailer/notifier/_base.py
++++ b/src/lib/svnmailer/notifier/_base.py
+@@ -513,6 +513,42 @@
+         return subversion.isUnicodeProperty(name)
+ 
+ 
++    def isNonUnidiffProperty(self, name):
++        """ Returns if the supplied property name is diff'd not in unidiff
++
++            :param `name`: The property name
++            :type `name`: ``str``
++
++            :param `name`: The property name
++            :type `name`: ``str``
++
++            :return: The decision
++            :rtype: ``bool``
++        """
++        from svnmailer import subversion
++        return subversion.isNonUnidiffProperty(name)
++
++    def diffNonUnidiffProperty(self, fp, name, value1, value2):
++        """ Write a diff of a non-unudiff property.
++
++            :param `fp`: File-like object to write to
++            :type `name`: ``file``
++
++            :param `name`: The property name
++            :type `name`: ``str``
++
++            :param `value1`: old value
++            :type `value1`: ``str``
++
++            :param `value2`: new value
++            :type `value2`: ``str``
++
++            :return: None
++            :rtype: ``NoneType``
++        """
++        from svnmailer import subversion
++        return subversion.diffNonUnidiffProperty(fp, name, value1, value2)
++
+     def isBinaryProperty(self, values):
+         """ Returns if the supplied property seems to be binary
+ 
+--- a/src/lib/svnmailer/notifier/_text.py
++++ b/src/lib/svnmailer/notifier/_text.py
+@@ -262,6 +262,9 @@
+         elif token == self.ADD and self.isOneLineProperty(name, value2):
+             self.fp.write("    %s = %s\n" % (name, value2))
+ 
++        elif token == self.MODIFY and self.isNonUnidiffProperty(name):
++            self.diffNonUnidiffProperty(self.fp, name, value1, value2)
++
+         else:
+             # avoid "no newline at end of file" for props
+             if value1 and not value1.endswith("\n"):
+--- a/src/lib/svnmailer/subversion.py
++++ b/src/lib/svnmailer/subversion.py
+@@ -28,6 +28,7 @@
+ __all__       = [
+     'version', 'Repository', 'Error', 'RepositoryError', 'isUnicodeProperty'
+     'VersionedPathDescriptor', 'LockedPathDescriptor',
++    'isNonUnidiffProperty', 'diffNonUnidiffProperty',
+ ]
+ 
+ 
+@@ -99,6 +100,46 @@
+     return bool(svn_core.svn_prop_needs_translation(name))
+ 
+ 
++def isNonUnidiffProperty(name):
++    """ Returns if the supplied name is not to be unidiff'd
++
++        :param name: The property name
++        :type name: ``str``
++
++        :return: The decision
++        :rtype: ``bool``
++    """
++    return name == svn_core.SVN_PROP_MERGEINFO
++
++def diffNonUnidiffProperty(fp, name, value1, value2):
++    """ Write a diff of a non-unudiff property.
++
++        :param `fp`: File-like object to write to
++        :type `name`: ``file``
++
++        :param `name`: The property name
++        :type `name`: ``str``
++
++        :param `value1`: old value
++        :type `value1`: ``str``
++
++        :param `value2`: new value
++        :type `value2`: ``str``
++
++        :return: None
++        :rtype: ``NoneType``
++    """
++    # TODO: throw some error if this isn't svn:mergeinfo
++    # This mirrors display_mergeinfo_diff() in libsvn_client/diff.c
++    parsed1 = svn_core.svn_mergeinfo_parse(value1)
++    parsed2 = svn_core.svn_mergeinfo_parse(value2)
++    deleted, added = svn_core.svn_mergeinfo_diff(parsed1, parsed2, True)
++    for mergeinfo, text in [(deleted, "Reverse-merged"),
++                            (added, "Merged")]:
++        for fspath, rangelist in mergeinfo.iteritems():
++            rangelist_str = svn_core.svn_rangelist_to_string(rangelist)
++            fp.write("  %s %s:r%s\n" % (text, fspath, rangelist_str))
++
+ def isBinary(mtype):
+     """ Returns True if the supplied mime type represents a binary
+ 
