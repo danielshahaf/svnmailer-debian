@@ -1,3 +1,9 @@
+svnmailer (1.0.9-3~git) UNRELEASED; urgency=medium
+
+  * QA upload.
+
+ -- Daniel Shahaf <danielsh@apache.org>  Tue, 13 Sep 2016 02:22:36 +0000
+
 svnmailer (1.0.9-2) unstable; urgency=low
 
   * QA upload.
