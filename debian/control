@@ -6,7 +6,7 @@ Build-Depends:
  debhelper (>= 9),
  dh-python,
  python (>= 2.6.6-3~),
-Standards-Version: 3.9.5
+Standards-Version: 3.9.8
 Homepage: http://opensource.perlig.de/svnmailer/
 Vcs-Svn: svn://anonscm.debian.org/python-apps/packages/svnmailer/trunk/
 Vcs-Browser: http://anonscm.debian.org/viewvc/python-apps/packages/svnmailer/trunk/
