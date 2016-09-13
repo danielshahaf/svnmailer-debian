@@ -2,6 +2,8 @@ svnmailer (1.0.9-3~git) UNRELEASED; urgency=medium
 
   * QA upload.
   * new patch: Pretty-print svn:mergeinfo diffs.  (Closes: #837076)
+  * svnmailer.conf: Pass -oi to sendmail to disable \n.\n ending an email
+    prematurely with some MTA's.
 
  -- Daniel Shahaf <danielsh@apache.org>  Tue, 13 Sep 2016 02:22:36 +0000
 
