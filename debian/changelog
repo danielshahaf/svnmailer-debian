@@ -1,10 +1,14 @@
 svnmailer (1.0.9-3~git) UNRELEASED; urgency=medium
 
   * QA upload.
-  * new patch: Pretty-print svn:mergeinfo diffs.  (Closes: #837076)
-  * svnmailer.conf: Pass -oi to sendmail to disable \n.\n ending an email
-    prematurely with some MTA's.
-  * Bump Standards-Version to 3.9.8 (no changes).
+  * Package changes:
+    + new patch: Pretty-print svn:mergeinfo diffs.  (Closes: #837076)
+    + svnmailer.conf: Pass -oi to sendmail to disable \n.\n ending an email
+      prematurely with some MTA's.
+  * Packaging changes:
+    + Move Vcs-* to collab-maint, the package has been orphaned so it's not
+      longer part of the Python Applications Packaging Team.
+    + Bump Standards-Version to 3.9.8 (no changes).
 
  -- Daniel Shahaf <danielsh@apache.org>  Tue, 13 Sep 2016 02:22:36 +0000
 
