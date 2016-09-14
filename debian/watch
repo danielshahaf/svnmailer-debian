@@ -1,2 +1,5 @@
 version=3
+# Note: would use  opts=pgpsigurlmangle=s/$/.asc/  ,
+# but upstream's key was revoked (years before the svnmailer
+# releases it signed!?).
 http://storage.perlig.de/svnmailer/svnmailer-([\d\.]*)\.tar.*
