@@ -1,9 +1,0 @@
-Document: svnmailer
-Title: Svnmailer Documentation
-Author: André Malo
-Abstract: Documentation for svnmailer, an extensible Subversion commit notification tool whose purpose is to create human readable commit mails and correctly encoded other notifications.
-Section: Programming
-
-Format: HTML
-Index: /usr/share/doc/svnmailer/docs/index.html
-Files: /usr/share/doc/svnmailer/docs/*

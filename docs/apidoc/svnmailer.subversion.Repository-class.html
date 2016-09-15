@@ -1,0 +1,884 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>svnmailer.subversion.Repository</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="svnmailer-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="svnmailer-module.html">Package&nbsp;svnmailer</a> ::
+        <a href="svnmailer.subversion-module.html">Module&nbsp;subversion</a> ::
+        Class&nbsp;Repository
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class Repository</h1><p class="nomargin-top"><span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+object --+
+         |
+        <strong class="uidshort">Repository</strong>
+</pre>
+
+<hr />
+<p>Access to the subversion repository</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.subversion.Repository-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">repos_path</span>)</span><br />
+      Open the repository</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="close"></a><span class="summary-sig-name">close</span>(<span class="summary-sig-arg">self</span>)</span><br />
+      Destroy the pool and release the shared lock</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository.close">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>list</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.subversion.Repository-class.html#getChangesList" class="summary-sig-name">getChangesList</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">revision</span>)</span><br />
+      Return the list of changes of a revisions sorted by path</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository.getChangesList">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>dict</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.subversion.Repository-class.html#getPathProperties" class="summary-sig-name">getPathProperties</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">path</span>,
+        <span class="summary-sig-arg">revision</span>)</span><br />
+      Get a dict of properties for a particular path/revision</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository.getPathProperties">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>str</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.subversion.Repository-class.html#getPathProperty" class="summary-sig-name">getPathProperty</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">path</span>,
+        <span class="summary-sig-arg">revision</span>)</span><br />
+      Get the value of a particular property</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository.getPathProperty">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>str</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.subversion.Repository-class.html#getPathMimeType" class="summary-sig-name">getPathMimeType</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">path</span>,
+        <span class="summary-sig-arg">revision</span>)</span><br />
+      Get the MIME type of a particular path</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository.getPathMimeType">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.subversion.Repository-class.html#dumpPathContent" class="summary-sig-name">dumpPathContent</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">fp</span>,
+        <span class="summary-sig-arg">path</span>,
+        <span class="summary-sig-arg">revision</span>)</span><br />
+      Dump the contents of a particular path into a file</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository.dumpPathContent">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>int</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.subversion.Repository-class.html#getRevisionTime" class="summary-sig-name">getRevisionTime</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">revision</span>)</span><br />
+      Returns the time of a particular rev.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository.getRevisionTime">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>str</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.subversion.Repository-class.html#getRevisionAuthor" class="summary-sig-name">getRevisionAuthor</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">revision</span>)</span><br />
+      Returns the author of a particular revision</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository.getRevisionAuthor">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>str</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.subversion.Repository-class.html#getRevisionLog" class="summary-sig-name">getRevisionLog</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">revision</span>)</span><br />
+      Returns the log entry of a particular revision</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository.getRevisionLog">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>str</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.subversion.Repository-class.html#getRevisionProperty" class="summary-sig-name">getRevisionProperty</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">revision</span>,
+        <span class="summary-sig-arg">propname</span>)</span><br />
+      Returns the value of a revision property</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository.getRevisionProperty">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>_RevisionChangeCollector</code></span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.subversion.Repository-class.html#_getChangeCollector" class="summary-sig-name" onclick="show_private();">_getChangeCollector</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">revision</span>)</span><br />
+      Return the RevisionChangeCollector instance</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository._getChangeCollector">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">swig object</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.subversion.Repository-class.html#_getRevisionRoot" class="summary-sig-name" onclick="show_private();">_getRevisionRoot</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">revision</span>)</span><br />
+      Return the root object of a particular revision</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository._getRevisionRoot">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">swig object</span>
+    </td><td class="summary">
+        <a name="_pool"></a><span class="summary-name">_pool</span> = <code title="None">None</code><br />
+      <code>None</code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>bool</code></span>
+    </td><td class="summary">
+        <a name="_apr_initialized"></a><span class="summary-name">_apr_initialized</span> = <code title="False">False</code><br />
+      <code>False</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">swig object</span>
+    </td><td class="summary">
+        <a name="_fs"></a><span class="summary-name">_fs</span><br />
+      Reference to the repos filesystem
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>dict</code></span>
+    </td><td class="summary">
+        <a name="_pathPropLists"></a><span class="summary-name">_pathPropLists</span><br />
+      Cached path propery lists
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>dict</code></span>
+    </td><td class="summary">
+        <a name="_pathProps"></a><span class="summary-name">_pathProps</span><br />
+      Cached path properties
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">swig object</span>
+    </td><td class="summary">
+        <a name="_repos"></a><span class="summary-name">_repos</span><br />
+      Reference to the open repository
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>dict</code></span>
+    </td><td class="summary">
+        <a name="_revChanges"></a><span class="summary-name">_revChanges</span><br />
+      Cached revision change lists
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>dict</code></span>
+    </td><td class="summary">
+        <a name="_revProps"></a><span class="summary-name">_revProps</span><br />
+      Cached revision properties
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>dict</code></span>
+    </td><td class="summary">
+        <a name="_revRoots"></a><span class="summary-name">_revRoots</span><br />
+      Cached revision root objects
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>dict</code></span>
+    </td><td class="summary">
+        <a name="_revTimes"></a><span class="summary-name">_revTimes</span><br />
+      Cached revision times
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type"><code>unicode</code></span>
+    </td><td class="summary">
+        <a name="path"></a><span class="summary-name">path</span><br />
+      The path to the repository
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">repos_path</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Open the repository</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>repos_path</code></strong> (<code>unicode</code>) - The repository path as unicode</li>
+    </ul></dd>
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getChangesList"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getChangesList</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">revision</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository.getChangesList">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return the list of changes of a revisions sorted by path</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>revision</code></strong> (<code>int</code>) - The revision</li>
+    </ul></dd>
+    <dt>Returns: <code>list</code></dt>
+        <dd>The Changes list</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getPathProperties"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getPathProperties</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">path</span>,
+        <span class="sig-arg">revision</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository.getPathProperties">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get a dict of properties for a particular path/revision</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>path</code></strong> (<code>str</code>) - The path</li>
+        <li><strong class="pname"><code>revision</code></strong> (<code>int</code>) - The revision number</li>
+    </ul></dd>
+    <dt>Returns: <code>dict</code></dt>
+        <dd>The dict of properties</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getPathProperty"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getPathProperty</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name</span>,
+        <span class="sig-arg">path</span>,
+        <span class="sig-arg">revision</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository.getPathProperty">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get the value of a particular property</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>name</code></strong> (<code>str</code>) - The name of the property</li>
+        <li><strong class="pname"><code>path</code></strong> (<code>str</code>) - The path the property is attached to</li>
+        <li><strong class="pname"><code>revision</code></strong> (<code>int</code>) - The revision number</li>
+    </ul></dd>
+    <dt>Returns: <code>str</code></dt>
+        <dd>The property value or <code>None</code> if the property doesn't 
+          exist.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getPathMimeType"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getPathMimeType</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">path</span>,
+        <span class="sig-arg">revision</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository.getPathMimeType">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get the MIME type of a particular path</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>path</code></strong> (<code>str</code>) - The path</li>
+        <li><strong class="pname"><code>revision</code></strong> (<code>int</code>) - The revision number</li>
+    </ul></dd>
+    <dt>Returns: <code>str</code></dt>
+        <dd>The mime type or <code>None</code></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="dumpPathContent"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">dumpPathContent</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">fp</span>,
+        <span class="sig-arg">path</span>,
+        <span class="sig-arg">revision</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository.dumpPathContent">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Dump the contents of a particular path into a file</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fp</code></strong> (file like object) - The file descriptor</li>
+        <li><strong class="pname"><code>path</code></strong> (<code>str</code>) - The path to process</li>
+        <li><strong class="pname"><code>revision</code></strong> (<code>int</code>) - The revision number</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getRevisionTime"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getRevisionTime</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">revision</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository.getRevisionTime">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the time of a particular rev. in seconds since epoch</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>revision</code></strong> (<code>int</code>) - The revision number</li>
+    </ul></dd>
+    <dt>Returns: <code>int</code></dt>
+        <dd>The time</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getRevisionAuthor"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getRevisionAuthor</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">revision</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository.getRevisionAuthor">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the author of a particular revision</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>revision</code></strong> (<code>int</code>) - The revision number</li>
+    </ul></dd>
+    <dt>Returns: <code>str</code></dt>
+        <dd>The author</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getRevisionLog"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getRevisionLog</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">revision</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository.getRevisionLog">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the log entry of a particular revision</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>revision</code></strong> (<code>int</code>) - The revision number</li>
+    </ul></dd>
+    <dt>Returns: <code>str</code></dt>
+        <dd>The log entry or <code>None</code></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getRevisionProperty"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getRevisionProperty</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">revision</span>,
+        <span class="sig-arg">propname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository.getRevisionProperty">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the value of a revision property</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>propname</code></strong> (<code>str</code>) - The property name</li>
+        <li><strong class="pname"><code>revision</code></strong> (<code>int</code>) - The revision number</li>
+    </ul></dd>
+    <dt>Returns: <code>str</code></dt>
+        <dd>The property value</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_getChangeCollector"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_getChangeCollector</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">revision</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository._getChangeCollector">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return the RevisionChangeCollector instance</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>revision</code></strong> (<code>int</code>) - The revision</li>
+    </ul></dd>
+    <dt>Returns: <code>_RevisionChangeCollector</code></dt>
+        <dd>The Collector instance</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_getRevisionRoot"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">_getRevisionRoot</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">revision</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.subversion-pysrc.html#Repository._getRevisionRoot">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return the root object of a particular revision</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>revision</code></strong> (<code>int</code>) - The revision number</li>
+    </ul></dd>
+    <dt>Returns: swig object</dt>
+        <dd>The revision root</dd>
+  </dl>
+<div class="fields">      <p><strong>Note:</strong>
+        The root objects are cached
+      </p>
+</div></td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="svnmailer-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Sep 25 21:07:33 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

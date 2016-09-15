@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>svnmailer.struct_accessors.BaseDescriptor</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="svnmailer-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="svnmailer-module.html">Package&nbsp;svnmailer</a> ::
+        <a href="svnmailer.struct_accessors-module.html">Module&nbsp;struct_accessors</a> ::
+        Class&nbsp;BaseDescriptor
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class BaseDescriptor</h1><p class="nomargin-top"><span class="codelink"><a href="svnmailer.struct_accessors-pysrc.html#BaseDescriptor">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+                  object --+    
+                           |    
+<a href="svnmailer.typedstruct.MemberDescriptor-class.html">typedstruct.MemberDescriptor</a> --+
+                               |
+                              <strong class="uidshort">BaseDescriptor</strong>
+</pre>
+
+<dl><dt>Known Subclasses:</dt>
+<dd>
+      <ul class="subclass-list">
+<li class="private"><a href="svnmailer.struct_accessors.BasePostmapDescriptor-class.html" onclick="show_private();">BasePostmapDescriptor</a></li><li class="private">, <a href="svnmailer.struct_accessors.BasePremapDescriptor-class.html" onclick="show_private();">BasePremapDescriptor</a></li><li class="private">, <a href="svnmailer.struct_accessors.BooleanDescriptor-class.html" onclick="show_private();">BooleanDescriptor</a></li><li class="private">, <a href="svnmailer.struct_accessors.HumanBooleanDescriptor-class.html" onclick="show_private();">HumanBooleanDescriptor</a></li><li class="private">, <a href="svnmailer.struct_accessors.IntegerDescriptor-class.html" onclick="show_private();">IntegerDescriptor</a></li><li class="private">, <a href="svnmailer.struct_accessors.StdinDescriptor-class.html" onclick="show_private();">StdinDescriptor</a></li><li class="private">, <a href="svnmailer.struct_accessors.StringDescriptor-class.html" onclick="show_private();">StringDescriptor</a></li>  </ul>
+</dd></dl>
+
+<hr />
+<p>Base class for svnmailer descriptors</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.struct_accessors.BaseDescriptor-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">name</span>,
+        <span class="summary-sig-arg">private</span>,
+        <span class="summary-sig-arg">param</span>=<span class="summary-sig-default">None</span>)</span><br />
+      Initialization</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.struct_accessors-pysrc.html#BaseDescriptor.__init__">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">any</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.struct_accessors.BaseDescriptor-class.html#transform" class="summary-sig-name">transform</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>,
+        <span class="summary-sig-arg">arg</span>)</span><br />
+      Transform if value is not None</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.struct_accessors-pysrc.html#BaseDescriptor.transform">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">any</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.struct_accessors.BaseDescriptor-class.html#substitute" class="summary-sig-name">substitute</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>,
+        <span class="summary-sig-arg">subst</span>,
+        <span class="summary-sig-arg">arg</span>)</span><br />
+      Substitute the value if it's activated</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.struct_accessors-pysrc.html#BaseDescriptor.substitute">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.struct_accessors.BaseDescriptor-class.html#premap" class="summary-sig-name">premap</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>,
+        <span class="summary-sig-arg">mapper</span>,
+        <span class="summary-sig-arg">arg</span>)</span><br />
+      Premap the value if it's activated</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.struct_accessors-pysrc.html#BaseDescriptor.premap">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.struct_accessors.BaseDescriptor-class.html#postmap" class="summary-sig-name">postmap</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>,
+        <span class="summary-sig-arg">mapper</span>,
+        <span class="summary-sig-arg">arg</span>)</span><br />
+      Postmap the value if it's activated</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.struct_accessors-pysrc.html#BaseDescriptor.postmap">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getCharset"></a><span class="summary-sig-name">getCharset</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">arg</span>)</span><br />
+      Returns the charset</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.struct_accessors-pysrc.html#BaseDescriptor.getCharset">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="getFileCharset"></a><span class="summary-sig-name">getFileCharset</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">arg</span>)</span><br />
+      Returns the file system charset</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.struct_accessors-pysrc.html#BaseDescriptor.getFileCharset">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.struct_accessors.BaseDescriptor-class.html#doPremap" class="summary-sig-name">doPremap</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>,
+        <span class="summary-sig-arg">mapper</span>,
+        <span class="summary-sig-arg">arg</span>)</span><br />
+      abstract method</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.struct_accessors-pysrc.html#BaseDescriptor.doPremap">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">any</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.struct_accessors.BaseDescriptor-class.html#doTransform" class="summary-sig-name">doTransform</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>,
+        <span class="summary-sig-arg">arg</span>)</span><br />
+      abstract method</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.struct_accessors-pysrc.html#BaseDescriptor.doTransform">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">any</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.struct_accessors.BaseDescriptor-class.html#doSubstitute" class="summary-sig-name">doSubstitute</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>,
+        <span class="summary-sig-arg">subst</span>,
+        <span class="summary-sig-arg">arg</span>)</span><br />
+      abstract method</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.struct_accessors-pysrc.html#BaseDescriptor.doSubstitute">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="svnmailer.struct_accessors.BaseDescriptor-class.html#doPostmap" class="summary-sig-name">doPostmap</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">value</span>,
+        <span class="summary-sig-arg">mapper</span>,
+        <span class="summary-sig-arg">arg</span>)</span><br />
+      abstract method</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="svnmailer.struct_accessors-pysrc.html#BaseDescriptor.doPostmap">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="svnmailer.typedstruct.MemberDescriptor-class.html">typedstruct.MemberDescriptor</a></code></b>:
+      <code><a href="svnmailer.typedstruct.MemberDescriptor-class.html#__delete__">__delete__</a></code>,
+      <code><a href="svnmailer.typedstruct.MemberDescriptor-class.html#__get__">__get__</a></code>,
+      <code><a href="svnmailer.typedstruct.MemberDescriptor-class.html#__set__">__set__</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== INSTANCE VARIABLES ==================== -->
+<a name="section-InstanceVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="svnmailer.typedstruct.MemberDescriptor-class.html">typedstruct.MemberDescriptor</a></code></b>:
+      <code><a href="svnmailer.typedstruct.MemberDescriptor-class.html#name">name</a></code>,
+      <code><a href="svnmailer.typedstruct.MemberDescriptor-class.html#param">param</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">name</span>,
+        <span class="sig-arg">private</span>,
+        <span class="sig-arg">param</span>=<span class="sig-default">None</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.struct_accessors-pysrc.html#BaseDescriptor.__init__">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Initialization</p>
+  <dl class="fields">
+    <dt>Overrides:
+        object.__init__
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="transform"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">transform</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">value</span>,
+        <span class="sig-arg">arg</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.struct_accessors-pysrc.html#BaseDescriptor.transform">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Transform if value is not None</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>value</code></strong> - The value to tranform</li>
+        <li><strong class="pname"><code>arg</code></strong> - The argument used for struct initialization</li>
+    </ul></dd>
+    <dt>Returns: any</dt>
+        <dd>The transformed value</dd>
+    <dt>Overrides:
+        <a href="svnmailer.typedstruct.MemberDescriptor-class.html#transform">typedstruct.MemberDescriptor.transform</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="substitute"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">substitute</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">value</span>,
+        <span class="sig-arg">subst</span>,
+        <span class="sig-arg">arg</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.struct_accessors-pysrc.html#BaseDescriptor.substitute">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Substitute the value if it's activated</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>value</code></strong> - The value to substitute</li>
+        <li><strong class="pname"><code>subst</code></strong> - The substitution dictionary</li>
+        <li><strong class="pname"><code>arg</code></strong> - The argument used for struct initialization</li>
+    </ul></dd>
+    <dt>Returns: any</dt>
+        <dd>The substituted value</dd>
+    <dt>Overrides:
+        <a href="svnmailer.typedstruct.MemberDescriptor-class.html#substitute">typedstruct.MemberDescriptor.substitute</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="premap"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">premap</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">value</span>,
+        <span class="sig-arg">mapper</span>,
+        <span class="sig-arg">arg</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.struct_accessors-pysrc.html#BaseDescriptor.premap">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Premap the value if it's activated</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>value</code></strong> - The value to premap</li>
+        <li><strong class="pname"><code>mapper</code></strong> - The mapping argument</li>
+        <li><strong class="pname"><code>arg</code></strong> - The argument used for struct initialization</li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="svnmailer.typedstruct.MemberDescriptor-class.html#premap">typedstruct.MemberDescriptor.premap</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="postmap"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">postmap</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">value</span>,
+        <span class="sig-arg">mapper</span>,
+        <span class="sig-arg">arg</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.struct_accessors-pysrc.html#BaseDescriptor.postmap">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Postmap the value if it's activated</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>value</code></strong> - The value to postmap</li>
+        <li><strong class="pname"><code>mapper</code></strong> - The mapping argument</li>
+        <li><strong class="pname"><code>arg</code></strong> - The argument used for struct initialization</li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="svnmailer.typedstruct.MemberDescriptor-class.html#postmap">typedstruct.MemberDescriptor.postmap</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="doPremap"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">doPremap</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">value</span>,
+        <span class="sig-arg">mapper</span>,
+        <span class="sig-arg">arg</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.struct_accessors-pysrc.html#BaseDescriptor.doPremap">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>abstract method</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>value</code></strong> (any) - The value to premap</li>
+        <li><strong class="pname"><code>mapper</code></strong> (<code>function</code>) - The mapper function</li>
+        <li><strong class="pname"><code>arg</code></strong> (any) - The argument used for struct initialization</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="doTransform"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">doTransform</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">value</span>,
+        <span class="sig-arg">arg</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.struct_accessors-pysrc.html#BaseDescriptor.doTransform">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>abstract method</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>value</code></strong> (any) - The value to tranform</li>
+        <li><strong class="pname"><code>arg</code></strong> (any) - The argument used for struct initialization</li>
+    </ul></dd>
+    <dt>Returns: any</dt>
+        <dd>The transformed value</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="doSubstitute"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">doSubstitute</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">value</span>,
+        <span class="sig-arg">subst</span>,
+        <span class="sig-arg">arg</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.struct_accessors-pysrc.html#BaseDescriptor.doSubstitute">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>abstract method</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>value</code></strong> (any) - The value to substitute</li>
+        <li><strong class="pname"><code>subst</code></strong> (<code>dict</code>) - The substitution dictionary</li>
+        <li><strong class="pname"><code>arg</code></strong> (any) - The argument used for struct initialization</li>
+    </ul></dd>
+    <dt>Returns: any</dt>
+        <dd>The substituted value</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="doPostmap"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">doPostmap</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">value</span>,
+        <span class="sig-arg">mapper</span>,
+        <span class="sig-arg">arg</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="svnmailer.struct_accessors-pysrc.html#BaseDescriptor.doPostmap">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>abstract method</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>value</code></strong> (any) - The value to premap</li>
+        <li><strong class="pname"><code>mapper</code></strong> (<code>function</code>) - The mapper function</li>
+        <li><strong class="pname"><code>arg</code></strong> (any) - The argument used for struct initialization</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="svnmailer-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Sep 25 21:07:33 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

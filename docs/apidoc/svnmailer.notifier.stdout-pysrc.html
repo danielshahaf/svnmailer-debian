@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>svnmailer.notifier.stdout</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="svnmailer-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="svnmailer-module.html">Package&nbsp;svnmailer</a> ::
+        <a href="svnmailer.notifier-module.html">Package&nbsp;notifier</a> ::
+        Module&nbsp;stdout
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="svnmailer.notifier.stdout-module.html">Module svnmailer.notifier.stdout</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment"># -*- coding: utf-8 -*-</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"># Copyright 2004-2006 Andr&#233; Malo or his licensors, as applicable</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment"># Licensed under the Apache License, Version 2.0 (the "License");</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"># you may not use this file except in compliance with the License.</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># You may obtain a copy of the License at</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment">#     http://www.apache.org/licenses/LICENSE-2.0</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment"># Unless required by applicable law or agreed to in writing, software</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment"># distributed under the License is distributed on an "AS IS" BASIS,</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-comment"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-comment"># See the License for the specific language governing permissions and</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-comment"># limitations under the License.</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-docstring">Stdout notifier - mostly for debugging purposes</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-name">__author__</tt>    <tt class="py-op">=</tt> <tt class="py-string">"Andr&#233; Malo"</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-name">__docformat__</tt> <tt class="py-op">=</tt> <tt class="py-string">"epytext en"</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-name">__all__</tt>       <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'getNotifier'</tt><tt class="py-op">]</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-comment"># global imports</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Package svnmailer=svnmailer-module.html"><a title="svnmailer" class="py-name" href="#" onclick="return doclink('link-0', 'svnmailer', 'link-0');">svnmailer</a></tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Package svnmailer.notifier=svnmailer.notifier-module.html"><a title="svnmailer.notifier" class="py-name" href="#" onclick="return doclink('link-1', 'notifier', 'link-1');">notifier</a></tt> <tt class="py-keyword">import</tt> <tt id="link-2" class="py-name" targets="Module svnmailer.notifier._text=svnmailer.notifier._text-module.html"><a title="svnmailer.notifier._text" class="py-name" href="#" onclick="return doclink('link-2', '_text', 'link-2');">_text</a></tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"> </tt>
+<a name="getNotifier"></a><div id="getNotifier-def"><a name="L28"></a><tt class="py-lineno"> 28</tt> <a class="py-toggle" href="#" id="getNotifier-toggle" onclick="return toggle('getNotifier');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.notifier.stdout-module.html#getNotifier">getNotifier</a><tt class="py-op">(</tt><tt class="py-param">config</tt><tt class="py-op">,</tt> <tt class="py-param">groupset</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="getNotifier-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="getNotifier-expanded"><a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">    <tt class="py-docstring">""" Returns an initialized notifier or nothing</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-docstring">        @param config: The svnmailer config</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-docstring">        @type config: C{svnmailer.settings.Settings}</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-docstring">        @param groupset: The groupset to process</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-docstring">        @type groupset: C{list}</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-docstring">        @return: The list of notifiers (containing 0 or 1 member)</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: C{list}</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-op">[</tt><tt id="link-3" class="py-name" targets="Class svnmailer.notifier.stdout.StdoutNotifier=svnmailer.notifier.stdout.StdoutNotifier-class.html"><a title="svnmailer.notifier.stdout.StdoutNotifier" class="py-name" href="#" onclick="return doclink('link-3', 'StdoutNotifier', 'link-3');">StdoutNotifier</a></tt><tt class="py-op">(</tt><tt id="link-4" class="py-name" targets="Module svnmailer.config=svnmailer.config-module.html,Variable svnmailer.settings.RuntimeSettingsContainer.config=svnmailer.settings.RuntimeSettingsContainer-class.html#config"><a title="svnmailer.config
+svnmailer.settings.RuntimeSettingsContainer.config" class="py-name" href="#" onclick="return doclink('link-4', 'config', 'link-4');">config</a></tt><tt class="py-op">,</tt> <tt class="py-name">groupset</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"> </tt>
+<a name="StdoutNotifier"></a><div id="StdoutNotifier-def"><a name="L43"></a><tt class="py-lineno"> 43</tt> <a class="py-toggle" href="#" id="StdoutNotifier-toggle" onclick="return toggle('StdoutNotifier');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="svnmailer.notifier.stdout.StdoutNotifier-class.html">StdoutNotifier</a><tt class="py-op">(</tt><tt class="py-base-class">_text</tt><tt class="py-op">.</tt><tt class="py-base-class">TextNotifier</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="StdoutNotifier-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="StdoutNotifier-expanded"><a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">    <tt class="py-docstring">""" Writes all stuff to sys.stdout</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-docstring">        @cvar _fp: C{None}</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-docstring">        @ivar _fp: alternate file like object (for testing purposes)</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-docstring">        @type _fp: file like object</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">    <tt id="link-5" class="py-name" targets="Variable svnmailer.config.ConfigFileSettings.__implements__=svnmailer.config.ConfigFileSettings-class.html#__implements__,Variable svnmailer.notifier._mail.MailNotifier.__implements__=svnmailer.notifier._mail.MailNotifier-class.html#__implements__,Variable svnmailer.notifier._multimail.MultiMailNotifier.__implements__=svnmailer.notifier._multimail.MultiMailNotifier-class.html#__implements__,Variable svnmailer.notifier._text.TextNotifier.__implements__=svnmailer.notifier._text.TextNotifier-class.html#__implements__,Variable svnmailer.notifier._textmail.TextMailNotifier.__implements__=svnmailer.notifier._textmail.TextMailNotifier-class.html#__implements__,Variable svnmailer.notifier._textnews.TextNewsNotifier.__implements__=svnmailer.notifier._textnews.TextNewsNotifier-class.html#__implements__,Variable svnmailer.notifier.cia_xmlrpc.CIAXMLRPCNotifier.__implements__=svnmailer.notifier.cia_xmlrpc.CIAXMLRPCNotifier-class.html#__implements__,Variable svnmailer.notifier.stdout.StdoutNotifier.__implements__=svnmailer.notifier.stdout.StdoutNotifier-class.html#__implements__"><a title="svnmailer.config.ConfigFileSettings.__implements__
+svnmailer.notifier._mail.MailNotifier.__implements__
+svnmailer.notifier._multimail.MultiMailNotifier.__implements__
+svnmailer.notifier._text.TextNotifier.__implements__
+svnmailer.notifier._textmail.TextMailNotifier.__implements__
+svnmailer.notifier._textnews.TextNewsNotifier.__implements__
+svnmailer.notifier.cia_xmlrpc.CIAXMLRPCNotifier.__implements__
+svnmailer.notifier.stdout.StdoutNotifier.__implements__" class="py-name" href="#" onclick="return doclink('link-5', '__implements__', 'link-5');">__implements__</a></tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt id="link-6" class="py-name"><a title="svnmailer.notifier._text" class="py-name" href="#" onclick="return doclink('link-6', '_text', 'link-2');">_text</a></tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Class svnmailer.notifier._text.TextNotifier=svnmailer.notifier._text.TextNotifier-class.html"><a title="svnmailer.notifier._text.TextNotifier" class="py-name" href="#" onclick="return doclink('link-7', 'TextNotifier', 'link-7');">TextNotifier</a></tt><tt class="py-op">]</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">    <tt id="link-8" class="py-name" targets="Variable svnmailer.notifier.stdout.StdoutNotifier._fp=svnmailer.notifier.stdout.StdoutNotifier-class.html#_fp"><a title="svnmailer.notifier.stdout.StdoutNotifier._fp" class="py-name" href="#" onclick="return doclink('link-8', '_fp', 'link-8');">_fp</a></tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"> </tt>
+<a name="StdoutNotifier.run"></a><div id="StdoutNotifier.run-def"><a name="L54"></a><tt class="py-lineno"> 54</tt> <a class="py-toggle" href="#" id="StdoutNotifier.run-toggle" onclick="return toggle('StdoutNotifier.run');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.notifier.stdout.StdoutNotifier-class.html#run">run</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="StdoutNotifier.run-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="StdoutNotifier.run-expanded"><a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">        <tt class="py-docstring">""" Print the notification to stdout """</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-keyword">from</tt> <tt id="link-9" class="py-name"><a title="svnmailer" class="py-name" href="#" onclick="return doclink('link-9', 'svnmailer', 'link-0');">svnmailer</a></tt> <tt class="py-keyword">import</tt> <tt id="link-10" class="py-name" targets="Module svnmailer.stream=svnmailer.stream-module.html"><a title="svnmailer.stream" class="py-name" href="#" onclick="return doclink('link-10', 'stream', 'link-10');">stream</a></tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">        <tt id="link-11" class="py-name" targets="Variable svnmailer.notifier._text.TextNotifier.fp=svnmailer.notifier._text.TextNotifier-class.html#fp,Variable svnmailer.util.TempFile.fp=svnmailer.util.TempFile-class.html#fp"><a title="svnmailer.notifier._text.TextNotifier.fp
+svnmailer.util.TempFile.fp" class="py-name" href="#" onclick="return doclink('link-11', 'fp', 'link-11');">fp</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name"><a title="svnmailer.notifier.stdout.StdoutNotifier._fp" class="py-name" href="#" onclick="return doclink('link-12', '_fp', 'link-8');">_fp</a></tt> <tt class="py-keyword">or</tt> <tt class="py-name">sys</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Module svnmailer.notifier.stdout=svnmailer.notifier.stdout-module.html"><a title="svnmailer.notifier.stdout" class="py-name" href="#" onclick="return doclink('link-13', 'stdout', 'link-13');">stdout</a></tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">        <tt id="link-14" class="py-name"><a title="svnmailer.notifier._text.TextNotifier.fp
+svnmailer.util.TempFile.fp" class="py-name" href="#" onclick="return doclink('link-14', 'fp', 'link-11');">fp</a></tt> <tt class="py-op">=</tt> <tt id="link-15" class="py-name"><a title="svnmailer.stream" class="py-name" href="#" onclick="return doclink('link-15', 'stream', 'link-10');">stream</a></tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Class svnmailer.stream.UnicodeStream=svnmailer.stream.UnicodeStream-class.html"><a title="svnmailer.stream.UnicodeStream" class="py-name" href="#" onclick="return doclink('link-16', 'UnicodeStream', 'link-16');">UnicodeStream</a></tt><tt class="py-op">(</tt><tt id="link-17" class="py-name"><a title="svnmailer.notifier._text.TextNotifier.fp
+svnmailer.util.TempFile.fp" class="py-name" href="#" onclick="return doclink('link-17', 'fp', 'link-11');">fp</a></tt><tt class="py-op">,</tt> <tt class="py-name">out_enc</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Method svnmailer.notifier.stdout.StdoutNotifier._getOutputEnc()=svnmailer.notifier.stdout.StdoutNotifier-class.html#_getOutputEnc"><a title="svnmailer.notifier.stdout.StdoutNotifier._getOutputEnc" class="py-name" href="#" onclick="return doclink('link-18', '_getOutputEnc', 'link-18');">_getOutputEnc</a></tt><tt class="py-op">(</tt><tt id="link-19" class="py-name"><a title="svnmailer.notifier._text.TextNotifier.fp
+svnmailer.util.TempFile.fp" class="py-name" href="#" onclick="return doclink('link-19', 'fp', 'link-11');">fp</a></tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">        <tt class="py-name">groups</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">_groupset</tt><tt class="py-op">.</tt><tt class="py-name">groups</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name"><a title="svnmailer.notifier._text.TextNotifier.fp
+svnmailer.util.TempFile.fp" class="py-name" href="#" onclick="return doclink('link-20', 'fp', 'link-11');">fp</a></tt> <tt class="py-op">=</tt> <tt id="link-21" class="py-name"><a title="svnmailer.notifier._text.TextNotifier.fp
+svnmailer.util.TempFile.fp" class="py-name" href="#" onclick="return doclink('link-21', 'fp', 'link-11');">fp</a></tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name" targets="Method svnmailer.notifier.stdout.StdoutNotifier._writePreamble()=svnmailer.notifier.stdout.StdoutNotifier-class.html#_writePreamble"><a title="svnmailer.notifier.stdout.StdoutNotifier._writePreamble" class="py-name" href="#" onclick="return doclink('link-22', '_writePreamble', 'link-22');">_writePreamble</a></tt><tt class="py-op">(</tt><tt class="py-name">groups</tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name" targets="Method svnmailer.notifier.stdout.StdoutNotifier._writeNotification()=svnmailer.notifier.stdout.StdoutNotifier-class.html#_writeNotification"><a title="svnmailer.notifier.stdout.StdoutNotifier._writeNotification" class="py-name" href="#" onclick="return doclink('link-23', '_writeNotification', 'link-23');">_writeNotification</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"> </tt>
+<a name="StdoutNotifier._writeNotification"></a><div id="StdoutNotifier._writeNotification-def"><a name="L67"></a><tt class="py-lineno"> 67</tt> <a class="py-toggle" href="#" id="StdoutNotifier._writeNotification-toggle" onclick="return toggle('StdoutNotifier._writeNotification');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.notifier.stdout.StdoutNotifier-class.html#_writeNotification">_writeNotification</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="StdoutNotifier._writeNotification-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="StdoutNotifier._writeNotification-expanded"><a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-docstring">""" Writes the whole diff notification body """</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">        <tt class="py-keyword">from</tt> <tt id="link-24" class="py-name"><a title="svnmailer" class="py-name" href="#" onclick="return doclink('link-24', 'svnmailer', 'link-0');">svnmailer</a></tt><tt class="py-op">.</tt><tt id="link-25" class="py-name" targets="Module svnmailer.settings=svnmailer.settings-module.html"><a title="svnmailer.settings" class="py-name" href="#" onclick="return doclink('link-25', 'settings', 'link-25');">settings</a></tt> <tt class="py-keyword">import</tt> <tt id="link-26" class="py-name" targets="Variable svnmailer.settings.modes=svnmailer.settings-module.html#modes"><a title="svnmailer.settings.modes" class="py-name" href="#" onclick="return doclink('link-26', 'modes', 'link-26');">modes</a></tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">        <tt id="link-27" class="py-name" targets="Variable svnmailer.settings.RuntimeSettingsContainer.mode=svnmailer.settings.RuntimeSettingsContainer-class.html#mode,Variable svnmailer.struct_accessors._MailAction.mode=svnmailer.struct_accessors._MailAction-class.html#mode"><a title="svnmailer.settings.RuntimeSettingsContainer.mode
+svnmailer.struct_accessors._MailAction.mode" class="py-name" href="#" onclick="return doclink('link-27', 'mode', 'link-27');">mode</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Variable svnmailer.notifier.mail.SMTPSubmitter._settings=svnmailer.notifier.mail.SMTPSubmitter-class.html#_settings,Variable svnmailer.notifier.mail.SendmailSubmitter._settings=svnmailer.notifier.mail.SendmailSubmitter-class.html#_settings,Variable svnmailer.notifier.news.NNTPSubmitter._settings=svnmailer.notifier.news.NNTPSubmitter-class.html#_settings"><a title="svnmailer.notifier.mail.SMTPSubmitter._settings
+svnmailer.notifier.mail.SendmailSubmitter._settings
+svnmailer.notifier.news.NNTPSubmitter._settings" class="py-name" href="#" onclick="return doclink('link-28', '_settings', 'link-28');">_settings</a></tt><tt class="py-op">.</tt><tt class="py-name">runtime</tt><tt class="py-op">.</tt><tt id="link-29" class="py-name"><a title="svnmailer.settings.RuntimeSettingsContainer.mode
+svnmailer.struct_accessors._MailAction.mode" class="py-name" href="#" onclick="return doclink('link-29', 'mode', 'link-27');">mode</a></tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt id="link-30" class="py-name"><a title="svnmailer.settings.RuntimeSettingsContainer.mode
+svnmailer.struct_accessors._MailAction.mode" class="py-name" href="#" onclick="return doclink('link-30', 'mode', 'link-27');">mode</a></tt> <tt class="py-op">==</tt> <tt id="link-31" class="py-name"><a title="svnmailer.settings.modes" class="py-name" href="#" onclick="return doclink('link-31', 'modes', 'link-26');">modes</a></tt><tt class="py-op">.</tt><tt class="py-name">commit</tt><tt class="py-op">:</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name" targets="Method svnmailer.notifier._multimail.SplittingDecorator.writeMetaData()=svnmailer.notifier._multimail.SplittingDecorator-class.html#writeMetaData,Method svnmailer.notifier._text.TextNotifier.writeMetaData()=svnmailer.notifier._text.TextNotifier-class.html#writeMetaData,Method svnmailer.notifier._textmail.SplittingDecorator.writeMetaData()=svnmailer.notifier._textmail.SplittingDecorator-class.html#writeMetaData,Method svnmailer.notifier._textmail.URLDecorator.writeMetaData()=svnmailer.notifier._textmail.URLDecorator-class.html#writeMetaData"><a title="svnmailer.notifier._multimail.SplittingDecorator.writeMetaData
+svnmailer.notifier._text.TextNotifier.writeMetaData
+svnmailer.notifier._textmail.SplittingDecorator.writeMetaData
+svnmailer.notifier._textmail.URLDecorator.writeMetaData" class="py-name" href="#" onclick="return doclink('link-32', 'writeMetaData', 'link-32');">writeMetaData</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name" targets="Method svnmailer.notifier._text.TextNotifier.writePathList()=svnmailer.notifier._text.TextNotifier-class.html#writePathList,Method svnmailer.notifier._textmail.SplittingDecorator.writePathList()=svnmailer.notifier._textmail.SplittingDecorator-class.html#writePathList,Method svnmailer.notifier._textmail.URLDecorator.writePathList()=svnmailer.notifier._textmail.URLDecorator-class.html#writePathList"><a title="svnmailer.notifier._text.TextNotifier.writePathList
+svnmailer.notifier._textmail.SplittingDecorator.writePathList
+svnmailer.notifier._textmail.URLDecorator.writePathList" class="py-name" href="#" onclick="return doclink('link-33', 'writePathList', 'link-33');">writePathList</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name" targets="Method svnmailer.notifier._multimail.MultiMailNotifier.writeDiffList()=svnmailer.notifier._multimail.MultiMailNotifier-class.html#writeDiffList,Method svnmailer.notifier._text.TextNotifier.writeDiffList()=svnmailer.notifier._text.TextNotifier-class.html#writeDiffList,Method svnmailer.notifier._textmail.URLDecorator.writeDiffList()=svnmailer.notifier._textmail.URLDecorator-class.html#writeDiffList"><a title="svnmailer.notifier._multimail.MultiMailNotifier.writeDiffList
+svnmailer.notifier._text.TextNotifier.writeDiffList
+svnmailer.notifier._textmail.URLDecorator.writeDiffList" class="py-name" href="#" onclick="return doclink('link-34', 'writeDiffList', 'link-34');">writeDiffList</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt id="link-35" class="py-name"><a title="svnmailer.settings.RuntimeSettingsContainer.mode
+svnmailer.struct_accessors._MailAction.mode" class="py-name" href="#" onclick="return doclink('link-35', 'mode', 'link-27');">mode</a></tt> <tt class="py-op">==</tt> <tt id="link-36" class="py-name"><a title="svnmailer.settings.modes" class="py-name" href="#" onclick="return doclink('link-36', 'modes', 'link-26');">modes</a></tt><tt class="py-op">.</tt><tt class="py-name">propchange</tt><tt class="py-op">:</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name" targets="Method svnmailer.notifier._text.TextNotifier.writeRevPropData()=svnmailer.notifier._text.TextNotifier-class.html#writeRevPropData"><a title="svnmailer.notifier._text.TextNotifier.writeRevPropData" class="py-name" href="#" onclick="return doclink('link-37', 'writeRevPropData', 'link-37');">writeRevPropData</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">        <tt class="py-keyword">elif</tt> <tt id="link-38" class="py-name"><a title="svnmailer.settings.RuntimeSettingsContainer.mode
+svnmailer.struct_accessors._MailAction.mode" class="py-name" href="#" onclick="return doclink('link-38', 'mode', 'link-27');">mode</a></tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt id="link-39" class="py-name"><a title="svnmailer.settings.modes" class="py-name" href="#" onclick="return doclink('link-39', 'modes', 'link-26');">modes</a></tt><tt class="py-op">.</tt><tt class="py-name">lock</tt><tt class="py-op">,</tt> <tt id="link-40" class="py-name"><a title="svnmailer.settings.modes" class="py-name" href="#" onclick="return doclink('link-40', 'modes', 'link-26');">modes</a></tt><tt class="py-op">.</tt><tt class="py-name">unlock</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name" targets="Method svnmailer.notifier._text.TextNotifier.writeLockData()=svnmailer.notifier._text.TextNotifier-class.html#writeLockData"><a title="svnmailer.notifier._text.TextNotifier.writeLockData" class="py-name" href="#" onclick="return doclink('link-41', 'writeLockData', 'link-41');">writeLockData</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">AssertionError</tt><tt class="py-op">(</tt><tt class="py-string">"Unknown runtime.mode %r"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-42" class="py-name"><a title="svnmailer.settings.RuntimeSettingsContainer.mode
+svnmailer.struct_accessors._MailAction.mode" class="py-name" href="#" onclick="return doclink('link-42', 'mode', 'link-27');">mode</a></tt><tt class="py-op">,</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"> </tt>
+<a name="StdoutNotifier._writePreamble"></a><div id="StdoutNotifier._writePreamble-def"><a name="L85"></a><tt class="py-lineno"> 85</tt> <a class="py-toggle" href="#" id="StdoutNotifier._writePreamble-toggle" onclick="return toggle('StdoutNotifier._writePreamble');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.notifier.stdout.StdoutNotifier-class.html#_writePreamble">_writePreamble</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">groups</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="StdoutNotifier._writePreamble-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="StdoutNotifier._writePreamble-expanded"><a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">        <tt class="py-docstring">""" Writes the stdout preamble for the selected groups</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"><tt class="py-docstring">            @param groups: The groups that are notified</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-docstring">            @type groups: C{list}</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-43" class="py-name"><a title="svnmailer.notifier._text.TextNotifier.fp
+svnmailer.util.TempFile.fp" class="py-name" href="#" onclick="return doclink('link-43', 'fp', 'link-11');">fp</a></tt><tt class="py-op">.</tt><tt id="link-44" class="py-name" targets="Method svnmailer.stream.BinaryOrUnicodeStream.write()=svnmailer.stream.BinaryOrUnicodeStream-class.html#write,Method svnmailer.stream.CountStream.write()=svnmailer.stream.CountStream-class.html#write,Method svnmailer.stream.DevNullStream.write()=svnmailer.stream.DevNullStream-class.html#write,Method svnmailer.stream.SplittingStream.write()=svnmailer.stream.SplittingStream-class.html#write,Method svnmailer.stream.TruncatingStream.write()=svnmailer.stream.TruncatingStream-class.html#write,Method svnmailer.stream.UnicodeStream.write()=svnmailer.stream.UnicodeStream-class.html#write,Method svnmailer.stream._BaseStream.write()=svnmailer.stream._BaseStream-class.html#write"><a title="svnmailer.stream.BinaryOrUnicodeStream.write
+svnmailer.stream.CountStream.write
+svnmailer.stream.DevNullStream.write
+svnmailer.stream.SplittingStream.write
+svnmailer.stream.TruncatingStream.write
+svnmailer.stream.UnicodeStream.write
+svnmailer.stream._BaseStream.write" class="py-name" href="#" onclick="return doclink('link-44', 'write', 'link-44');">write</a></tt><tt class="py-op">(</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">            <tt class="py-string">"&gt;&gt;&gt; Notification for the following group%s:\n  %s\n\n"</tt> <tt class="py-op">%</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">            <tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-string">""</tt><tt class="py-op">,</tt> <tt class="py-string">"s"</tt><tt class="py-op">]</tt><tt class="py-op">[</tt><tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">groups</tt><tt class="py-op">)</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">1</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">            <tt class="py-string">",\n  "</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-string">"[%s]"</tt> <tt class="py-op">%</tt> <tt class="py-name">group</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name" targets="Variable svnmailer.settings.GroupSettingsContainer._name=svnmailer.settings.GroupSettingsContainer-class.html#_name"><a title="svnmailer.settings.GroupSettingsContainer._name" class="py-name" href="#" onclick="return doclink('link-45', '_name', 'link-45');">_name</a></tt> <tt class="py-keyword">for</tt> <tt class="py-name">group</tt> <tt class="py-keyword">in</tt> <tt class="py-name">groups</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">        <tt class="py-op">)</tt> </tt>
+</div><a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"> </tt>
+<a name="StdoutNotifier._getOutputEnc"></a><div id="StdoutNotifier._getOutputEnc-def"><a name="L98"></a><tt class="py-lineno"> 98</tt> <a class="py-toggle" href="#" id="StdoutNotifier._getOutputEnc-toggle" onclick="return toggle('StdoutNotifier._getOutputEnc');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="svnmailer.notifier.stdout.StdoutNotifier-class.html#_getOutputEnc">_getOutputEnc</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">fp</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="StdoutNotifier._getOutputEnc-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="StdoutNotifier._getOutputEnc-expanded"><a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">        <tt class="py-docstring">""" Returns the "proper" output encoding</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-docstring">            If the output goes to a terminal, the method tries to get</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-docstring">            the current locale encoding. UTF-8 is default and fallback</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-docstring">            if anything fails.</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-docstring">            @param fp: The file object written to</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-docstring">            @type fp: file like object</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"><tt class="py-docstring">            @return: The chosen encoding</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"><tt class="py-docstring">            @rtype: C{str}</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">        <tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">        <tt class="py-name">enc</tt> <tt class="py-op">=</tt> <tt class="py-string">"utf-8"</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">            <tt class="py-name">isatty</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">isatty</tt><tt class="py-op">(</tt><tt id="link-46" class="py-name"><a title="svnmailer.notifier._text.TextNotifier.fp
+svnmailer.util.TempFile.fp" class="py-name" href="#" onclick="return doclink('link-46', 'fp', 'link-11');">fp</a></tt><tt class="py-op">.</tt><tt class="py-name">fileno</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">AttributeError</tt><tt class="py-op">:</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">            <tt class="py-name">isatty</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">isatty</tt><tt class="py-op">:</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">            <tt class="py-keyword">import</tt> <tt class="py-name">locale</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">            <tt class="py-name">enc</tt> <tt class="py-op">=</tt> <tt class="py-name">locale</tt><tt class="py-op">.</tt><tt class="py-name">getpreferredencoding</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">or</tt> <tt class="py-name">enc</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">enc</tt> </tt>
+</div></div><a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="svnmailer-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Sun Sep 25 21:07:33 2011
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
