@@ -8,9 +8,6 @@ Build-Depends:
  python (>= 2.6.6-3~),
 Standards-Version: 3.9.8
 Homepage: http://opensource.perlig.de/svnmailer/
-# These were correct through 1.0.9-1, until #634213 orphaning:
-#Vcs-Svn: svn://anonscm.debian.org/python-apps/packages/svnmailer/trunk/
-#Vcs-Browser: http://anonscm.debian.org/viewvc/python-apps/packages/svnmailer/trunk/
 Vcs-Git: https://anonscm.debian.org/git/collab-maint/svnmailer.git
 Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/svnmailer.git
 
