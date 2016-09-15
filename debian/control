@@ -13,12 +13,15 @@ Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/svnmailer.git
 
 Package: svnmailer
 Architecture: all
-Depends: ${misc:Depends}, ${python:Depends}, python-subversion
+Depends:
+ python-subversion,
+ ${misc:Depends},
+ ${python:Depends},
 Description: extensible Subversion commit notification tool
- The svnmailer is a tool, which is usually called by a Subversion hook 
- to submit commit notifications in various ways (at the moment: mail via 
- SMTP or a pipe to a sendmail like program, news via NNTP, CIA live 
- tracker notification via XML-RPC). It is derived from the original 
- mailer.py distributed with Subversion, but supposed to be much more 
- consistent, better extensible and to have much more features. Have a 
- look at the documentation for further details. 
+ The svnmailer is a tool, which is usually called by a Subversion hook
+ to submit commit notifications in various ways (at the moment: mail via
+ SMTP or a pipe to a sendmail like program, news via NNTP, CIA live
+ tracker notification via XML-RPC). It is derived from the original
+ mailer.py distributed with Subversion, but supposed to be much more
+ consistent, better extensible and to have much more features. Have a
+ look at the documentation for further details.
